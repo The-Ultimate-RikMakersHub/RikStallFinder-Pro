@@ -1,43 +1,51 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RikMakersHub | Local Food Registry</title>
+    <title>RikMakersHub | Purulia Stall Finder Pro</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Premium Nav Blended Bar -->
+    <!-- Luxury Nav Blended Bar -->
     <nav class="nav-bar">
         <div class="nav-brand">
             RikMakersHub <span>PRO</span>
         </div>
         <div class="selector-box">
             <select id="stall-picker" onchange="switchStallRoute(this.value)">
-                <option value="demo_stall">-- Choose Verified Vendor --</option>
+                <option value="demo_stall">-- Select a Verified Town Vendor --</option>
                 <option value="lamaland_momos">Lamaland Momos (Raghabpur More)</option>
             </select>
         </div>
     </nav>
 
-    <!-- Master Layout Grid (Left Content Matrix + Right QR Display) -->
+    <!-- Master Layout Grid -->
     <main id="app-screen" class="master-grid">
         
-        <!-- LEFT COLUMN: Operations & Menu Telemetry -->
+        <!-- LEFT COLUMN: Operations, Branding, Menus & Analytics -->
         <div class="left-column">
             
             
             <section class="card profile-card">
                 <div class="profile-header">
-                    <h2 id="vendor-name">Loading Profile...</h2>
+                    <div class="title-group">
+                        <span id="vendor-eyebrow" class="hero-eyebrow">Purulia Quality Certified</span>
+                        <h2 id="vendor-name">Loading Profile...</h2>
+                    </div>
                     <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
                 </div>
                 
+                <!-- Dynamic Vendor Motto (Arghya's Layout Feature Built Scaleably) -->
+                <p id="vendor-motto" class="stall-motto">Loading Motto...</p>
+                
                 <div class="meta-grid">
-                    <div class="meta-item">🕒 <span id="vendor-time">--:--</span></div>
+                    <div class="meta-item">🕒 Timings: <span id="vendor-time">--:--</span></div>
                     <div class="meta-item">🪑 Seating: <span id="vendor-seating">-</span> Pax</div>
-                    <div class="meta-item">📍 <span id="vendor-location">-</span></div>
+                    <div class="meta-item">📍 Hub: <span id="vendor-location">-</span></div>
                 </div>
 
                 <!-- Trial Tracker Progress System -->
@@ -48,6 +56,12 @@
                     </div>
                     <div class="trial-bar"><div id="trial-progress" class="trial-fill"></div></div>
                 </div>
+            </section>
+
+            <!-- Dynamic Ambience & Seating Showcase Section -->
+            <section class="card ambience-card">
+                <div class="card-section-title">Ambience & Seating</div>
+                <p id="vendor-ambience-text" class="ambience-description">Loading structural layout configurations...</p>
             </section>
 
             <!-- Dynamic Menu Component -->
@@ -63,18 +77,27 @@
                 <h3>Customer Verification Loop</h3>
                 <div class="rating-summary">
                     <div class="big-rating"><span id="avg-rating">0.0</span>⭐</div>
-                    <p>If rating drops below <strong>3.0⭐</strong>, the stall is auto-suspended for a quality re-survey.</p>
+                    <p class="rating-logic-text">If rating drops below <strong>3.0⭐</strong>, this counter is automatically purged from the public live registry for a quality audit.</p>
                 </div>
 
                 <div class="feedback-action">
                     <h4>Submit Live Field Report</h4>
                     <div class="star-row">
-                        <button class="star-btn" onclick="submitRating(1)">1⭐</button>
-                        <button class="star-btn" onclick="submitRating(2)">2⭐</button>
-                        <button class="star-btn" onclick="submitRating(3)">3⭐</button>
-                        <button class="star-btn" onclick="submitRating(4)">4⭐</button>
-                        <button class="star-btn" onclick="submitRating(5)">5⭐</button>
+                        <button class="star-btn" onclick="submitRating(1)">1★</button>
+                        <button class="star-btn" onclick="submitRating(2)">2★</button>
+                        <button class="star-btn" onclick="submitRating(3)">3★</button>
+                        <button class="star-btn" onclick="submitRating(4) backend">4★</button>
+                        <button class="star-btn" onclick="submitRating(5)">5★</button>
                     </div>
+                </div>
+            </section>
+
+            <!-- Dynamic Contact & Action Hub Card -->
+            <section class="card contact-card">
+                <div class="card-section-title">Merchant Desk & Verification</div>
+                <div class="contact-grid">
+                    <div class="contact-item">📞 Phone: <span id="vendor-phone">--</span></div>
+                    <div class="contact-item">🤝 Verified Operations Lead: <span id="vendor-ops">--</span></div>
                 </div>
             </section>
 
@@ -90,7 +113,7 @@
             </section>
         </div>
 
-        <!-- RIGHT COLUMN: Dynamic Device QR Verification Tab -->
+        <!-- RIGHT COLUMN: Sticky Dynamic Device QR Verification Tab -->
         <div class="right-column">
             <div class="card qr-sticky-card">
                 <div class="qr-header">
