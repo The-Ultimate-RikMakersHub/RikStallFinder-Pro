@@ -1,75 +1,78 @@
-/* Premium Color Architecture (Absorbing the elegant dark roast tones) */
+/* Arghya's Premium Color Palette Integrated into your Design Tokens */
 :root {
-    --bg-main: #110D07;       /* Dark Rich Espresso Base */
-    --bg-card: #1E1208;       /* Deep Roast Secondary Surfaces */
-    --text-main: #F5ECD7;     /* Soft Premium Cream Text */
-    --text-muted: #8A7A6A;    /* Warm Earth Grey for Secondary Readability */
-    --accent-ember: #FF6B00;  /* Pure Industrial Ember Glow */
-    --accent-amber: #FFB347;  /* High-Contrast Highlight Amber */
+    --espresso:   #110D07;    /* Dark Rich Espresso Base Background */
+    --dark-roast: #1E1208;    /* Deep Roasted Secondary Surfaces & Cards */
+    --ember:      #FF6B00;    /* High-Frequency Neon Flame Glow Accent */
+    --amber:      #FFB347;    /* Elegant Warm Highlight Gold */
+    --cream:      #F5ECD7;    /* Clean Premium Text Contrast */
+    --warm-grey:  #8A7A6A;    /* Muted Earth Grey for Metadata Subtext */
     --accent-green: #4ade80;  /* Operational Verification Green */
-    --radius-main: 12px;
+    --radius-main: 2px;       /* Sleek, sharp premium modern corners */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 body {
-    background-color: var(--bg-main);
-    color: var(--text-main);
+    background-color: var(--espresso);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
     padding-bottom: 60px;
 }
 
-/* Nav Menu Header Elements */
+/* Luxury Navigation Blended Header Bar */
 .nav-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
+    padding: 24px 40px;
     background: linear-gradient(to bottom, rgba(17,13,7,0.95) 0%, transparent 100%);
-    border-bottom: 1px solid rgba(255,107,0,0.1);
-    margin-bottom: 30px;
+    border-bottom: 1px solid rgba(255,107,0,0.15);
+    backdrop-filter: blur(4px);
+    margin-bottom: 40px;
 }
 
 .nav-brand {
-    font-size: 1.3rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
     font-weight: 900;
-    letter-spacing: 0.05em;
-    color: var(--accent-amber);
+    letter-spacing: 0.04em;
+    color: var(--amber);
 }
 
 .nav-brand span {
-    color: var(--accent-ember);
+    color: var(--ember);
     font-style: italic;
 }
 
 #stall-picker {
-    background-color: var(--bg-card);
-    color: var(--text-main);
-    border: 1px solid rgba(255,107,0,0.25);
-    padding: 8px 16px;
-    border-radius: 6px;
+    background-color: var(--dark-roast);
+    color: var(--cream);
+    border: 1px solid rgba(255,107,0,0.3);
+    padding: 10px 18px;
+    border-radius: 2px;
     font-size: 0.85rem;
     font-weight: 600;
+    letter-spacing: 0.05em;
     cursor: pointer;
     outline: none;
-    transition: all 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 #stall-picker:focus {
-    border-color: var(--accent-amber);
-    box-shadow: 0 0 10px rgba(255,107,0,0.2);
+    border-color: var(--amber);
+    box-shadow: 0 0 15px rgba(255,107,0,0.25);
 }
 
-/* Master Dual-Column Framework Layout */
+/* Master Dual-Column Framework Grid Layout */
 .master-grid {
     display: grid;
-    grid-template-columns: 1.20fr 0.80fr;
-    gap: 30px;
-    max-width: 1100px;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 32px;
+    max-width: 1140px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -79,143 +82,224 @@ body {
 
 /* Structural Content Card Elements */
 .card {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(138,122,106,0.15);
+    background-color: var(--dark-roast);
+    border: 1px solid rgba(212,201,184,0.1);
     border-radius: var(--radius-main);
-    padding: 24px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 26px;
+    margin-bottom: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 .profile-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 16px;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.hero-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ember);
+    margin-bottom: 6px;
 }
 
 #vendor-name {
-    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--cream);
+}
+
+.stall-motto {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--amber);
+    margin-bottom: 20px;
+    letter-spacing: 0.02em;
+}
+
+.card-section-title {
+    font-size: 0.75rem;
+    color: var(--warm-grey);
+    text-transform: uppercase;
     font-weight: 800;
-    letter-spacing: -0.02em;
-    background: linear-gradient(135deg, var(--text-main) 0%, var(--accent-amber) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    letter-spacing: 0.15em;
+    margin-bottom: 12px;
+}
+
+.ambience-description {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--cream);
 }
 
 .badge-verified {
     background-color: rgba(74,222,128,0.1);
     color: var(--accent-green);
     border: 1px solid var(--accent-green);
-    font-size: 0.7rem;
-    padding: 4px 10px;
-    border-radius: 4px;
+    font-size: 0.68rem;
+    padding: 5px 12px;
+    border-radius: 2px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
 }
 
 .meta-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 12px;
     font-size: 0.85rem;
-    color: var(--text-muted);
-    border-bottom: 1px solid rgba(138,122,106,0.15);
-    padding-bottom: 16px;
-    margin-bottom: 16px;
+    color: var(--warm-grey);
+    border-bottom: 1px solid rgba(212,201,184,0.1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
-/* System Progress Visual Elements */
-.trial-box { font-size: 0.85rem; }
-.trial-header { display: flex; justify-content: space-between; color: var(--text-muted); margin-bottom: 8px; }
-.trial-bar { background-color: rgba(17,13,7,0.6); height: 6px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(138,122,106,0.1); }
-.trial-fill { background-color: var(--accent-ember); height: 100%; transition: width 0.3s ease; }
-
-/* Dynamic Interactive Menu List View styling */
-.menu-section h3 {
+/* Contact Specific Grid Layout */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
     font-size: 0.9rem;
+}
+.contact-item span {
+    color: var(--amber);
+    font-weight: 600;
+}
+
+/* Trial Clock Telemetry System Visuals */
+.trial-box { font-size: 0.85rem; }
+.trial-header { display: flex; justify-content: space-between; color: var(--warm-grey); margin-bottom: 8px; font-weight: 500; }
+.trial-bar { background-color: var(--espresso); height: 6px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(212,201,184,0.05); }
+.trial-fill { background-color: var(--ember); height: 100%; transition: width 0.3s ease; }
+
+/* Dynamic Menu List View Item Styling */
+.menu-section h3 {
+    font-size: 0.75rem;
+    margin-bottom: 16px;
+    color: var(--warm-grey);
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.menu-grid { display: flex; flex-direction: column; gap: 14px; margin-bottom: 24px; }
+
+.menu-item {
+    background-color: var(--dark-roast);
+    border: 1px solid rgba(212,201,184,0.1);
+    border-radius: var(--radius-main);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    border-color: rgba(255,107,0,0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255,107,0,0.15);
+}
+
+.item-info h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--cream);
+}
+
+.item-info p {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.85rem;
+    color: var(--warm-grey);
+}
+
+.item-price {
+    font-family: 'Inter', sans-serif;
+    color: var(--amber);
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+/* Interactive Rating Interface Matrices */
+.rating-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(17,13,7,0.4);
+    padding: 18px;
+    border-radius: 4px;
+    margin: 18px 0;
+    border: 1px solid rgba(212,201,184,0.1);
+}
+
+.big-rating {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: var(--cream);
+}
+
+.rating-logic-text {
+    font-size: 0.85rem;
+    color: var(--warm-grey);
+    line-height: 1.5;
+}
+
+.feedback-action h4 {
+    font-size: 0.75rem;
     margin-bottom: 14px;
-    color: var(--text-muted);
+    color: var(--warm-grey);
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 0.1em;
 }
 
-.menu-grid { display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+.star-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
 
-.menu-item {
-    background-color: var(--bg-card);
-    border: 1px solid rgba(138,122,106,0.15);
-    border-radius: var(--radius-main);
-    padding: 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.star-btn {
+    background-color: var(--espresso);
+    border: 1px solid rgba(212,201,184,0.15);
+    color: var(--cream);
+    padding: 14px 0;
+    border-radius: 2px;
+    font-weight: 700;
+    cursor: pointer;
     transition: all 0.25s ease;
 }
 
-.menu-item:hover {
-    border-color: rgba(255,107,0,0.3);
-    transform: translateY(-2px);
-}
-
-.item-info h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
-.item-info p { font-size: 0.85rem; color: var(--text-muted); }
-.item-price { color: var(--accent-amber); font-weight: 800; font-size: 1.15rem; }
-
-/* Interactive Rating Input System Component */
-.rating-summary {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    background-color: rgba(17,13,7,0.5);
-    padding: 16px;
-    border-radius: 8px;
-    margin: 16px 0;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    border: 1px solid rgba(138,122,106,0.15);
-}
-
-.big-rating { font-size: 2.2rem; font-weight: 900; color: var(--text-main); }
-.feedback-action h4 { font-size: 0.9rem; margin-bottom: 12px; color: var(--text-muted); text-transform: uppercase; font-weight: 700; letter-spacing: 0.05em; }
-.star-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
-
-.star-btn {
-    background-color: var(--bg-main);
-    border: 1px solid rgba(138,122,106,0.2);
-    color: var(--text-main);
-    padding: 12px 0;
-    border-radius: 6px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
 .star-btn:hover {
-    background-color: var(--accent-ember);
-    border-color: var(--accent-ember);
+    background: var(--ember);
+    border-color: var(--ember);
     color: #ffffff;
-    box-shadow: 0 4px 12px rgba(255,107,0,0.3);
+    box-shadow: 0 8px 24px rgba(255,107,0,0.4);
 }
 
-/* Social Ledger Display Matrix component */
+/* Charity Social Fund Segment Card */
 .charity-card {
-    border-left: 4px solid var(--accent-ember);
+    border-left: 4px solid var(--ember);
     background: linear-gradient(90deg, rgba(255,107,0,0.03) 0%, rgba(0,0,0,0) 100%);
 }
 
-.charity-content { display: flex; gap: 16px; align-items: flex-start; }
-.heart-icon { font-size: 1.5rem; }
-.charity-card h4 { font-size: 0.95rem; margin-bottom: 4px; color: var(--text-main); }
-.charity-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.4; }
+.charity-content { display: flex; gap: 18px; align-items: flex-start; }
+.heart-icon { font-size: 1.6rem; color: var(--ember); }
+.charity-card h4 { font-family: 'Playfair Display', serif; font-size: 1.05rem; margin-bottom: 4px; color: var(--cream); }
+.charity-card p { font-size: 0.85rem; color: var(--warm-grey); line-height: 1.5; }
 
-/* Sticky Side QR Panel elements */
+/* Right Side Sticky QR Validation Panel */
 .qr-sticky-card {
     position: sticky;
-    top: 30px;
-    border-top: 4px solid var(--accent-ember);
+    top: 40px;
+    border-top: 4px solid var(--ember);
     text-align: center;
 }
 
@@ -224,31 +308,31 @@ body {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
-.qr-icon { font-size: 1.2rem; }
-.qr-sticky-card h3 { font-size: 1.1rem; font-weight: 800; color: var(--text-main); }
-.qr-helper-text { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; margin-bottom: 20px; }
+.qr-icon { font-size: 1.3rem; color: var(--amber); }
+.qr-sticky-card h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 800; color: var(--cream); }
+.qr-helper-text { font-size: 0.8rem; color: var(--warm-grey); line-height: 1.5; margin-bottom: 24px; }
 
 .qr-wrapper {
     background-color: #ffffff;
-    padding: 16px;
-    border-radius: 8px;
+    padding: 18px;
+    border-radius: 2px;
     display: inline-block;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 .qr-element { display: block; max-width: 180px; height: auto; }
 
-/* Error Handling Screens styling */
-.error-card { text-align: center; padding: 50px 20px; border-top: 4px solid #f87171; margin: 40px auto; max-width: 450px; background-color: var(--bg-card); }
-.error-card h2 { margin-bottom: 10px; color: #f87171; }
-.error-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 24px; }
-.btn { display: inline-block; background-color: var(--accent-ember); color: #ffffff; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.9rem; box-shadow: 0 4px 12px rgba(255,107,0,0.3); }
+/* Global System Error Screens styling */
+.error-card { text-align: center; padding: 60px 20px; border-top: 4px solid #f87171; margin: 40px auto; max-width: 450px; background-color: var(--dark-roast); }
+.error-card h2 { font-family: 'Playfair Display', serif; margin-bottom: 12px; color: #f87171; }
+.error-card p { font-size: 0.95rem; color: var(--warm-grey); margin-bottom: 28px; }
+.btn { display: inline-block; background-color: var(--ember); color: #ffffff; padding: 14px 28px; border-radius: 2px; text-decoration: none; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; box-shadow: 0 6px 20px rgba(255,107,0,0.35); }
 
 @media (max-width: 768px) {
     .master-grid { grid-template-columns: 1fr; }
     .qr-sticky-card { position: static; }
-    .nav-bar { padding: 20px; flex-direction: column; gap: 15px; text-align: center; }
+    .nav-bar { padding: 24px 20px; flex-direction: column; gap: 18px; text-align: center; }
 }
