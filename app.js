@@ -5,7 +5,7 @@ const vendorRegistry = {
         location: "Raghabpur More, Purulia",
         timings: "11:00 AM - 10:00 PM",
         seating: 12,
-        trialStarted: "2026-06-22", // Active System Tracker Timestamp
+        trialStarted: "2026-06-22", 
         ratings:,
         menu: [
             { name: "Crispy Chicken Burger", desc: "Fresh toasted buns with house sauce", price: "₹120" },
@@ -13,21 +13,20 @@ const vendorRegistry = {
             { name: "Virgin Mojito", desc: "Fresh mint and crushed ice cooling base", price: "₹60" }
         ]
     },
-        "nagaland_momos": {
+    "nagaland_momos": {
         name: "Nagaland Momos",
-        location: "north lake road",
+        location: "Raghabpur More Counter",
         timings: "4:00 PM - 9:30 PM",
-        seating: 4,
+        seating: 6,
         trialStarted: "2026-06-25",
-        ratings:, // Restored active evaluation seed integers
+        ratings:,
         menu: [
-            { name: "Steamed Chicken Momos", desc: "Authentic North-East style fillings (6 Pcs)", price: "₹30" },
-            { name: "Classic chicken Dumplings", desc: "Traditional slow-steamed ginger wrappers", price: "₹35" },
-            { name: "Fried Schezwan Momos", desc: "Tossed in hot spicy garlic chili oil", price: "₹50" },
-            { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹15" }
+            { name: "Steamed Chicken Momos", desc: "Authentic North-East style fillings (6 Pcs)", price: "₹60" },
+            { name: "Classic Pork Dumplings", desc: "Traditional slow-steamed ginger wrappers", price: "₹70" },
+            { name: "Fried Schezwan Momos", desc: "Tossed in hot spicy garlic chili oil", price: "₹80" },
+            { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹20" }
         ]
     }
-
 };
 
 let activeStallId = null;
@@ -36,30 +35,41 @@ function bootstrapApp() {
     const urlParams = new URLSearchParams(window.location.search);
     const stallParam = urlParams.get('stall');
 
-    // Trigger state safety filter if route parameter is blank
-    if (!stallParam || !vendorRegistry[stallParam]) {
-        document.getElementById('app-screen').classList.add('hidden');
-        document.getElementById('error-screen').classList.remove('hidden');
+    if (stallParam && vendorRegistry[stallParam]) {
+        activeStallId = stallParam;
+        document.getElementById('stall-picker').value = stallParam;
+        renderDashboard(vendorRegistry[activeStallId]);
+    } else {
+        // Handle landing view gracefully without broken metrics or placeholders
+        document.getElementById('vendor-name').innerText = "Select a Stall Above...";
+        document.getElementById('menu-container').innerHTML = `<p style="color:var(--text-muted); text-align:center; padding: 20px;">Choose a vendor from the dropdown menu to see their active telemetry profile.</p>`;
+    }
+}
+
+function switchStallRoute(selectedStallId) {
+    if (!selectedStallId) {
+        window.history.pushState({}, '', window.location.pathname);
+        bootstrapApp();
+        document.getElementById('dynamic-qr').src = "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='%23ffffff'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='12' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'>Select Stall Above</text></svg>";
         return;
     }
 
-    activeStallId = stallParam;
+    activeStallId = selectedStallId;
+    const newRelativePathQuery = window.location.pathname + '?stall=' + selectedStallId;
+    window.history.pushState({}, '', newRelativePathQuery);
     renderDashboard(vendorRegistry[activeStallId]);
 }
 
 function renderDashboard(data) {
-    // Inject core elements
     document.getElementById('vendor-name').innerText = data.name;
     document.getElementById('vendor-location').innerText = data.location;
     document.getElementById('vendor-time').innerText = data.timings;
     document.getElementById('vendor-seating').innerText = data.seating;
 
-    // Run active calculus mechanics
     calculateRating(data);
     calculateTrial(data.trialStarted);
     generateQRTarget();
 
-    // Render Menu Loop Array
     const menuContainer = document.getElementById('menu-container');
     menuContainer.innerHTML = ""; 
     
@@ -83,7 +93,6 @@ function calculateRating(data) {
     
     document.getElementById('avg-rating').innerText = average;
 
-    // Automated 3-Star Purge Algorithm Execution Block
     if (parseFloat(average) < 3.0) {
         document.getElementById('app-screen').innerHTML = `
             <div class="card error-card" style="margin-top:40px; max-width: 500px;">
@@ -115,12 +124,9 @@ function calculateTrial(startDateString) {
     }
 }
 
-// AUTOMATED DYNAMIC QR ENGINE LOOP: Generates code targeting the exact parameter viewed
 function generateQRTarget() {
     const activeRouteURL = window.location.href;
     const qrNode = document.getElementById('dynamic-qr');
-    
-    // Links direct payload path straight to the open-source QRServer network tool
     qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=0f172a`;
 }
 
