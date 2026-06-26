@@ -1,20 +1,11 @@
-function renderDashboard(data) {
-    // ... (vendor data rendering)
-    const currentURL = window.location.href; //
-    const qrImageElement = document.getElementById('dynamic-qr');
-    // Generates QR code based on current URL
-    qrImageElement.src = `https://qrserver.com{encodeURIComponent(currentURL)}`;
-}
-// ... rest of the logic
-
-// Master Data Payload Matrix (Add unlimited stalls here)
+// Master Unified Data Matrix Layout Panel
 const vendorRegistry = {
     "sizzle_cafe": {
         name: "Sizzle Cafe",
         location: "Raghabpur More, Purulia",
         timings: "11:00 AM - 10:00 PM",
         seating: 12,
-        trialStarted: "2026-06-22", // YYYY-MM-DD
+        trialStarted: "2026-06-22", // Active System Tracker Timestamp
         ratings:,
         menu: [
             { name: "Crispy Chicken Burger", desc: "Fresh toasted buns with house sauce", price: "₹120" },
@@ -37,15 +28,13 @@ const vendorRegistry = {
     }
 };
 
-// Main Routing State
 let activeStallId = null;
 
 function bootstrapApp() {
-    // Parse the URL tracking variables
     const urlParams = new URLSearchParams(window.location.search);
     const stallParam = urlParams.get('stall');
 
-    // Default to error screen if route is blank or invalid
+    // Trigger state safety filter if route parameter is blank
     if (!stallParam || !vendorRegistry[stallParam]) {
         document.getElementById('app-screen').classList.add('hidden');
         document.getElementById('error-screen').classList.remove('hidden');
@@ -57,21 +46,20 @@ function bootstrapApp() {
 }
 
 function renderDashboard(data) {
-    // Ingest profile metadata
+    // Inject core elements
     document.getElementById('vendor-name').innerText = data.name;
     document.getElementById('vendor-location').innerText = data.location;
     document.getElementById('vendor-time').innerText = data.timings;
     document.getElementById('vendor-seating').innerText = data.seating;
 
-    // Execute Rating calculations
+    // Run active calculus mechanics
     calculateRating(data);
-
-    // Run Trial Clock Calculations
     calculateTrial(data.trialStarted);
+    generateQRTarget();
 
-    // Ingest Dynamic Menu Loop
+    // Render Menu Loop Array
     const menuContainer = document.getElementById('menu-container');
-    menuContainer.innerHTML = ""; // Clear buffer
+    menuContainer.innerHTML = ""; 
     
     data.menu.forEach(item => {
         const itemHTML = `
@@ -91,16 +79,15 @@ function calculateRating(data) {
     const total = data.ratings.reduce((sum, current) => sum + current, 0);
     const average = (total / data.ratings.length).toFixed(1);
     
-    const ratingDisplay = document.getElementById('avg-rating');
-    ratingDisplay.innerText = average;
+    document.getElementById('avg-rating').innerText = average;
 
-    // THE PURGE LIMIT CRITERIA: Automated suspension logic
+    // Automated 3-Star Purge Algorithm Execution Block
     if (parseFloat(average) < 3.0) {
         document.getElementById('app-screen').innerHTML = `
-            <div class="card error-card" style="margin-top:40px;">
+            <div class="card error-card" style="margin-top:40px; max-width: 500px;">
                 <h2>Stall Suspended</h2>
-                <p><strong>${data.name}</strong> has dropped below the required 3.0⭐ hygiene threshold (${average}⭐).</p>
-                <p style="font-size:0.8rem; color:#94a3b8;">RikMakersHub Operations field team has been notified to execute a safety audit loop.</p>
+                <p><strong>${data.name}</strong> has been auto-purged from the active registry loop as score dropped to ${average}⭐.</p>
+                <p style="font-size:0.85rem; color:#94a3b8;">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
             </div>
         `;
     }
@@ -108,9 +95,7 @@ function calculateRating(data) {
 
 function calculateTrial(startDateString) {
     const start = new Date(startDateString);
-    const current = new Date(); // Injects system clock
-    
-    // Determine delta days
+    const current = new Date();
     const diffTime = Math.abs(current - start);
     const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
     const daysLeft = 7 - diffDays;
@@ -118,7 +103,7 @@ function calculateTrial(startDateString) {
     const trialBox = document.getElementById('trial-container');
     
     if (daysLeft <= 0) {
-        trialBox.innerHTML = `<div class="trial-header" style="color:#4ade80;"><span>💸 Free Trial Expired. ₹100 Monthly Cycle Due.</span></div>`;
+        trialBox.innerHTML = `<div class="trial-header" style="color:#4ade80; font-weight:700;"><span>💸 Trial Cycle Expired. ₹100 Subscription Balance Due.</span></div>`;
         trialBox.classList.remove('hidden');
     } else {
         document.getElementById('trial-days').innerText = `${daysLeft} days left`;
@@ -128,16 +113,19 @@ function calculateTrial(startDateString) {
     }
 }
 
-function submitRating(val) {
-    if (!activeStallId) return;
+// AUTOMATED DYNAMIC QR ENGINE LOOP: Generates code targeting the exact parameter viewed
+function generateQRTarget() {
+    const activeRouteURL = window.location.href;
+    const qrNode = document.getElementById('dynamic-qr');
     
-    // Inject review payload into RAM matrix array
-    vendorRegistry[activeStallId].ratings.push(val);
-    
-    // Re-trigger visual pipeline calculation
-    renderDashboard(vendorRegistry[activeStallId]);
-    alert(`Telemetry Verified: Added ${val}⭐ rating to calculation framework.`);
+    // Links direct payload path straight to the open-source QRServer network tool
+    qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=0f172a`;
 }
 
-// Start application framework on load
+function submitRating(val) {
+    if (!activeStallId) return;
+    vendorRegistry[activeStallId].ratings.push(val);
+    renderDashboard(vendorRegistry[activeStallId]);
+}
+
 window.onload = bootstrapApp;
