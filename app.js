@@ -1,20 +1,34 @@
-// Master Unified Data Matrix Layout Panel
+// Master Local State Variable Arrays System Matrix
 const vendorRegistry = {
+    "demo_stall": {
+        name: "RikMakersHub Sample Counter",
+        location: "Prototype Test Zone, Purulia",
+        timings: "9:00 AM - 9:00 PM",
+        seating: 10,
+        trialStarted: new Date().toISOString().split('T')[0], 
+        ratings:[5, 5, 4, 5],
+        menu: [
+            { name: "Sample Chicken Fried Rice", desc: "Premium basmati wok-tossed grains", price: "₹90" },
+            { name: "Sample Paneer Hakka Noodles", desc: "Fresh pulled dough wheat strings", price: "₹80" },
+            { name: "Sample Steamed Dumplings", desc: "Ginger infused vegetable pockets (4 Pcs)", price: "₹40" },
+            { name: "Cold Spiced Lemon Tea", desc: "Slow brewed Assam CTC blend over ice", price: "₹25" }
+        ]
+    },
     "sizzle_cafe": {
         name: "Sizzle Cafe",
         location: "Raghabpur More, Purulia",
         timings: "11:00 AM - 10:00 PM",
         seating: 12,
         trialStarted: "2026-06-22", 
-        ratings:,
+        ratings:[4, 5, 5, 4],
         menu: [
             { name: "Crispy Chicken Burger", desc: "Fresh toasted buns with house sauce", price: "₹120" },
             { name: "Cheese Grilled Sandwich", desc: "Triple layered mozzarella blend", price: "₹80" },
             { name: "Virgin Mojito", desc: "Fresh mint and crushed ice cooling base", price: "₹60" }
         ]
     },
-    "nagaland_momos": {
-        name: "Nagaland Momos",
+       "lamaland_momos": {
+        name: "Lamaland Momos",
         location: "Raghabpur More Counter",
         timings: "4:00 PM - 9:30 PM",
         seating: 6,
@@ -27,6 +41,7 @@ const vendorRegistry = {
             { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹20" }
         ]
     }
+
 };
 
 let activeStallId = null;
@@ -35,24 +50,22 @@ function bootstrapApp() {
     const urlParams = new URLSearchParams(window.location.search);
     const stallParam = urlParams.get('stall');
 
-    if (stallParam && vendorRegistry[stallParam]) {
+    // Auto-fallback system parameters tracking configuration
+    if (!stallParam || !vendorRegistry[stallParam]) {
+        activeStallId = "demo_stall";
+        document.getElementById('stall-picker').value = "demo_stall";
+        const cleanPath = window.location.pathname + '?stall=demo_stall';
+        window.history.replaceState({}, '', cleanPath);
+    } else {
         activeStallId = stallParam;
         document.getElementById('stall-picker').value = stallParam;
-        renderDashboard(vendorRegistry[activeStallId]);
-    } else {
-        // Handle landing view gracefully without broken metrics or placeholders
-        document.getElementById('vendor-name').innerText = "Select a Stall Above...";
-        document.getElementById('menu-container').innerHTML = `<p style="color:var(--text-muted); text-align:center; padding: 20px;">Choose a vendor from the dropdown menu to see their active telemetry profile.</p>`;
     }
+    
+    renderDashboard(vendorRegistry[activeStallId]);
 }
 
 function switchStallRoute(selectedStallId) {
-    if (!selectedStallId) {
-        window.history.pushState({}, '', window.location.pathname);
-        bootstrapApp();
-        document.getElementById('dynamic-qr').src = "data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='%23ffffff'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='12' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'>Select Stall Above</text></svg>";
-        return;
-    }
+    if (!selectedStallId) return;
 
     activeStallId = selectedStallId;
     const newRelativePathQuery = window.location.pathname + '?stall=' + selectedStallId;
@@ -88,17 +101,19 @@ function renderDashboard(data) {
 }
 
 function calculateRating(data) {
+    if (data.ratings.length === 0) return;
     const total = data.ratings.reduce((sum, current) => sum + current, 0);
     const average = (total / data.ratings.length).toFixed(1);
     
     document.getElementById('avg-rating').innerText = average;
 
+    // AUTOMATED PURGE BLOCK ENGINE RUNTIME
     if (parseFloat(average) < 3.0) {
         document.getElementById('app-screen').innerHTML = `
             <div class="card error-card" style="margin-top:40px; max-width: 500px;">
                 <h2>Stall Suspended</h2>
                 <p><strong>${data.name}</strong> has been auto-purged from the active registry loop as score dropped to ${average}⭐.</p>
-                <p style="font-size:0.85rem; color:#94a3b8;">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
+                <p style="font-size:0.85rem; color:#8A7A6A;">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
             </div>
         `;
     }
@@ -127,7 +142,8 @@ function calculateTrial(startDateString) {
 function generateQRTarget() {
     const activeRouteURL = window.location.href;
     const qrNode = document.getElementById('dynamic-qr');
-    qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=0f172a`;
+    // Generates active code pointing straight to current parameters
+    qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=1e1208`;
 }
 
 function submitRating(val) {
