@@ -1,4 +1,4 @@
-// Master Local State Variable Arrays System Matrix
+// Master Local State Variable Arrays System Matrix (Sizzle Removed)
 const vendorRegistry = {
     "demo_stall": {
         name: "RikMakersHub Sample Counter",
@@ -6,7 +6,7 @@ const vendorRegistry = {
         timings: "9:00 AM - 9:00 PM",
         seating: 10,
         trialStarted: new Date().toISOString().split('T')[0], 
-        ratings:[5, 5, 4, 5],
+        ratings:,
         menu: [
             { name: "Sample Chicken Fried Rice", desc: "Premium basmati wok-tossed grains", price: "₹90" },
             { name: "Sample Paneer Hakka Noodles", desc: "Fresh pulled dough wheat strings", price: "₹80" },
@@ -14,20 +14,7 @@ const vendorRegistry = {
             { name: "Cold Spiced Lemon Tea", desc: "Slow brewed Assam CTC blend over ice", price: "₹25" }
         ]
     },
-    "sizzle_cafe": {
-        name: "Sizzle Cafe",
-        location: "Raghabpur More, Purulia",
-        timings: "11:00 AM - 10:00 PM",
-        seating: 12,
-        trialStarted: "2026-06-22", 
-        ratings:[4, 5, 5, 4],
-        menu: [
-            { name: "Crispy Chicken Burger", desc: "Fresh toasted buns with house sauce", price: "₹120" },
-            { name: "Cheese Grilled Sandwich", desc: "Triple layered mozzarella blend", price: "₹80" },
-            { name: "Virgin Mojito", desc: "Fresh mint and crushed ice cooling base", price: "₹60" }
-        ]
-    },
-       "lamaland_momos": {
+    "lamaland_momos": {
         name: "Lamaland Momos",
         location: "Raghabpur More Counter",
         timings: "4:00 PM - 9:30 PM",
@@ -41,7 +28,6 @@ const vendorRegistry = {
             { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹20" }
         ]
     }
-
 };
 
 let activeStallId = null;
@@ -50,7 +36,6 @@ function bootstrapApp() {
     const urlParams = new URLSearchParams(window.location.search);
     const stallParam = urlParams.get('stall');
 
-    // Auto-fallback system parameters tracking configuration
     if (!stallParam || !vendorRegistry[stallParam]) {
         activeStallId = "demo_stall";
         document.getElementById('stall-picker').value = "demo_stall";
@@ -107,7 +92,6 @@ function calculateRating(data) {
     
     document.getElementById('avg-rating').innerText = average;
 
-    // AUTOMATED PURGE BLOCK ENGINE RUNTIME
     if (parseFloat(average) < 3.0) {
         document.getElementById('app-screen').innerHTML = `
             <div class="card error-card" style="margin-top:40px; max-width: 500px;">
@@ -142,7 +126,6 @@ function calculateTrial(startDateString) {
 function generateQRTarget() {
     const activeRouteURL = window.location.href;
     const qrNode = document.getElementById('dynamic-qr');
-    // Generates active code pointing straight to current parameters
     qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=1e1208`;
 }
 
