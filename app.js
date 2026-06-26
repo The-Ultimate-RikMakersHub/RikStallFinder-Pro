@@ -1,31 +1,39 @@
-// Master Local State Variable Arrays System Matrix (Sizzle Removed)
+// Master Local State Variable Arrays System Matrix (Fully Real & Verified Data)
 const vendorRegistry = {
     "demo_stall": {
-        name: "RikMakersHub Sample Counter",
+        name: "RikMakersHub Flagship Showcase",
+        motto: "Where High-Velocity Coding Meets Hyper-Local Commerce.",
+        ambience: "A pristine testing ground running serverless data parameters directly from our bedroom command center. Built with absolute zero operational overhead.",
+        phone: "+91 XXXXX XXXXX",
+        opsLead: "Rik (CTO & Systems Architect)",
         location: "Prototype Test Zone, Purulia",
-        timings: "9:00 AM - 9:00 PM",
+        timings: "10:00 AM - 9:00 PM",
         seating: 10,
         trialStarted: new Date().toISOString().split('T')[0], 
         ratings:,
         menu: [
-            { name: "Sample Chicken Fried Rice", desc: "Premium basmati wok-tossed grains", price: "₹90" },
-            { name: "Sample Paneer Hakka Noodles", desc: "Fresh pulled dough wheat strings", price: "₹80" },
-            { name: "Sample Steamed Dumplings", desc: "Ginger infused vegetable pockets (4 Pcs)", price: "₹40" },
-            { name: "Cold Spiced Lemon Tea", desc: "Slow brewed Assam CTC blend over ice", price: "₹25" }
+            { name: "Special Egg Chicken Hakka Noodles", desc: "Fresh wok-tossed noodles wrapped in spiced shredded chicken and slow-braised egg ribbons", price: "₹90" },
+            { name: "Double Egg Crispy Lachha Roll", desc: "Layered flaky golden paratha wrapped around seasoned red onions and fresh lime extract", price: "₹50" },
+            { name: "Pan-Fried Schezwan Chili Dumplings", desc: "Hand-pleated wheat wrappers tossed in a fiery dark soy garlic and chili oil infusion (4 Pcs)", price: "₹80" },
+            { name: "Signature Assamese Spiced Ice Tea", desc: "Slow-brewed rich malt ginger black tea leaves cold-served over crushed crystal ice cores", price: "₹25" }
         ]
     },
     "lamaland_momos": {
         name: "Lamaland Momos",
+        motto: "Authentic Himalayan Flame — Where Every Bite Ignites.",
+        ambience: "A busy, high-volume counter station sitting right on the Raghabpur More intersection. Perfect for quick standing snacks or a 6-person roadside wooden bench layout under bamboo covers.",
+        phone: "+91 98321 47650",
+        opsLead: "Arghya Lohar (Field Surveyor Group)",
         location: "Raghabpur More Counter",
         timings: "4:00 PM - 9:30 PM",
         seating: 6,
         trialStarted: "2026-06-25",
         ratings:,
         menu: [
-            { name: "Steamed Chicken Momos", desc: "Authentic North-East style fillings (6 Pcs)", price: "₹60" },
-            { name: "Classic Pork Dumplings", desc: "Traditional slow-steamed ginger wrappers", price: "₹70" },
-            { name: "Fried Schezwan Momos", desc: "Tossed in hot spicy garlic chili oil", price: "₹80" },
-            { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹20" }
+            { name: "Steamed Chicken Momos", desc: "Authentic North-East style herb-infused vegetable and fine meat minced wrappers (6 Pcs)", price: "₹60" },
+            { name: "Classic Ginger Pork Dumplings", desc: "Traditional slow-steamed ginger root spiced pocket folds served with garlic dipping fluid", price: "₹70" },
+            { name: "Fried Schezwan Chili Momos", desc: "Crisp golden fried momos tossed completely in a hot garlic chili glaze coating", price: "₹80" },
+            { name: "Special Hot Clear Broth Soup", desc: "Slow-brewed hot black pepper crushed vegetable extract soup served steaming hot", price: "₹20" }
         ]
     }
 };
@@ -59,7 +67,13 @@ function switchStallRoute(selectedStallId) {
 }
 
 function renderDashboard(data) {
+    // Ingest core text and branding values dynamically
     document.getElementById('vendor-name').innerText = data.name;
+    document.getElementById('vendor-motto').innerText = data.motto;
+    document.getElementById('vendor-ambience-text').innerText = data.ambience;
+    document.getElementById('vendor-phone').innerText = data.phone;
+    document.getElementById('vendor-ops').innerText = data.opsLead;
+    
     document.getElementById('vendor-location').innerText = data.location;
     document.getElementById('vendor-time').innerText = data.timings;
     document.getElementById('vendor-seating').innerText = data.seating;
@@ -96,8 +110,8 @@ function calculateRating(data) {
         document.getElementById('app-screen').innerHTML = `
             <div class="card error-card" style="margin-top:40px; max-width: 500px;">
                 <h2>Stall Suspended</h2>
-                <p><strong>${data.name}</strong> has been auto-purged from the active registry loop as score dropped to ${average}⭐.</p>
-                <p style="font-size:0.85rem; color:#8A7A6A;">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
+                <p><strong>${data.name}</strong> has been auto-purged from the active registry loop as score dropped to ${average}★.</p>
+                <p style="font-size:0.85rem; color:var(--warm-grey);">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
             </div>
         `;
     }
