@@ -5,131 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RikMakersHub | Local Food Registry</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Live Google Schema Injection Engine -->
-<script type="text/javascript">
-    window.addEventListener('DOMContentLoaded', () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const stallKey = urlParams.get('stall');
-        
-        // Target localized data registry directly from your app memory
-        if (stallKey && vendorRegistry && vendorRegistry[stallKey]) {
-            const data = vendorRegistry[stallKey];
-            
-            const schemaData = {
-                "@context": "https://schema.org",
-                "@type": "FastFoodRestaurant",
-                "name": data.name,
-                "address": {
-                    "@type": "PostalAddress",
-                    "addressLocality": "Purulia",
-                    "addressRegion": "WB",
-                    "countryByCode": "IN",
-                    "streetAddress": data.location
-                },
-                "priceRange": "₹",
-                "servesCuisine": "Local Street Food",
-                "aggregateRating": {
-                    "@type": "AggregateRating",
-                    "ratingValue": (data.ratings.reduce((a,b)=>a+b,0)/data.ratings.length).toFixed(1),
-                    "ratingCount": data.ratings.length
-                }
-            };
-
-            const script = document.createElement('script');
-            script.type = 'application/ld+json';
-            script.text = JSON.stringify(schemaData);
-            document.head.appendChild(script);
-        }
-    });
-</script> 
 </head>
 <body>
-
-    <!-- Main Navigation Header -->
     <header class="main-header">
-        <div class="brand-container">
-            <span class="brand-logo">⚡</span>
-            <h1>RikStallFinder-Pro <span class="badge-pro">PRO</span></h1>
-        </div>
-        <p class="tagline">Purulia Value-Certified Street Food Network</p>
+        <h1>RikStallFinder-Pro <span class="badge-pro">PRO</span></h1>
     </header>
 
-    <!-- Error View (Hidden by default) -->
-    <div id="error-screen" class="container hidden">
-        <div class="card error-card">
-            <h2>Stall Not Registered</h2>
-            <p>This food stall is currently not verified under our quality framework.</p>
-            <a href="?stall=sizzle_cafe" class="btn">View Demo Stall</a>
+    <main id="app-screen" class="container grid-layout">
+        <!-- Left: Vendor Info -->
+        <div class="left-column">
+            <section class="card profile-card">
+                <h2 id="vendor-name">Loading...</h2>
+                <div id="menu-container" class="menu-grid"></div>
+            </section>
         </div>
-    </div>
-
-    <!-- Active Vendor Dashboard -->
-    <main id="app-screen" class="container">
-        
-        <!-- Vendor Profile Section -->
-        <section class="card profile-card">
-            <div class="profile-header">
-                <h2 id="vendor-name">Loading Stall...</h2>
-                <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
-            </div>
-            
-            <div class="meta-grid">
-                <div class="meta-item">🕒 <span id="vendor-time">--:--</span></div>
-                <div class="meta-item">🪑 Seating: <span id="vendor-seating">-</span> Pax</div>
-                <div class="meta-item">📍 <span id="vendor-location">-</span></div>
-            </div>
-
-            <!-- Trial Status Bar -->
-            <div id="trial-container" class="trial-box hidden">
-                <div class="trial-header">
-                    <span>⚡ 7-Day Active Free Trial</span>
-                    <span id="trial-days">X days left</span>
-                </div>
-                <div class="trial-bar"><div id="trial-progress" class="trial-fill"></div></div>
-            </div>
-        </section>
-
-        <!-- Dynamic Menu Grid -->
-        <section class="menu-section">
-            <h3>Fresh Daily Menu</h3>
-            <div id="menu-container" class="menu-grid">
-                <!-- Injected via JavaScript -->
-            </div>
-        </section>
-
-        <!-- Live Feedback Matrix -->
-        <section class="card feedback-card">
-            <h3>Customer Verification Loop</h3>
-            <div class="rating-summary">
-                <div class="big-rating"><span id="avg-rating">0.0</span>⭐</div>
-                <p>If rating drops below <strong>3.0⭐</strong>, the stall is automatically suspended for a quality audit.</p>
-            </div>
-
-            <!-- Interactive Rating Input -->
-            <div class="feedback-action">
-                <h4>Submit Live Field Report</h4>
-                <div class="star-row">
-                    <button class="star-btn" onclick="submitRating(1)">1⭐</button>
-                    <button class="star-btn" onclick="submitRating(2)">2⭐</button>
-                    <button class="star-btn" onclick="submitRating(3)">3⭐</button>
-                    <button class="star-btn" onclick="submitRating(4)">4⭐</button>
-                    <button class="star-btn" onclick="submitRating(5)">5⭐</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Social Enterprise Transparent Audit -->
-        <section class="card charity-card">
-            <div class="charity-content">
-                <span class="heart-icon">❤️</span>
-                <div>
-                    <h4>Social Impact Transparency Log</h4>
-                    <p>25% of this vendor's subscription fee goes directly to Purulia Orphanages & Old-Age Homes.</p>
-                </div>
-            </div>
-        </section>
+        <!-- Right: Dynamic QR -->
+        <div class="right-column">
+            <section class="card qr-card">
+                <h3>Scan to Order</h3>
+                <img id="dynamic-qr" src="" alt="QR Code" class="qr-img">
+            </section>
+        </div>
     </main>
-
     <script src="app.js"></script>
 </body>
 </html>
