@@ -7,26 +7,111 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- Main Navigation Header -->
     <header class="main-header">
-        <h1>RikStallFinder-Pro <span class="badge-pro">PRO</span></h1>
+        <div class="brand-container">
+            <span class="brand-logo">⚡</span>
+            <h1>RikStallFinder-Pro <span class="badge-pro">PRO</span></h1>
+        </div>
+        <p class="tagline">Purulia Value-Certified Street Food Network</p>
     </header>
 
-    <main id="app-screen" class="container grid-layout">
-        <!-- Left: Vendor Info -->
+    <!-- Error View (Hidden by default) -->
+    <div id="error-screen" class="container hidden">
+        <div class="card error-card">
+            <h2>Stall Not Registered</h2>
+            <p>This food stall is currently not verified under our quality framework.</p>
+            <a href="?stall=sizzle_cafe" class="btn">View Demo Stall</a>
+        </div>
+    </div>
+
+    <!-- Dual-Column Master Layout Grid -->
+    <main id="app-screen" class="master-grid">
+        
+        <!-- LEFT COLUMN: All Original Impressive Interactive Panels -->
         <div class="left-column">
+            
+            <!-- Vendor Profile Header Card -->
             <section class="card profile-card">
-                <h2 id="vendor-name">Loading...</h2>
-                <div id="menu-container" class="menu-grid"></div>
+                <div class="profile-header">
+                    <h2 id="vendor-name">Loading Stall...</h2>
+                    <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
+                </div>
+                
+                <div class="meta-grid">
+                    <div class="meta-item">🕒 <span id="vendor-time">--:--</span></div>
+                    <div class="meta-item">🪑 Seating: <span id="vendor-seating">-</span> Pax</div>
+                    <div class="meta-item">📍 <span id="vendor-location">-</span></div>
+                </div>
+
+                <!-- Trial Status Bar -->
+                <div id="trial-container" class="trial-box hidden">
+                    <div class="trial-header">
+                        <span>⚡ 7-Day Active Free Trial</span>
+                        <span id="trial-days">X days left</span>
+                    </div>
+                    <div class="trial-bar"><div id="trial-progress" class="trial-fill"></div></div>
+                </div>
+            </section>
+
+            <!-- Dynamic Menu Component -->
+            <section class="menu-section">
+                <h3>Fresh Daily Menu</h3>
+                <div id="menu-container" class="menu-grid">
+                    <!-- Injected via JavaScript -->
+                </div>
+            </section>
+
+            <!-- Live Verification Feedback Matrix -->
+            <section class="card feedback-card">
+                <h3>Customer Verification Loop</h3>
+                <div class="rating-summary">
+                    <div class="big-rating"><span id="avg-rating">0.0</span>⭐</div>
+                    <p>If rating drops below <strong>3.0⭐</strong>, the stall is automatically suspended for a quality audit.</p>
+                </div>
+
+                <!-- Interactive Rating Input -->
+                <div class="feedback-action">
+                    <h4>Submit Live Field Report</h4>
+                    <div class="star-row">
+                        <button class="star-btn" onclick="submitRating(1)">1⭐</button>
+                        <button class="star-btn" onclick="submitRating(2)">2⭐</button>
+                        <button class="star-btn" onclick="submitRating(3)">3⭐</button>
+                        <button class="star-btn" onclick="submitRating(4)">4⭐</button>
+                        <button class="star-btn" onclick="submitRating(5)">5⭐</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Social Enterprise Transparency Card -->
+            <section class="card charity-card">
+                <div class="charity-content">
+                    <span class="heart-icon">❤️</span>
+                    <div>
+                        <h4>Social Impact Transparency Log</h4>
+                        <p>25% of this vendor's subscription fee goes directly to Purulia Orphanages & Old-Age Homes.</p>
+                    </div>
+                </div>
             </section>
         </div>
-        <!-- Right: Dynamic QR -->
+
+        <!-- RIGHT COLUMN: New Dedicated QR Code Panel Tab -->
         <div class="right-column">
-            <section class="card qr-card">
-                <h3>Scan to Order</h3>
-                <img id="dynamic-qr" src="" alt="QR Code" class="qr-img">
-            </section>
+            <div class="card qr-sticky-card">
+                <div class="qr-header">
+                    <span class="qr-icon">📱</span>
+                    <h3>Live Scan Target</h3>
+                </div>
+                <p class="qr-helper-text">Scan this layout or copy the address to test this stall routing on other mobile devices.</p>
+                <div class="qr-wrapper">
+                    <img id="dynamic-qr" src="" alt="Live Device Verification QR Code" class="qr-element">
+                </div>
+            </div>
         </div>
+
     </main>
+
     <script src="app.js"></script>
 </body>
 </html>
