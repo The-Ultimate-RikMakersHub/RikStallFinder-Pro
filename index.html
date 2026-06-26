@@ -15,6 +15,16 @@
             <h1>RikStallFinder-Pro <span class="badge-pro">PRO</span></h1>
         </div>
         <p class="tagline">Purulia Value-Certified Street Food Network</p>
+
+        <!-- Dynamic Prototype Selector Dropdown -->
+        <div class="selector-container">
+            <label for="stall-picker" class="picker-label">Select Demo Stall: </label>
+            <select id="stall-picker" onchange="switchStallRoute(this.value)">
+                <option value="">-- Choose a Verified Vendor --</option>
+                <option value="sizzle_cafe">Sizzle Cafe (Raghabpur More)</option>
+                <option value="nagaland_momos">Nagaland Momos (Raghabpur More)</option>
+            </select>
+        </div>
     </header>
 
     <!-- Error View (Hidden by default) -->
@@ -22,7 +32,7 @@
         <div class="card error-card">
             <h2>Stall Not Registered</h2>
             <p>This food stall is currently not verified under our quality framework.</p>
-            <a href="?stall=sizzle_cafe" class="btn">View Demo Stall</a>
+            <a href="#" onclick="switchStallRoute('sizzle_cafe'); return false;" class="btn">View Demo Stall</a>
         </div>
     </div>
 
@@ -35,7 +45,7 @@
             <!-- Vendor Profile Header Card -->
             <section class="card profile-card">
                 <div class="profile-header">
-                    <h2 id="vendor-name">Loading Stall...</h2>
+                    <h2 id="vendor-name">Select a Stall Above...</h2>
                     <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
                 </div>
                 
@@ -105,7 +115,7 @@
                 </div>
                 <p class="qr-helper-text">Scan this layout or copy the address to test this stall routing on other mobile devices.</p>
                 <div class="qr-wrapper">
-                    <img id="dynamic-qr" src="" alt="Live Device Verification QR Code" class="qr-element">
+                    <img id="dynamic-qr" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='%23ffffff'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='12' fill='%2394a3b8' text-anchor='middle' dominant-baseline='middle'>Select Stall Above</text></svg>" alt="Live Device Verification QR Code" class="qr-element">
                 </div>
             </div>
         </div>
