@@ -1,3 +1,12 @@
+function renderDashboard(data) {
+    // ... (vendor data rendering)
+    const currentURL = window.location.href; //
+    const qrImageElement = document.getElementById('dynamic-qr');
+    // Generates QR code based on current URL
+    qrImageElement.src = `https://qrserver.com{encodeURIComponent(currentURL)}`;
+}
+// ... rest of the logic
+
 // Master Data Payload Matrix (Add unlimited stalls here)
 const vendorRegistry = {
     "sizzle_cafe": {
