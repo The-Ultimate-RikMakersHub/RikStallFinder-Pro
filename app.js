@@ -13,19 +13,21 @@ const vendorRegistry = {
             { name: "Virgin Mojito", desc: "Fresh mint and crushed ice cooling base", price: "₹60" }
         ]
     },
-    "nagaland_momos": {
+        "nagaland_momos": {
         name: "Nagaland Momos",
-        location: "Raghabpur More Counter",
+        location: "north lake road",
         timings: "4:00 PM - 9:30 PM",
-        seating: 6,
+        seating: 4,
         trialStarted: "2026-06-25",
-        ratings:,
+        ratings:, // Restored active evaluation seed integers
         menu: [
-            { name: "Steamed Chicken Momos", desc: "Authentic North-East style fillings (6 Pcs)", price: "₹60" },
-            { name: "Fried Schezwan Momos", desc: "Tossed in hot spicy garlic chili oil", price: "₹80" },
-            { name: "Special Clear Soup", desc: "Slow-brewed hot pepper vegetable broth", price: "₹20" }
+            { name: "Steamed Chicken Momos", desc: "Authentic North-East style fillings (6 Pcs)", price: "₹30" },
+            { name: "Classic chicken Dumplings", desc: "Traditional slow-steamed ginger wrappers", price: "₹35" },
+            { name: "Fried Schezwan Momos", desc: "Tossed in hot spicy garlic chili oil", price: "₹50" },
+            { name: "Special Hot Clear Soup", desc: "Slow-brewed pepper vegetable broth", price: "₹15" }
         ]
     }
+
 };
 
 let activeStallId = null;
