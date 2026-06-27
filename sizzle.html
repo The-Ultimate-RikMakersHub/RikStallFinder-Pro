@@ -3,225 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizzle Network Terminal | Premium Analytics Console</title>
+    <title>Sizzle Cafe | Powered by RikMakersHub PRO</title>
     <link href="https://googleapis.com" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* ─── ARRGHAY'S HIGH-END LUXURY DESIGN TOKENS (SECURE SEPARATION) ─── */
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        
-        :root {
-          --espresso:   #110D07;
-          --dark-roast: #1E1208;
-          --ember:      #FF6B00;
-          --amber:      #FFB347;
-          --gold:       #E8A830;
-          --cream:      #F5ECD7;
-          --warm-grey:  #8A7A6A;
-          --light-grey: #D4C9B8;
-          --radius-main: 2px;
-          --accent-green: #4ade80;
+        /* ─── SURGICAL LOGIC OVERLAY UTILITIES FOR ARGHYA'S LAYOUT ─── */
+        .engine-selector-panel { display: inline-block; margin-left: 20px; }
+        #stall-picker {
+            background-color: var(--dark-roast); color: var(--cream);
+            border: 1px solid rgba(255,107,0,0.4); padding: 6px 12px;
+            border-radius: 2px; font-size: 0.8rem; font-weight: 600;
+            letter-spacing: 0.05em; cursor: pointer; outline: none;
         }
-
-        html { scroll-behavior: smooth; }
-        
-        body { 
-          background: var(--espresso); 
-          color: var(--cream); 
-          font-family: 'Inter', sans-serif; 
-          overflow-x: hidden; 
-          padding-top: 80px; 
+        .hero-framework-grid {
+            position: relative; z-index: 2; display: grid; grid-template-columns: 1.3fr 0.7fr;
+            gap: 40px; width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; align-items: center;
         }
-        
-        /* ─── NAVIGATION SYSTEM FIXED FRAME ─── */
-        nav {
-          position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
-          display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem;
-          background: linear-gradient(to bottom, rgba(17,13,7,0.98) 0%, rgba(17,13,7,0.85) 100%);
-          backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,107,0,0.18);
-        }
-        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; letter-spacing: 0.04em; color: var(--amber); }
-        .nav-logo span { color: var(--ember); font-style: italic; }
-        .nav-logo em { font-family: 'Inter', sans-serif; font-style: normal; font-size: 0.72rem; vertical-align: super; background: var(--ember); color: #fff; padding: 2px 6px; border-radius: 2px; margin-left: 6px; }
-        .nav-links { display: flex; gap: 2.4rem; list-style: none; align-items: center; }
-        .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.25s; }
-        .nav-links a:hover { color: var(--amber); }
-
-        /* ─── SYSTEM SELECTOR PANEL OVERRIDE ─── */
-        .engine-selector-panel { display: flex; align-items: center; margin-left: 20px; }
-        #stall-picker { background-color: var(--espresso); color: var(--cream); border: 1px solid var(--ember); padding: 8px 16px; border-radius: var(--radius-main); font-size: 0.82rem; font-weight: 600; cursor: pointer; outline: none; }
-        /* ─── DUAL-PANE HERO CONSOLE SECTION ─── */
-        #hero { position: relative; min-height: calc(100vh - 80px); display: flex; align-items: center; overflow: hidden; }
-        .hero-framework-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; align-items: center; }
         .hero-left-info { display: flex; flex-direction: column; text-align: left; }
-        .hero-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ember); margin-bottom: 1.2rem; }
-        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; color: var(--cream); }
-        .hero-title .word-sizzle { display: inline-block; background: linear-gradient(135deg, var(--amber) 0%, var(--ember) 50%, #FF3D00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 32px rgba(255,107,0,0.45)); }
-        .hero-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2.2vw, 1.45rem); color: var(--light-grey); margin-top: 1.6rem; line-height: 1.4; }
-        .hero-cta-row { margin-top: 2.8rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
-        
-        /* Telemetry QR Dock Layout */
         .hero-right-telemetry { display: flex; justify-content: flex-end; }
-        .telemetry-widget-card { background-color: var(--dark-roast); border: 1px solid rgba(212, 201, 184, 0.08); border-top: 4px solid var(--ember); padding: 24px; border-radius: var(--radius-main); text-align: center; max-width: 290px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); }
-        .telemetry-widget-card h5 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 6px; }
-        .telemetry-widget-card p { font-size: 0.75rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 16px; }
-        .qr-code-housing { background-color: #ffffff; padding: 12px; display: inline-block; border-radius: var(--radius-main); }
-        .qr-code-housing img { display: block; max-width: 135px; height: auto; }
-
-        .btn-primary { background: var(--ember); color: #fff; border: none; padding: 0.9rem 2.4rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: var(--radius-main); text-decoration: none; display: inline-block; transition: all 0.25s; }
-        .btn-primary:hover { background: #FF8C00; box-shadow: 0 8px 28px rgba(255,107,0,0.45); transform: translateY(-2px); }
-        .btn-ghost { background: transparent; color: var(--cream); border: 1px solid rgba(245,236,215,0.35); padding: 0.9rem 2.4rem; font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; border-radius: var(--radius-main); text-decoration: none; display: inline-block; transition: all 0.25s; }
-        .btn-ghost:hover { border-color: var(--amber); color: var(--amber); transform: translateY(-2px); }
-
-        /* ─── GENERAL DIVISION LAYOUT NODES ─── */
-        .divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, var(--ember), transparent); opacity: 0.25; }
-        section { padding: 6rem 0; }
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 3rem; }
-        .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ember); margin-bottom: 1rem; }
-        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; color: var(--cream); }
-        .section-title em { color: var(--amber); font-style: italic; }
-        #about, #experience { background: var(--dark-roast); }
-        .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; margin-top: 2.5rem; }
-        .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--light-grey); margin-top: 1rem; }
-        
-        /* Tactical Subscriptions Financial Display System */
-        .billing-telemetry-box { background-color: rgba(17, 13, 7, 0.5); border: 1px solid rgba(255,107,0,0.2); padding: 24px; border-radius: 4px; margin-top: 24px; display: flex; flex-direction: column; gap: 16px; }
-        .billing-metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-        .bm-card { background: var(--espresso); padding: 14px; border-radius: 2px; border-left: 3px solid var(--amber); }
-        .bm-label { font-size: 0.65rem; color: var(--warm-grey); text-transform: uppercase; letter-spacing: 0.08em; }
-        .bm-value { font-size: 1.15rem; font-weight: 700; color: var(--cream); margin-top: 4px; }
-        
-        /* Trial Progress Bar */
-        .trial-progress-container { margin-top: 8px; }
-        .tpc-header { display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--light-grey); margin-bottom: 6px; }
-        .tpc-track { background: var(--espresso); height: 6px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(212,201,184,0.05); }
-        .tpc-fill { background: var(--ember); height: 100%; transition: width 0.4s ease; }
-
-        /* Pure Merchant-Focused Analytics Grid Blocks */
-        .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-        .stat-card { background: rgba(255,107,0,0.04); border: 1px solid rgba(255,107,0,0.15); border-radius: 4px; padding: 1.5rem; transition: all 0.3s; }
-        .stat-card:hover { border-color: rgba(255,179,71,0.3); background: rgba(255,107,0,0.08); }
-        .stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--amber); line-height: 1; }
-        .stat-label { font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--warm-grey); margin-top: 0.4rem; }
-
-        /* Customer Live Audit Verification Panels */
-        .live-system-verification-loop { display: grid; grid-template-columns: 0.35fr 0.65fr; gap: 20px; background-color: rgba(17, 13, 7, 0.4); border: 1px solid rgba(212, 201, 184, 0.1); padding: 20px; border-radius: 4px; margin-top: 24px; }
-        .lsvl-score-block { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(212, 201, 184, 0.15); padding-right: 12px; }
-        .lsvl-score-block h4, .lsvl-action-block h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--warm-grey); margin-bottom: 4px; }
-        .lsvl-numerical-display { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--cream); }
-        .lsvl-action-block p { font-size: 0.75rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 10px; }
-        .star-rating-buttons-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
-        .star-rating-buttons-row button { background-color: var(--espresso); border: 1px solid rgba(212, 201, 184, 0.15); color: var(--cream); padding: 8px 0; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s; }
-        .star-rating-buttons-row button:hover { background: var(--ember); border-color: var(--ember); color: #fff; }
-
-        /* Dynamic Menu Grid Modules */
-        #menu { background: var(--espresso); }
-        .menu-intro { display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; flex-wrap: wrap; margin-bottom: 3rem; }
-        .menu-tabs { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-        .tab-btn { background: transparent; border: 1px solid rgba(245,236,215,0.2); color: var(--warm-grey); padding: 0.5rem 1.3rem; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; border-radius: var(--radius-main); transition: all 0.25s; }
-        .tab-btn.active, .tab-btn:hover { background: var(--ember); color: #fff; border-color: var(--ember); }
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
-        
-        .menu-item-card { background: var(--dark-roast); border: 1px solid rgba(212,201,184,0.06); border-radius: 4px; padding: 1.8rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; transition: all 0.3s; }
-        .menu-item-card:hover { border-color: rgba(255,107,0,0.3); transform: translateY(-3px); }
-        .mic-info h4 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--cream); margin-bottom: 4px; }
-        .mic-info p { font-size: 0.82rem; color: var(--warm-grey); line-height: 1.45; }
-        .mic-pricing-tag { font-family: 'Inter', sans-serif; color: var(--amber); font-weight: 700; font-size: 1.15rem; }
-
-        #visit { background: var(--dark-roast); }
-        .visit-details { display: flex; justify-content: space-between; gap: 2rem; margin-top: 3rem; flex-wrap: wrap; }
-        .visit-detail-block { flex: 1; min-width: 220px; }
-        .vd-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--warm-grey); margin-bottom: 0.6rem; }
-        .vd-value { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-weight: 700; line-height: 1.4; color: var(--cream); }
-        .divider-v { width: 1px; background: linear-gradient(to bottom, transparent, rgba(255,107,0,0.25), transparent); }
-        .badge-fssai-layer { display: inline-block; background-color: rgba(255,107,0,0.06); color: var(--amber); border: 1px solid rgba(255,107,0,0.2); font-size: 0.65rem; padding: 2px 8px; border-radius: 2px; font-weight: 700; letter-spacing: 0.04em; margin-top: 4px; text-transform: uppercase; }
-
-        footer { padding: 4rem 0; text-align: center; background: var(--espresso); border-top: 1px solid rgba(212,201,184,0.05); }
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; letter-spacing: 0.04em; color: var(--amber); margin-bottom: 1rem; }
-        .footer-logo span { color: var(--ember); font-style: italic; }
-        .footer-copy { font-size: 0.78rem; color: var(--warm-grey); }
-
-        @media (max-width: 900px) {
-            nav { padding: 1rem 2rem; }
-            .hero-framework-grid { grid-template-columns: 1fr; text-align: center; }
-            .hero-left-info { text-align: center; align-items: center; }
-            .hero-right-telemetry { justify-content: center; margin-top: 20px; }
-            .about-grid { grid-template-columns: 1fr; gap: 3rem; }
-            .live-system-verification-loop { grid-template-columns: 1fr; }
-            .lsvl-score-block { border-right: none; border-bottom: 1px solid rgba(212,201,184,0.1); padding-bottom: 12px; }
-            .divider-v { display: none; }
-            .visit-details { flex-direction: column; gap: 1.5rem; }
+        .telemetry-widget-card {
+            background-color: var(--dark-roast); border: 1px solid rgba(212, 201, 184, 0.08);
+            border-top: 4px solid var(--ember); padding: 20px; border-radius: 4px; text-align: center; max-width: 280px;
         }
+        .telemetry-widget-card h5 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); margin-bottom: 4px; }
+        .telemetry-widget-card p { font-size: 0.7rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 12px; }
+        .qr-code-housing { background-color: #ffffff; padding: 10px; display: inline-block; border-radius: 2px; }
+        .qr-code-housing img { display: block; max-width: 120px; height: auto; }
+        
+        .live-system-verification-loop {
+            display: grid; grid-template-columns: 0.3fr 0.7fr; gap: 16px;
+            background-color: rgba(17, 13, 7, 0.5); border: 1px solid rgba(212, 201, 184, 0.1);
+            padding: 16px; border-radius: 4px; margin-top: 20px; text-align: left;
+        }
+        .lsvl-score-block { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(212, 201, 184, 0.15); padding-right: 12px; }
+        .lsvl-score-block h4, .lsvl-action-block h4 { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--warm-grey); margin-bottom: 4px; }
+        .lsvl-numerical-display { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--cream); }
+        .lsvl-action-block p { font-size: 0.72rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 8px; }
+        .star-rating-buttons-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
+        .star-rating-buttons-row button {
+            background-color: var(--espresso); border: 1px solid rgba(212, 201, 184, 0.15);
+            color: var(--cream); padding: 6px 0; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s;
+        }
+        .star-rating-buttons-row button:hover { background: var(--ember); border-color: var(--ember); color: #fff; }
+        
+        .billing-telemetry-box { background-color: rgba(17, 13, 7, 0.4); border: 1px solid rgba(255,107,0,0.15); padding: 16px; border-radius: 4px; margin-top: 16px; text-align: left; }
+        .billing-metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        .bm-card { background: var(--espresso); padding: 10px; border-radius: 2px; border-left: 3px solid var(--amber); }
+        .bm-label { font-size: 0.6rem; color: var(--warm-grey); text-transform: uppercase; letter-spacing: 0.08em; }
+        .bm-value { font-size: 1rem; font-weight: 700; color: var(--cream); margin-top: 2px; }
+        
+        .trial-progress-container { margin-top: 10px; }
+        .tpc-header { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--light-grey); margin-bottom: 4px; }
+        .tpc-track { background: var(--espresso); height: 5px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(212,201,184,0.05); }
+        .tpc-fill { background: var(--ember); height: 100%; transition: width 0.4s ease; }
     </style>
 </head>
 <body>
-  <!-- Fixed Controls Navigation Header Overlay -->
+
+  <!-- ─── NAV LAYER CONSOLE (WITH RIKMAKERSHUB TRADEMARK BADGE) ─── -->
   <nav>
-    <div class="nav-logo"><a href="index.html" style="text-decoration:none; color:inherit;"><span>R</span>ikMakersHub</a> <em>SIZZLE OVERRIDE</em></div>
+    <div class="nav-logo"><span>S</span>izzle Cafe <span style="font-family:'Inter', sans-serif; font-size:0.65rem; letter-spacing:0.05em; font-weight:700; background:var(--ember); color:#fff; padding:2px 6px; border-radius:2px; margin-left:4px; vertical-align:middle; text-transform:uppercase;">By RikMakersHub</span></div>
+    
+    <!-- System Controller Dropdown -->
     <div class="engine-selector-panel">
         <select id="stall-picker" onchange="switchStallRoute(this.value)"></select>
     </div>
+
     <ul class="nav-links">
-      <li><a href="#hero">Active Unit</a></li>
-      <li><a href="#experience">The Experience</a></li>
-      <li><a href="#menu">Menu Matrix</a></li>
+      <li><a href="#about">Our Story</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#ambiance">Ambiance</a></li>
+      <li><a href="#visit">Visit</a></li>
     </ul>
+    <a href="#visit" class="btn-primary" style="padding:0.55rem 1.4rem;font-size:0.72rem;">Reserve a Table</a>
   </nav>
 
+  <!-- ─── HERO PANE INTERCEPT SYSTEM ─── -->
   <section id="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-framework-grid">
-      <!-- Left Variable Merchant Branding Lane (100% Focused on Sizzle Cafe Overhaul) -->
+      
+      <!-- Left Info Lane -->
       <div class="hero-left-info">
-        <p class="hero-eyebrow">Sizzle Network Active Pipeline Node</p>
-        <h1 class="hero-title"><span id="vendor-name-node" class="word-sizzle">Loading Sizzle Node...</span></h1>
-        <p class="hero-sub" id="vendor-motto-node">Processing interfaces with deep network registry arrays...</p>
-        
+        <p class="hero-eyebrow" id="vendor-eyebrow-text">Ecosystem Verification Pipeline Active</p>
+        <h1 class="hero-title">
+          <span id="vendor-name-node" class="word-sizzle">Sizzle</span>
+          <span class="word-cafe">Cafe</span>
+        </h1>
+        <p class="hero-sub" id="vendor-motto-node">Where every bite ignites a moment worth remembering.</p>
         <div class="hero-cta-row">
-          <a href="#menu" class="btn-primary">Inspect Pricing Feed</a>
-          <!-- Dynamic button routes users straight to their native dialer using JS memory arrays -->
+          <a href="#menu" class="btn-primary">Explore Menu</a>
+          <!-- Dynamic call button that grabs phone data parameter strings asynchronously -->
           <a id="dynamic-merchant-call-btn" href="tel:" class="btn-ghost" style="border-color: var(--amber); color: var(--amber); display: inline-flex; align-items: center; gap: 8px;">
              📞 Connecting Dialer...
           </a>
         </div>
       </div>
-      <!-- Right Signature Live QR Scanner Telemetry Box -->
+
+      <!-- Right Telemetry QR Panel -->
       <div class="hero-right-telemetry">
          <div class="telemetry-widget-card">
-             <h5>Device Verification Route</h5>
-             <p>Scan this tracking interface layer using separate handheld devices to broadcast server parameter links instantly.</p>
+             <h5>Device Routing Matrix</h5>
+             <p>Scan this tracking interface layer using handheld screens to broadcast server parameters instantly.</p>
              <div class="qr-code-housing">
-                 <img id="telemetry-qr-element" src="" alt="Compiling QR Target Layer...">
+                 <img id="telemetry-qr-element" src="" alt="Compiling Telemetry Code...">
              </div>
          </div>
       </div>
+
+    </div>
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll
     </div>
   </section>
-
   <div class="divider"></div>
 
+  <!-- ─── ABOUT ─── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <p class="section-label">Field Verification</p>
-          <h2 class="section-title">Verified On-Site <em>Telemetry</em></h2>
-          <p id="vendor-ambience-node">Loading environment data configurations profiles...</p>
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Born from a <em>passion</em> for the perfect sear</h2>
+          <p>Sizzle Cafe wasn't built around a menu. It was built around a sound — that unmistakable crackle the moment something hits a perfectly seasoned cast-iron pan. We opened our doors with one conviction: food cooked with heat and intention tastes like nothing else.</p>
+          <p>Every plate that leaves our kitchen carries the warmth of that philosophy. From our slow-brewed single-origin pour-overs to our signature griddle-pressed sandwiches, we cook for the moment — and that moment is yours.</p>
           
-          <!-- Free Trial, Price Log, and Orphanage Fund Array Dashboard -->
+          <!-- Tactical SaaS Billing, Trial Progress, and Orphanage Fund Array Dashboard -->
           <div class="billing-telemetry-box">
              <div class="billing-metrics-row">
                  <div class="bm-card">
-                     <div class="bm-label">Subscription Rate</div>
-                     <div class="bm-value">₹250 <span style="font-size:0.7rem; color:var(--warm-grey);">/ Month</span></div>
+                     <div class="bm-label">Network Subscription Rate</div>
+                     <div class="bm-value">₹250 <span style="font-size:0.65rem; color:var(--warm-grey);">/ Month</span></div>
                  </div>
                  <div class="bm-card" style="border-left-color: var(--ember);">
-                     <div class="bm-label">Purulia Orphanage Fund (25%)</div>
-                     <div class="bm-value" style="color: var(--amber);">₹62.50 <span style="font-size:0.7rem; color:var(--warm-grey);">/ Node</span></div>
+                     <div class="bm-label">Orphanage Fund Payout (25%)</div>
+                     <div class="bm-value" style="color: var(--amber);">₹62.50 <span style="font-size:0.65rem; color:var(--warm-grey);">/ Node</span></div>
                  </div>
              </div>
              
-             <!-- Strategic Triple Criteria Checklist Display Box Layout -->
-             <div style="background:var(--espresso); padding:12px; margin-top:4px; border-radius:2px; border:1px dashed rgba(255,107,0,0.15);">
-                 <span style="font-size:0.62rem; color:var(--warm-grey); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px;">Ecosystem Quality Clearance Rules</span>
+             <!-- Strategic Triple Criteria Checklist Display Box Layout (Crushes the Competition) -->
+             <div style="background:var(--espresso); padding:12px; margin-top:8px; border-radius:2px; border:1px dashed rgba(255,107,0,0.15);">
+                 <span style="font-size:0.62rem; color:var(--warm-grey); text-transform:uppercase; letter-spacing:0.06em; display:block; margin-bottom:6px; font-weight:700;">Ecosystem Quality Clearance Rules</span>
                  <ul style="list-style:none; font-size:0.78rem; color:var(--light-grey); display:flex; flex-direction:column; gap:4px;">
                      <li>✅ <strong>Hygiene Standard:</strong> Passed on-site deep-clean metric audit.</li>
                      <li>✅ <strong>Fresh Circle Protocol:</strong> Absolute zero stale inventory allowed.</li>
@@ -231,13 +154,14 @@
 
              <div class="trial-progress-container">
                  <div class="tpc-header">
-                     <span style="color: var(--ember); font-weight:700;">⚡ Active Developer Sandbox Clock</span>
+                     <span style="color: var(--ember); font-weight:700;">⚡ Sandbox Balance Clock</span>
                      <span id="trial-days-left-text">Calculating...</span>
                  </div>
                  <div class="tpc-track"><div id="trial-progress-bar-fill" class="tpc-fill"></div></div>
              </div>
           </div>
 
+          <!-- Customer Live Audit Verification Panels -->
           <div class="live-system-verification-loop">
               <div class="lsvl-score-block">
                   <h4>Registry Index</h4>
@@ -255,84 +179,124 @@
                   </div>
               </div>
           </div>
+
         </div>
-        
-        <!-- 100% Sizzle Cafe Local Analytics Matrix Cards -->
         <div class="about-stats">
-          <div class="stat-card"><div class="stat-num">₹250</div><div class="stat-label">SaaS License Rate</div></div>
-          <div class="stat-card"><div class="stat-num">25%</div><div class="stat-label">Orphanage Fund Payout</div></div>
-          <div class="stat-card"><div class="stat-num">47</div><div class="stat-label">Verified Menu Items</div></div>
-          <div class="stat-card"><div class="stat-num">5-Pax</div><div class="stat-label">Minimum Seating Checked</div></div>
+          <div class="stat-card">
+            <div class="stat-num">47</div>
+            <div class="stat-label">Menu Items</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">6+</div>
+            <div class="stat-label">Years of Fire</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Local Sourced</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Refills of Love</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <div class="divider"></div>
-
-  <!-- THE HIGH-VALUE ENVIRONMENT SHOWCASE -->
-  <section id="experience">
-    <div class="container">
-      <p class="section-label">The Customer Experience</p>
-      <h2 class="section-title">A space that <em>breathes</em> warmth</h2>
-      
-      <blockquote class="ambiance-quote" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--amber); margin: 2rem 0; border-left: 2px solid var(--ember); padding-left: 1.5rem; line-height: 1.6;">
-        "You don't just eat here. You slow down. You lean in. You taste something that was made for exactly this moment."
-      </blockquote>
-      
-      <div class="about-grid" style="margin-top: 3rem; gap: 2rem;">
-        <div class="stat-card">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔥</div>
-          <div class="stat-num" style="font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 0.4rem;">Open Theater Kitchen</div>
-          <div class="stat-label" style="text-transform: none; font-size: 0.85rem; color: var(--light-grey); line-height: 1.5;">Watch every dish come to life — the theatre of the open flame is an active part of your meal.</div>
-        </div>
-        <div class="stat-card">
-          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎵</div>
-          <div class="stat-num" style="font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 0.4rem;">Curated Ambient Acoustics</div>
-          <div class="stat-label" style="text-transform: none; font-size: 0.85rem; color: var(--light-grey); line-height: 1.5;">Smooth jazz, classic soul, and relaxed lo-fi — a background soundtrack that never fights for attention.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
+  <!-- ─── MENU ─── -->
   <section id="menu">
     <div class="container">
       <div class="menu-intro">
         <div>
-          <p class="section-label">Real-Time Data Feed</p>
-          <h2 class="section-title">The <em>Menu Matrix</em></h2>
+          <p class="section-label">What We Serve</p>
+          <h2 class="section-title">The <em>Menu</em></h2>
         </div>
         <div class="menu-tabs">
-          <button class="tab-btn active" onclick="filterMenu('all', this)">All Feeds</button>
-          <button class="tab-btn" onclick="filterMenu('breakfast', this)">Veg Base</button>
-          <button class="tab-btn" onclick="filterMenu('mains', this)">Chicken Stack</button>
-          <button class="tab-btn" onclick="filterMenu('drinks', this)">Soups & Broths</button>
-          <button class="tab-btn" onclick="filterMenu('desserts', this)">Moburg Series</button>
+          <button class="tab-btn active" onclick="filterMenu('all', this)">All</button>
+          <button class="tab-btn" onclick="filterMenu('breakfast', this)">Breakfast</button>
+          <button class="tab-btn" onclick="filterMenu('mains', this)">Mains</button>
+          <button class="tab-btn" onclick="filterMenu('drinks', this)">Drinks</button>
+          <button class="tab-btn" onclick="filterMenu('desserts', this)">Desserts</button>
         </div>
       </div>
-      <div class="menu-grid" id="menu-grid"></div>
-    </div>
-  </section>
-
-  <section id="visit">
-    <div class="container">
-      <p class="section-label">Registry Security Coordinates</p>
-      <h2 class="section-title">Location <em>Nodes</em></h2>
-      <div class="visit-details">
-        <div class="visit-detail-block"><div class="vd-label">Physical Field Address</div><div class="vd-value" id="vd-location-pane">Syncing Nodes...</div></div>
-        <div class="divider-v"></div>
-        <div class="visit-detail-block"><div class="vd-label">Monitored Schedule</div><div class="vd-value" id="vd-hours-pane">Processing Hours...</div></div>
-        <div class="divider-v"></div>
-        <div class="visit-detail-block"><div class="vd-label">Regulatory Identity Parameters</div><div class="vd-value" id="vd-credentials-pane">Verifying License Arrays...</div></div>
+      <div class="menu-grid" id="menu-grid">
+        <!-- Items dynamically injected by sizzle.js processing loop -->
       </div>
     </div>
   </section>
 
-<footer>
-    <div class="footer-logo"><span>R</span>ikMakersHub</div>
-    <div class="footer-copy">© 2026 Sizzle Network Operations. All rights reserved under RikMakersHub PRO Corporate Framework.</div>
+  <div class="divider"></div>
+
+  <!-- ─── AMBIANCE ─── -->
+  <section id="ambiance">
+    <div class="container">
+      <p class="section-label reveal">The Experience</p>
+      <h2 class="section-title reveal">A space that <em>breathes</em> warmth</h2>
+      <blockquote class="ambiance-quote reveal">
+        "You don't just eat at Sizzle Cafe. You slow down. You lean in. You taste something that was made for exactly this moment."
+      </blockquote>
+      <div class="ambiance-grid">
+        <div class="ambiance-card reveal">
+          <div class="ambiance-card-bg">🔥</div>
+          <div class="ambiance-card-content">
+            <div class="amb-title">Open Kitchen</div>
+            <div class="amb-desc">Watch every dish come to life — the theatre of the flame is part of the meal.</div>
+          </div>
+        </div>
+        <div class="ambiance-card reveal">
+          <div class="ambiance-card-bg">🎵</div>
+          <div class="ambiance-card-content">
+            <div class="amb-title">Curated Sounds</div>
+            <div class="amb-desc">Jazz, soul, and lo-fi — a soundtrack that never fights for your attention.</div>
+          </div>
+        </div>
+        <div class="ambiance-card reveal">
+          <div class="ambiance-card-bg">🌿</div>
+          <div class="ambiance-card-content">
+            <div class="amb-title">Slow Mornings</div>
+            <div class="amb-desc">We open at 7. Linger as long as the coffee holds. No rush, ever.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- ─── VISIT ─── -->
+  <section id="visit">
+    <div class="container">
+      <p class="section-label reveal">Come Find Us</p>
+      <h2 class="section-title reveal">The table is <em>waiting</em></h2>
+      <div class="visit-details reveal">
+        <div class="visit-detail-block">
+          <div class="vd-label">Location</div>
+          <div class="vd-value" id="vd-location-pane">12 Ember Lane<br>Arts Quarter, Downtown</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="visit-detail-block">
+          <div class="vd-label">Hours</div>
+          <div class="vd-value" id="vd-hours-pane">Mon – Fri: 7am – 10pm<br>Sat – Sun: 8am – 11pm</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="visit-detail-block">
+          <div class="vd-label">Reservations & Identity</div>
+          <div class="vd-value" id="vd-credentials-pane">+1 (800) SIZZLE-1<br>hello@sizzlecafe.com</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER (WITH SOLE RIKMAKERSHUB INTELLECTUAL PROPERTY NOTICE) ─── -->
+  <footer>
+    <div class="footer-logo"><span>S</span>izzle Cafe</div>
+    <div class="footer-copy">© 2026 Sizzle Cafe. All rights reserved. Mapped & Engineered as Proprietary Software Ecosystem under RikMakersHub.</div>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
   </footer>
 
   <script src="sizzle.js"></script>
