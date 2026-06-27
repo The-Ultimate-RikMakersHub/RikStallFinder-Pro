@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RikMakersHub | Purulia Stall Finder Pro</title>
-    <link href="https://googleapis.com" rel="stylesheet">
+    <title>RikMakersHub | Stall Finder Pro</title>
+    <link href="https://fonts.googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,10 +14,16 @@
         <div class="nav-brand">
             RikMakersHub <span>PRO</span>
         </div>
+        
+        <!-- Dual Selection Ecosystem: Region and Vendor Split -->
         <div class="selector-box">
+            <select id="region-picker" onchange="switchRegionRoute(this.value)">
+                <option value="purulia">West Bengal: Purulia Town</option>
+                <option value="nagaland">Nagaland: Sizzle Network</option>
+            </select>
+            
             <select id="stall-picker" onchange="switchStallRoute(this.value)">
-                <option value="demo_stall">-- Select a Verified Town Vendor --</option>
-                <option value="lamaland_momos">Lamaland Momos (Raghabpur More)</option>
+                <!-- JavaScript will inject dynamic options here depending on selected region -->
             </select>
         </div>
     </nav>
@@ -29,7 +34,6 @@
         <!-- LEFT COLUMN: Operations, Branding, Menus & Analytics -->
         <div class="left-column">
             
-            
             <section class="card profile-card">
                 <div class="profile-header">
                     <div class="title-group">
@@ -39,7 +43,7 @@
                     <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
                 </div>
                 
-                <!-- Dynamic Vendor Motto (Arghya's Layout Feature Built Scaleably) -->
+                <!-- Dynamic Vendor Motto -->
                 <p id="vendor-motto" class="stall-motto">Loading Motto...</p>
                 
                 <div class="meta-grid">
@@ -86,7 +90,7 @@
                         <button class="star-btn" onclick="submitRating(1)">1★</button>
                         <button class="star-btn" onclick="submitRating(2)">2★</button>
                         <button class="star-btn" onclick="submitRating(3)">3★</button>
-                        <button class="star-btn" onclick="submitRating(4) backend">4★</button>
+                        <button class="star-btn" onclick="submitRating(4)">4★</button>
                         <button class="star-btn" onclick="submitRating(5)">5★</button>
                     </div>
                 </div>
@@ -96,8 +100,8 @@
             <section class="card contact-card">
                 <div class="card-section-title">Merchant Desk & Verification</div>
                 <div class="contact-grid">
-                    <div class="contact-item">📞 Phone: <span id="vendor-phone">--</span></div>
-                    <div class="contact-item">🤝 Verified Operations Lead: <span id="vendor-ops">--</span></div>
+                    📞 Phone: <span id="vendor-phone">--</span>
+                    🤝 Verified Operations Lead: <span id="vendor-ops">--</span>
                 </div>
             </section>
 
