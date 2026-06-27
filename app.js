@@ -1,152 +1,180 @@
-// Master Local State Variable Arrays System Matrix (Fully Real & Verified Data)
+/**
+ * RikMakersHub PRO — High-Velocity Local Commerce Engine
+ * Core Architecture & Logic: 100% Rik Independent Property
+ * Integrated Layout Matrix System (Aesthetic Upgrade Mode)
+ */
+
 const vendorRegistry = {
     "demo_stall": {
-        name: "RikMakersHub Flagship Showcase",
+        name: "RikMakersHub Showcase",
         motto: "Where High-Velocity Coding Meets Hyper-Local Commerce.",
-        ambience: "A pristine testing ground running serverless data parameters directly from our bedroom command center. Built with absolute zero operational overhead.",
+        ambience: "A high-performance sandboxed operational engine running live asynchronous parameters straight from our desktop console. Built with zero cloud-computing overhead.",
         phone: "+91 XXXXX XXXXX",
         opsLead: "Rik (CTO & Systems Architect)",
         location: "Prototype Test Zone, Purulia",
-        timings: "10:00 AM - 9:00 PM",
-        seating: 10,
-        trialStarted: new Date().toISOString().split('T')[0], 
-        ratings:,
+        hours: "Mon – Sun: 10:00 AM – 9:00 PM",
+        license: "DEVELOPER CORE SECURE",
+        ratings: [],
         menu: [
-            { name: "Special Egg Chicken Hakka Noodles", desc: "Fresh wok-tossed noodles wrapped in spiced shredded chicken and slow-braised egg ribbons", price: "₹90" },
-            { name: "Double Egg Crispy Lachha Roll", desc: "Layered flaky golden paratha wrapped around seasoned red onions and fresh lime extract", price: "₹50" },
-            { name: "Pan-Fried Schezwan Chili Dumplings", desc: "Hand-pleated wheat wrappers tossed in a fiery dark soy garlic and chili oil infusion (4 Pcs)", price: "₹80" },
-            { name: "Signature Assamese Spiced Ice Tea", desc: "Slow-brewed rich malt ginger black tea leaves cold-served over crushed crystal ice cores", price: "₹25" }
+            { name: "Special Egg Chicken Hakka Noodles", desc: "Fresh wok-tossed premium long noodles wrapped in seasoned pulled chicken breast and slow-braised egg ribbons", price: "₹90", category: "mains" },
+            { name: "Double Egg Crispy Lachha Roll", desc: "Layered flaky golden paratha wrap loaded with spicy red onions and fresh lime zests", price: "₹50", category: "breakfast" }
         ]
     },
     "lamaland_momos": {
-        name: "Lamaland Momos",
+        name: "The LamaLand",
         motto: "Authentic Himalayan Flame — Where Every Bite Ignites.",
-        ambience: "A busy, high-volume counter station sitting right on the Raghabpur More intersection. Perfect for quick standing snacks or a 6-person roadside wooden bench layout under bamboo covers.",
+        ambience: "A high-traffic, roadside container installation sitting right on the Raghabpur More hub. Perfect for quick on-the-go snacks or casual community seating options.",
         phone: "+91 98321 47650",
-        opsLead: "Arghya Lohar (Field Surveyor Group)",
-        location: "Raghabpur More Counter",
-        timings: "4:00 PM - 9:30 PM",
-        seating: 6,
-        trialStarted: "2026-06-25",
-        ratings:,
+        opsLead: "Arghya Lohar (Field Operations Partner)",
+        location: "Raghabpur More, Near Hotel N Lake Road, Purulia",
+        hours: "Daily: 4:00 PM – 9:30 PM (Special Soup Weekends)",
+        license: "FSSAI No. 22823168000053",
+        ratings: [],
         menu: [
-            { name: "Steamed Chicken Momos", desc: "Authentic North-East style herb-infused vegetable and fine meat minced wrappers (6 Pcs)", price: "₹60" },
-            { name: "Classic Ginger Pork Dumplings", desc: "Traditional slow-steamed ginger root spiced pocket folds served with garlic dipping fluid", price: "₹70" },
-            { name: "Fried Schezwan Chili Momos", desc: "Crisp golden fried momos tossed completely in a hot garlic chili glaze coating", price: "₹80" },
-            { name: "Special Hot Clear Broth Soup", desc: "Slow-brewed hot black pepper crushed vegetable extract soup served steaming hot", price: "₹20" }
+            { name: "Steam Veg Momo (5 Pcs)", desc: "Fresh minced garden vegetables infused with local herbs wrapped in delicate wheat layers", price: "₹39", category: "breakfast" },
+            { name: "Steam Chicken Momo (5 Pcs)", desc: "Tender fine minced lean chicken breast seasoned with scallions and garlic juices", price: "₹49", category: "mains" },
+            { name: "Fried Veg Momo (5 Pcs)", desc: "Crisp golden outer crunch layers surrounding high-flavor seasoned vegetable fillings", price: "₹45", category: "breakfast" },
+            { name: "Fried Chicken Momo (5 Pcs)", desc: "Deep-fried premium chicken pockets tossed to a crispy textured structure", price: "₹55", category: "mains" },
+            { name: "Gondhoraj Veg Momo (5 Pcs)", desc: "Steamed vegetable pockets flavored with aromatic zest of premium local Gondhoraj lime", price: "₹55", category: "breakfast" },
+            { name: "Gondhoraj Chicken Momo (5 Pcs)", desc: "Succulent minced chicken pocket folds packing an explosion of fragrant lime extracts", price: "₹65", category: "mains" },
+            { name: "Taifu Momo (2 Pcs)", desc: "Large oversized fluffy Tibetan-style steamed specialty buns loaded with rich savory centers", price: "₹55", category: "mains" },
+            { name: "Panfried Veg Momo (5 Pcs)", desc: "Pan-seared base crisped momos coated fully in a rich, mild hot chili oil splash", price: "₹55", category: "breakfast" },
+            { name: "Panfried Chicken Momo (5 Pcs)", desc: "Crisp skillet-seared chicken dumplings tossed entirely in savory house garlic glazes", price: "₹65", category: "mains" },
+            { name: "Moburg (Veg)", desc: "A creative fusion burger packing crisp fried vegetable momos between toasted bun sets", price: "₹69", category: "desserts" },
+            { name: "Moburg (Chicken)", desc: "Toasted artisanal burger buns layered with crunch-fried chicken momo cores and signature sauces", price: "₹75", category: "desserts" },
+            { name: "Lamaland Spl Soup (Sat & Sun)", desc: "Exquisite slow-brewed hot spiced black pepper marrow and clear herb broth extract", price: "₹49", category: "drinks" }
         ]
     }
 };
 
-let activeStallId = null;
+let activeStallId = "demo_stall";
+let currentTabFilter = "all";
 
 function bootstrapApp() {
     const urlParams = new URLSearchParams(window.location.search);
     const stallParam = urlParams.get('stall');
 
-    if (!stallParam || !vendorRegistry[stallParam]) {
-        activeStallId = "demo_stall";
-        document.getElementById('stall-picker').value = "demo_stall";
-        const cleanPath = window.location.pathname + '?stall=demo_stall';
-        window.history.replaceState({}, '', cleanPath);
-    } else {
+    injectDropdownControls();
+
+    if (stallParam && vendorRegistry[stallParam]) {
         activeStallId = stallParam;
-        document.getElementById('stall-picker').value = stallParam;
+    } else {
+        activeStallId = "demo_stall";
+        updateURLQuery("demo_stall");
     }
-    
+
+    document.getElementById('stall-picker').value = activeStallId;
     renderDashboard(vendorRegistry[activeStallId]);
+}
+
+function injectDropdownControls() {
+    const picker = document.getElementById('stall-picker');
+    if (!picker) return;
+    picker.innerHTML = "";
+    
+    Object.keys(vendorRegistry).forEach(key => {
+        let opt = document.createElement('option');
+        opt.value = key;
+        opt.innerText = vendorRegistry[key].name;
+        picker.appendChild(opt);
+    });
 }
 
 function switchStallRoute(selectedStallId) {
-    if (!selectedStallId) return;
-
+    if (!selectedStallId || !vendorRegistry[selectedStallId]) return;
     activeStallId = selectedStallId;
-    const newRelativePathQuery = window.location.pathname + '?stall=' + selectedStallId;
-    window.history.pushState({}, '', newRelativePathQuery);
+    updateURLQuery(selectedStallId);
     renderDashboard(vendorRegistry[activeStallId]);
 }
 
+function updateURLQuery(id) {
+    const cleanPath = window.location.pathname + '?stall=' + id;
+    window.history.pushState({}, '', cleanPath);
+}
+
 function renderDashboard(data) {
-    // Ingest core text and branding values dynamically
-    document.getElementById('vendor-name').innerText = data.name;
-    document.getElementById('vendor-motto').innerText = data.motto;
-    document.getElementById('vendor-ambience-text').innerText = data.ambience;
-    document.getElementById('vendor-phone').innerText = data.phone;
-    document.getElementById('vendor-ops').innerText = data.opsLead;
+    document.getElementById('vendor-name-display').innerText = data.name;
+    document.getElementById('vendor-motto-display').innerText = data.motto;
+    document.getElementById('vendor-ambiance-text').innerText = data.ambience;
     
-    document.getElementById('vendor-location').innerText = data.location;
-    document.getElementById('vendor-time').innerText = data.timings;
-    document.getElementById('vendor-seating').innerText = data.seating;
+    // Address & Metadata Injections
+    document.getElementById('vd-location-text').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Operations: ${data.opsLead}</span>`;
+    document.getElementById('vd-hours-text').innerHTML = data.hours;
+    document.getElementById('vd-contact-text').innerHTML = `${data.phone}<br><span class="badge-hygiene">${data.license}</span>`;
 
     calculateRating(data);
-    calculateTrial(data.trialStarted);
-    generateQRTarget();
+    generateLiveQR();
+    filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
+}
 
-    const menuContainer = document.getElementById('menu-container');
-    menuContainer.innerHTML = ""; 
+function filterMenu(category, buttonElement) {
+    currentTabFilter = category;
     
-    data.menu.forEach(item => {
-        const itemHTML = `
-            <div class="menu-item">
-                <div class="item-info">
+    if (buttonElement) {
+        document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+        buttonElement.classList.add('active');
+    }
+
+    const menuGrid = document.getElementById('menu-grid');
+    if (!menuGrid) return;
+    menuGrid.innerHTML = "";
+
+    const activeMenu = vendorRegistry[activeStallId].menu;
+    const filteredItems = category === 'all' ? activeMenu : activeMenu.filter(item => item.category === category);
+
+    if (filteredItems.length === 0) {
+        menuGrid.innerHTML = `<p style="grid-column: 1/-1; text-align:center; color:var(--warm-grey); padding:40px 0;">No active verified options in this field tier today.</p>`;
+        return;
+    }
+
+    filteredItems.forEach(item => {
+        const itemMarkup = `
+            <div class="menu-item-card">
+                <div class="mic-details">
                     <h4>${item.name}</h4>
                     <p>${item.desc}</p>
                 </div>
-                <div class="item-price">${item.price}</div>
+                <div class="mic-price">${item.price}</div>
             </div>
         `;
-        menuContainer.innerHTML += itemHTML;
+        menuGrid.innerHTML += itemMarkup;
     });
 }
 
 function calculateRating(data) {
-    if (data.ratings.length === 0) return;
+    const scoreNode = document.getElementById('avg-rating-display');
+    if (!scoreNode) return;
+
+    if (data.ratings.length === 0) {
+        scoreNode.innerText = "0.0";
+        return;
+    }
+
     const total = data.ratings.reduce((sum, current) => sum + current, 0);
     const average = (total / data.ratings.length).toFixed(1);
-    
-    document.getElementById('avg-rating').innerText = average;
+    scoreNode.innerText = average;
 
     if (parseFloat(average) < 3.0) {
-        document.getElementById('app-screen').innerHTML = `
-            <div class="card error-card" style="margin-top:40px; max-width: 500px;">
-                <h2>Stall Suspended</h2>
-                <p><strong>${data.name}</strong> has been auto-purged from the active registry loop as score dropped to ${average}★.</p>
-                <p style="font-size:0.85rem; color:var(--warm-grey);">RikMakersHub Operations team must execute an on-site safety and quality re-survey loop before visibility restoration.</p>
+        document.getElementById('menu-grid').innerHTML = `
+            <div style="grid-column:1/-1; text-align:center; padding: 60px 20px; border:1px dashed var(--ember); background:rgba(255,107,0,0.02)">
+                <h3 style="color:var(--ember); font-family:'Playfair Display', serif; font-size:1.8rem; margin-bottom:10px;">Registry Clearance Required</h3>
+                <p style="color:var(--cream); font-size:0.9rem;">This field location has been hidden from active data loops as public score dropped to ${average}★.</p>
             </div>
         `;
     }
 }
 
-function calculateTrial(startDateString) {
-    const start = new Date(startDateString);
-    const current = new Date();
-    const diffTime = Math.abs(current - start);
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-    const daysLeft = 7 - diffDays;
-
-    const trialBox = document.getElementById('trial-container');
-    
-    if (daysLeft <= 0) {
-        trialBox.innerHTML = `<div class="trial-header" style="color:#4ade80; font-weight:700;"><span>💸 Trial Cycle Expired. ₹100 Subscription Balance Due.</span></div>`;
-        trialBox.classList.remove('hidden');
-    } else {
-        document.getElementById('trial-days').innerText = `${daysLeft} days left`;
-        const percentage = ((daysLeft / 7) * 100).toFixed(0);
-        document.getElementById('trial-progress').style.width = `${percentage}%`;
-        trialBox.classList.remove('hidden');
-    }
-}
-
-function generateQRTarget() {
-    const activeRouteURL = window.location.href;
-    const qrNode = document.getElementById('dynamic-qr');
-    qrNode.src = `https://qrserver.com{encodeURIComponent(activeRouteURL)}&color=1e1208`;
-}
-
-function submitRating(val) {
-    if (!activeStallId) return;
-    vendorRegistry[activeStallId].ratings.push(val);
+function submitLiveFieldReport(ratingScore) {
+    if (!vendorRegistry[activeStallId]) return;
+    vendorRegistry[activeStallId].ratings.push(ratingScore);
     renderDashboard(vendorRegistry[activeStallId]);
+}
+
+function generateLiveQR() {
+    const qrImageNode = document.getElementById('dynamic-qr-target');
+    if (!qrImageNode) return;
+    const currentURL = window.location.href;
+    qrImageNode.src = `https://qrserver.com{encodeURIComponent(currentURL)}&color=1e1208`;
 }
 
 window.onload = bootstrapApp;
