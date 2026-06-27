@@ -48,10 +48,12 @@ function bootstrapApp() {
 function renderActiveDashboard(data) {
     if (!data) return;
 
+    // Direct text injections straight into your HTML landmarks
     document.getElementById('vendor-name-node').innerText = data.name;
     document.getElementById('vendor-motto-node').innerText = data.motto;
     document.getElementById('vendor-ambience-node').innerText = data.ambience;
     
+    // Address / Hours / Contact Node Bindings
     document.getElementById('vd-location-pane').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Verification Lead: ${data.opsLead}</span>`;
     document.getElementById('vd-hours-pane').innerHTML = data.hours;
     document.getElementById('vd-credentials-pane').innerHTML = `${data.phone}<br><span class="badge-fssai-layer">${data.license}</span>`;
@@ -61,7 +63,7 @@ function renderActiveDashboard(data) {
     triggerLiveQRGenerator();
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
 
-    // DYNAMIC DIALER ROUTING INTERCEPT: Out-engineering static text variables securely
+    // Dynamic dealer dialer routing
     const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
     if (callButtonNode && data.phone) {
         const cleanPhoneNumber = data.phone.replace(/[^+\d]/g, '');
@@ -105,7 +107,6 @@ function filterMenu(category, triggerButton) {
     const filteredArray = category === 'all' ? fullMenuArray : fullMenuArray.filter(i => i.category === category);
 
     filteredArray.forEach(item => {
-        // Generate optional highlight badge layout string if tag is loaded
         const tagMarkup = item.tag ? `<span class="badge-fssai-layer" style="margin-top:0; margin-bottom:6px; background-color:rgba(255,107,0,0.1); border-color:rgba(255,107,0,0.3); color:var(--amber); font-size:0.6rem;">${item.tag}</span>` : '';
         
         const structuralMarkup = `
@@ -149,3 +150,22 @@ function triggerLiveQRGenerator() {
 }
 
 window.onload = bootstrapApp;
+
+// ==========================================================================
+// RIKMAKERSHUB PRO — COMPETITIVE INTELLIGENCE DATA MATRIX BLOCK
+// ==========================================================================
+const RIKMAKERSHUB_MARKET_INTELLIGENCE = {
+    targetRegion: "Purulia Town Tier-2 Commerce Hub",
+    competitorVectors: {
+        "zomato": { marketShare: "59%", model: "Commission (20-30%)", barrier: "High merchant margin depletion" },
+        "swiggy": { marketShare: "30%", model: "Commission (25%)", barrier: "Inaccessible to informal street kiosks" },
+        "yelp":   { marketShare: "5%",  model: "Static Ads",         barrier: "Zero Tier-3 town data currency parameters" },
+        "direct": { marketShare: "6%",  model: "Manual Phone Lines", barrier: "No real-time dynamic index capabilities" }
+    },
+    disruptorMoat: {
+        provider: "RikMakersHub PRO Core Architecture",
+        model: "Flat SaaS Fixed Tier (₹250 / Month)",
+        leverageStrategy: "100% vendor margin retention, 25% Orphanage Trust Log, Triple-A Quality Seal Validation"
+    },
+    executionRoadmap: ["Purulia Town Core", "Purulia District Satellites", "Bankura Takeover Circuit"]
+};
