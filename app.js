@@ -23,7 +23,7 @@ const vendorRegistry = {
     "lamaland_momos": {
         name: "The LamaLand",
         motto: "Authentic Himalayan Flame — Where Every Bite Ignites.",
-        ambience: "A high-traffic, roadside container installation running right along North Lake Road. Perfectly configured for quick standing street side snacks or a casual 6-person wooden layout table under clean bamboo setups near the District Stadium corridors.",
+        ambience: "A high-traffic, roadside container installation running right along North Lake Road. Perfectly configured for quick standing street side snacks or a casual 6-person wooden layout table under clean bamboo setups near the Prestigious Saheb Bandh.",
         phone: "+91 98321 47650",
         opsLead: "Arghya Lohar (Field Operations Surveyor)",
         location: "North Lake Road Near District Stadium, Purulia",
