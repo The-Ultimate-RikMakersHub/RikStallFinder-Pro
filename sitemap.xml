@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://sitemaps.org">
+    <!-- Master Control Hub Node: Purulia Town Core -->
+    <url>
+        <loc>https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <!-- Standalone Takeover Override Node: Sizzle Cafe Network -->
+    <url>
+        <loc>https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/sizzle.html</loc>
+        <lastmod>2026-06-27</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+    </url>
+</urlset>
