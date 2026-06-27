@@ -3,136 +3,167 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RikMakersHub | Stall Finder Pro</title>
-    <link href="https://fonts.googleapis.com" rel="stylesheet">
+    <title>RikMakersHub PRO | Intelligent Local Commerce</title>
+    <link href="https://googleapis.com" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Luxury Nav Blended Bar -->
-    <nav class="nav-bar">
-        <div class="nav-brand">
-            RikMakersHub <span>PRO</span>
-        </div>
+  <!-- Premium Top Controls Navigation -->
+  <nav>
+    <div class="nav-logo"><span>R</span>ikMakersHub <em>PRO</em></div>
+    
+    <div class="system-routing-control">
+        <select id="stall-picker" onchange="switchStallRoute(this.value)"></select>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#hero">Console</a></li>
+      <li><a href="#about">Overview</a></li>
+      <li><a href="#menu">Menu Matrix</a></li>
+    </ul>
+  </nav>
+
+  <!-- Dual Pane Master Hero Layout -->
+  <section id="hero">
+    <div class="hero-framework-grid">
+      
+      <!-- Left Info Panel -->
+      <div class="hero-left-info">
+        <p class="hero-eyebrow">RikMakersHub Verified Live Node Registry</p>
+        <h1 class="hero-title" id="vendor-name-display">Loading Node...</h1>
+        <p class="hero-sub" id="vendor-motto-display">Syncing data parameters with system architecture database...</p>
         
-        <!-- Dual Selection Ecosystem: Region and Vendor Split -->
-        <div class="selector-box">
-            <select id="region-picker" onchange="switchRegionRoute(this.value)">
-                <option value="purulia">West Bengal: Purulia Town</option>
-                <option value="nagaland">Nagaland: Sizzle Network</option>
-            </select>
-            
-            <select id="stall-picker" onchange="switchStallRoute(this.value)">
-                <!-- JavaScript will inject dynamic options here depending on selected region -->
-            </select>
+        <div class="hero-cta-row">
+          <a href="#menu" class="btn-primary">Explore Menu Engine</a>
+          <a href="#about" class="btn-ghost">Operational Infrastructure</a>
         </div>
-    </nav>
+      </div>
 
-    <!-- Master Layout Grid -->
-    <main id="app-screen" class="master-grid">
-        
-        <!-- LEFT COLUMN: Operations, Branding, Menus & Analytics -->
-        <div class="left-column">
-            
-            <section class="card profile-card">
-                <div class="profile-header">
-                    <div class="title-group">
-                        <span id="vendor-eyebrow" class="hero-eyebrow">Purulia Quality Certified</span>
-                        <h2 id="vendor-name">Loading Profile...</h2>
-                    </div>
-                    <span id="hygiene-badge" class="badge-verified">Verified Hygiene</span>
-                </div>
-                
-                <!-- Dynamic Vendor Motto -->
-                <p id="vendor-motto" class="stall-motto">Loading Motto...</p>
-                
-                <div class="meta-grid">
-                    <div class="meta-item">🕒 Timings: <span id="vendor-time">--:--</span></div>
-                    <div class="meta-item">🪑 Seating: <span id="vendor-seating">-</span> Pax</div>
-                    <div class="meta-item">📍 Hub: <span id="vendor-location">-</span></div>
-                </div>
-
-                <!-- Trial Tracker Progress System -->
-                <div id="trial-container" class="trial-box hidden">
-                    <div class="trial-header">
-                        <span>⚡ 7-Day Active Free Trial</span>
-                        <span id="trial-days">X days left</span>
-                    </div>
-                    <div class="trial-bar"><div id="trial-progress" class="trial-fill"></div></div>
-                </div>
-            </section>
-
-            <!-- Dynamic Ambience & Seating Showcase Section -->
-            <section class="card ambience-card">
-                <div class="card-section-title">Ambience & Seating</div>
-                <p id="vendor-ambience-text" class="ambience-description">Loading structural layout configurations...</p>
-            </section>
-
-            <!-- Dynamic Menu Component -->
-            <section class="menu-section">
-                <h3>Fresh Daily Menu</h3>
-                <div id="menu-container" class="menu-grid">
-                    <!-- Injected via JavaScript arrays -->
-                </div>
-            </section>
-
-            <!-- Interactive Verification Feedback Loop -->
-            <section class="card feedback-card">
-                <h3>Customer Verification Loop</h3>
-                <div class="rating-summary">
-                    <div class="big-rating"><span id="avg-rating">0.0</span>⭐</div>
-                    <p class="rating-logic-text">If rating drops below <strong>3.0⭐</strong>, this counter is automatically purged from the public live registry for a quality audit.</p>
-                </div>
-
-                <div class="feedback-action">
-                    <h4>Submit Live Field Report</h4>
-                    <div class="star-row">
-                        <button class="star-btn" onclick="submitRating(1)">1★</button>
-                        <button class="star-btn" onclick="submitRating(2)">2★</button>
-                        <button class="star-btn" onclick="submitRating(3)">3★</button>
-                        <button class="star-btn" onclick="submitRating(4)">4★</button>
-                        <button class="star-btn" onclick="submitRating(5)">5★</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Dynamic Contact & Action Hub Card -->
-            <section class="card contact-card">
-                <div class="card-section-title">Merchant Desk & Verification</div>
-                <div class="contact-grid">
-                    📞 Phone: <span id="vendor-phone">--</span>
-                    🤝 Verified Operations Lead: <span id="vendor-ops">--</span>
-                </div>
-            </section>
-
-            <!-- Social Enterprise Transparency Card -->
-            <section class="card charity-card">
-                <div class="charity-content">
-                    <span class="heart-icon">❤️</span>
-                    <div>
-                        <h4>Social Impact Transparency Log</h4>
-                        <p>25% of this vendor's subscription fee goes directly to Purulia Orphanages & Old-Age Homes.</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-        <!-- RIGHT COLUMN: Sticky Dynamic Device QR Verification Tab -->
-        <div class="right-column">
-            <div class="card qr-sticky-card">
-                <div class="qr-header">
-                    <span class="qr-icon">📱</span>
-                    <h3>Live Scan Target</h3>
-                </div>
-                <p class="qr-helper-text">Scan this layout or copy the address to test this stall routing on other mobile devices.</p>
-                <div class="qr-wrapper">
-                    <img id="dynamic-qr" src="data:image/svg+xml;utf8,<svg xmlns='http://w3.org' width='180' height='180' viewBox='0 0 180 180'><rect width='180' height='180' fill='%23ffffff'/><text x='50%25' y='50%25' font-family='sans-serif' font-size='12' fill='%238A7A6A' text-anchor='middle' dominant-baseline='middle'>Generating Code...</text></svg>" alt="Live Device Verification QR Code" class="qr-element">
-                </div>
+      <!-- Right Telemetry Widget Panel (Practical UI Upgrade) -->
+      <div class="hero-right-telemetry">
+        <div class="telemetry-widget-card">
+            <h5>Live Device Verification Routing</h5>
+            <p>Scan this telemetry layer on external mobile screens to synchronize live stall routing targets instantly.</p>
+            <div class="qr-code-housing">
+                <img id="dynamic-qr-target" src="" alt="Processing QR Generation Data Layer...">
             </div>
         </div>
+      </div>
 
-    </main>
+    </div>
+  </section>
 
-    <script src="app.js"></script>
+  <div class="divider"></div>
+
+  <!-- Operational Overview Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="section-label">System Node Status</p>
+          <h2 class="section-title">Verified On-Site <em>Telemetry</em></h2>
+          <p id="vendor-ambience-text">Loading verified environmental layout configurations...</p>
+          
+          <!-- Quality Audit Control Feedback Loop Matrix -->
+          <div class="registry-feedback-loop">
+             <div class="loop-score-pane">
+                 <h6>Registry Index Score</h6>
+                 <div class="big-score-display"><span id="avg-rating-display">0.0</span>⭐</div>
+             </div>
+             <div class="loop-action-pane">
+                 <h6>Submit Field Verification Report</h6>
+                 <p>Auto-purging sequences activate across public circuits if registry indexes slide under the 3.0★ audit boundary.</p>
+                 <div class="star-report-row">
+                     <button onclick="submitLiveFieldReport(1)">1★</button>
+                     <button onclick="submitLiveFieldReport(2)">2★</button>
+                     <button onclick="submitLiveFieldReport(3)">3★</button>
+                     <button onclick="submitLiveFieldReport(4)">4★</button>
+                     <button onclick="submitLiveFieldReport(5)">5★</button>
+                 </div>
+             </div>
+          </div>
+
+        </div>
+        
+        <div class="about-stats">
+          <div class="stat-card">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Independent Equity</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">14</div>
+            <div class="stat-label">Active Repos</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">23</div>
+            <div class="stat-label">Ecosystem Webs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">₹0</div>
+            <div class="stat-label">External Liabilities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Interactive Filterable Menu Section -->
+  <section id="menu">
+    <div class="container">
+      <div class="menu-intro">
+        <div>
+          <p class="section-label">Verified Terminal Pricing</p>
+          <h2 class="section-title">The <em>Menu Engine</em></h2>
+        </div>
+        <div class="menu-tabs">
+          <button class="tab-btn active" onclick="filterMenu('all', this)">All Feeds</button>
+          <button class="tab-btn" onclick="filterMenu('breakfast', this)">Veg Options</button>
+          <button class="tab-btn" onclick="filterMenu('mains', this)">Chicken Lineup</button>
+          <button class="tab-btn" onclick="filterMenu('drinks', this)">Drinks & Broths</button>
+          <button class="tab-btn" onclick="filterMenu('desserts', this)">Moburg Fusion</button>
+        </div>
+      </div>
+      <div class="menu-grid" id="menu-grid">
+          <!-- Injected dynamically by app.js processing engines -->
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- Real-Time Merchant Identification Directory Node -->
+  <section id="visit">
+    <div class="container">
+      <p class="section-label">Node Verification</p>
+      <h2 class="section-title">Secure Hub <em>Coordinates</em></h2>
+      <div class="visit-details">
+        <div class="visit-detail-block">
+          <div class="vd-label">Physical Coordinates</div>
+          <div class="vd-value" id="vd-location-text">Loading Address...</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="visit-detail-block">
+          <div class="vd-label">Operational Hours</div>
+          <div class="vd-value" id="vd-hours-text">Loading Schedule...</div>
+        </div>
+        <div class="divider-v"></div>
+        <div class="visit-detail-block">
+          <div class="vd-label">Regulatory Registry Credentials</div>
+          <div class="vd-value" id="vd-contact-text">Verifying Credentials...</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="footer-logo"><span>R</span>ikMakersHub</div>
+    <div class="footer-copy">© 2026 The Ultimate RikMakersHub Tech Empire. All rights reserved.</div>
+  </footer>
+
+  <script src="app.js"></script>
 </body>
 </html>
