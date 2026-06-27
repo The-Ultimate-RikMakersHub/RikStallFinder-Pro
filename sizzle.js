@@ -1,8 +1,15 @@
 /**
  * RikMakersHub PRO — High-Velocity Local Commerce Engine
  * Sizzle Standalone Override Controller Pipeline Engine Module
- * Operational Core Data Restoration: Arghya's Authentic Menu Matrix
+ * Production Stability Version 2.4.0 (100% Rik Independent Property)
  */
+
+const CHARITY_PARTNER_CONFIG = {
+    organizationName: "Ramakrishna Mission Sevashrama Welfare Fund",
+    districtBranch: "Purulia Town Node, West Bengal",
+    allocationRatio: 0.25,
+    verificationStatus: "Pending On-Ground Compliance Handshake"
+};
 
 const vendorRegistry = {
     "sizzle_cafe": {
@@ -14,7 +21,7 @@ const vendorRegistry = {
         location: "12 Ember Lane, Raghabpur More, Purulia",
         hours: "Mon – Fri: 7:00 AM – 10:00 PM | Sat – Sun: 8:00 AM – 11:00 PM",
         license: "FSSAI Lic. 22823168000053",
-        trialStarted: "2026-06-25", // Hardlocked baseline to calculate the active 7 days trial
+        trialStarted: "2026-06-25", // Baseline timeline tracking parameter
         ratings: [],
         menu: [
             { category: 'breakfast', name: 'The Sizzle Stack',    price: '₹349', desc: 'Triple griddle-pressed pancakes, caramelised banana, amber maple drizzle, sea salt butter.',   tag: '🔥 Chef\'s Pick' },
@@ -44,16 +51,15 @@ function bootstrapApp() {
     }
     renderActiveDashboard(vendorRegistry[activeStallId]);
 }
-
 function renderActiveDashboard(data) {
     if (!data) return;
 
-    // Direct text injections straight into your HTML landmarks
+    // Direct text injections straight into your HTML string node maps
     document.getElementById('vendor-name-node').innerText = data.name;
     document.getElementById('vendor-motto-node').innerText = data.motto;
     document.getElementById('vendor-ambience-node').innerText = data.ambience;
     
-    // Address / Hours / Contact Node Bindings
+    // Address / Hours / Contact Layout Pane Bindings
     document.getElementById('vd-location-pane').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Verification Lead: ${data.opsLead}</span>`;
     document.getElementById('vd-hours-pane').innerHTML = data.hours;
     document.getElementById('vd-credentials-pane').innerHTML = `${data.phone}<br><span class="badge-fssai-layer">${data.license}</span>`;
@@ -63,12 +69,19 @@ function renderActiveDashboard(data) {
     triggerLiveQRGenerator();
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
 
-    // Dynamic dealer dialer routing
+    // DYNAMIC DIALER ROUTING INTERCEPT: Sanitizing strings on auto-pilot
     const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
     if (callButtonNode && data.phone) {
         const cleanPhoneNumber = data.phone.replace(/[^+\d]/g, '');
         callButtonNode.href = `tel:${cleanPhoneNumber}`;
         callButtonNode.innerHTML = `📞 Call Desk: ${data.phone}`;
+    }
+
+    // DYNAMIC CHARITY TRANSPARENCY INJECTION: Displays your dad's strategic formula
+    const bmVals = document.querySelectorAll('.bm-value');
+    if (bmVals && bmVals.length >= 2) {
+        bmVals[0].innerHTML = `₹249 <span style="font-size:0.7rem; color:var(--warm-grey);">/ Month</span>`;
+        bmVals[1].innerHTML = `₹62.50 <span style="font-size:0.7rem; color:var(--accent-green); font-weight:800;">(RKM Sevashrama Log)</span>`;
     }
 }
 
@@ -83,7 +96,7 @@ function calculateTrialMetric(startDateString) {
     const barFillNode = document.getElementById('trial-progress-bar-fill');
     
     if (daysLeft <= 0) {
-        if (daysTextNode) daysTextNode.innerHTML = `<span style="color:#4ade80; font-weight:800;">🔒 Trial Ended. ₹250 Subscription Due.</span>`;
+        if (daysTextNode) daysTextNode.innerHTML = `<span style="color:#4ade80; font-weight:800;">🔒 Sandbox Term Completed. ₹249 Subscription Due.</span>`;
         if (barFillNode) barFillNode.style.width = "0%";
     } else {
         if (daysTextNode) daysTextNode.innerText = `${daysLeft} days remaining`;
@@ -144,51 +157,30 @@ function pushVerificationReport(scoreInput) {
 }
 
 function triggerLiveQRGenerator() {
-    // Look for the exact matching ID inside your four-part index layout
     const imageTargetNode = document.getElementById('telemetry-qr-element');
+    if (!imageTargetNode) return;
     
-    if (!imageTargetNode) {
-        console.log("[RikMakersHub Engine] Error: QR Image DOM target node not found.");
-        return;
-    }
-    
-    // Fallback logic: If local file path is detected, encode a standard baseline URL parameters string
     let currentAbsoluteURL = window.location.href;
     if (currentAbsoluteURL.startsWith('file:///')) {
-        currentAbsoluteURL = "https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/sizzle.html"
+        currentAbsoluteURL = "https://github.io";
     }
     
-    // Clear, fully structured, secure HTTPS API query parameter string
-    const secureQRAPIUrl = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=1e1208";
-    
-    // Force the browser source layout to bind instantly
-    imageTargetNode.src = secureQRAPIUrl;
-    
-    console.log("[RikMakersHub Engine] Secure dynamic QR tracking matrix generated successfully.");
+    imageTargetNode.src = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=1e1208";
 }
-
 
 window.onload = bootstrapApp;
 
 // ==========================================================================
-// RIKMAKERSHUB PRO — COMPETITIVE INTELLIGENCE DATA MATRIX BLOCK
-// ==========================================================================
-// ==========================================================================
 // RIKMAKERSHUB PRO — MASTER COMPETITIVE INTELLIGENCE & MARKET EVAPORATION MATRIX
-// Mapped Strategy: Deflationary B2B Capture vs. Predatory & Corporate Layers
 // ==========================================================================
 const RIKMAKERSHUB_MASTER_INTELLIGENCE = {
     targetTerritory: "Purulia Town Tier-2 Commerce Grid",
-    
-    // 1. Local Predatory Layer (Cyber Cafés Charging Hyper-Inflated Fees)
     localAgencies: {
         provider: "Regional Cyber Café Outlets",
         monthlyRateINR: 3500,
         deliveredValue: "Static single-page link sheets with zero automation or indexing",
         vulnerability: "Extremely high predatory pricing models. Boxed out by RikMakersHub's 93% cost cut."
     },
-    
-    // 2. Heavy Corporate Layer (The Delivery Giants Commission Walls)
     corporateAggregators: {
         "zomato": {
             marketShare: "59%",
@@ -206,28 +198,19 @@ const RIKMAKERSHUB_MASTER_INTELLIGENCE = {
             vulnerability: "Zero local data currency parameters; completely unused by Tier-3 citizens."
         }
     },
-    
-    // 3. The RikMakersHub PRO Ultimo Execution Moat
     ultimoDisruptorEngine: {
         architecture: "RikMakersHub PRO Core Serverless Stack",
-        monthlyRateINR: 249, // Flat fee, 100% merchant margin retention
+        monthlyRateINR: 249, 
         netMonthlySavingsVsCafesINR: 3251,
-        
-        // The Triple-Lock Strategic Weapon
         strategicLeverage: [
             "100% Food Margin Retention (0% commission cuts vs Zomato/Swiggy 25% hits)",
-            "Purulia Orphanage Transparency Trust Log (25% revenue routed to local children)",
+            "Purulia Orphanage Transparency Trust Log (25% revenue routed to RKM Sevashrama)",
             "Triple-A Quality Seal Validation Gates (Hygiene, Fresh Circle, 5-Pax Seating Minimum)"
         ]
     },
-    
-    // 4. Regional Scaling Roadmap Vector
     takeoverCircuit: [
         "Phase I: Purulia Town Core Dominance (North Lake Road / Raghabpur More)",
         "Phase II: Purulia District Satellites (Raghunathpur / Adra Municipal Nodes)",
         "Phase III: External Cross-District Expansion (Bankura Takeover Circuit)"
     ]
 };
-
-// System Terminal Verification Hook
-console.log(`[RikMakersHub Engine] Master Market Evaporation Matrix successfully compiled. Deflationary warfare architecture is active.`);
