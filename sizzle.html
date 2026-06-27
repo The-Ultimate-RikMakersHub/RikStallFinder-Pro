@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizzle Network Terminal | The LamaLand</title>
+    <title>Sizzle Network Terminal | Premium Analytics Console</title>
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
-        /* ─── LUXURY DESIGN TOKENS (EXTERNAL MIMIC STYLE PROTECTION) ─── */
+        /* ─── ARRGHAY'S HIGH-END LUXURY DESIGN TOKENS (SECURE SEPARATION) ─── */
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         
         :root {
@@ -46,10 +46,9 @@
         .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--light-grey); text-decoration: none; transition: color 0.25s; }
         .nav-links a:hover { color: var(--amber); }
 
-        /* ─── SYSTEM OVERRIDE DROP-IN SELECTOR ─── */
+        /* ─── SYSTEM SELECTOR PANEL OVERRIDE ─── */
         .engine-selector-panel { display: flex; align-items: center; margin-left: 20px; }
         #stall-picker { background-color: var(--espresso); color: var(--cream); border: 1px solid var(--ember); padding: 8px 16px; border-radius: var(--radius-main); font-size: 0.82rem; font-weight: 600; cursor: pointer; outline: none; }
-
         /* ─── DUAL-PANE HERO CONSOLE SECTION ─── */
         #hero { position: relative; min-height: calc(100vh - 80px); display: flex; align-items: center; overflow: hidden; }
         .hero-framework-grid { position: relative; z-index: 2; display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 48px; width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; align-items: center; }
@@ -58,7 +57,8 @@
         .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem, 5vw, 4.2rem); font-weight: 900; line-height: 1.1; color: var(--cream); }
         .hero-title .word-sizzle { display: inline-block; background: linear-gradient(135deg, var(--amber) 0%, var(--ember) 50%, #FF3D00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 32px rgba(255,107,0,0.45)); }
         .hero-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.1rem, 2.2vw, 1.45rem); color: var(--light-grey); margin-top: 1.6rem; line-height: 1.4; }
-        .hero-cta-row { margin-top: 2.8rem; display: flex; gap: 1rem; }
+        .hero-cta-row { margin-top: 2.8rem; display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+        
         /* Telemetry QR Dock Layout */
         .hero-right-telemetry { display: flex; justify-content: flex-end; }
         .telemetry-widget-card { background-color: var(--dark-roast); border: 1px solid rgba(212, 201, 184, 0.08); border-top: 4px solid var(--ember); padding: 24px; border-radius: var(--radius-main); text-align: center; max-width: 290px; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6); }
@@ -79,8 +79,7 @@
         .section-label { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--ember); margin-bottom: 1rem; }
         .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.1; color: var(--cream); }
         .section-title em { color: var(--amber); font-style: italic; }
-
-        #about { background: var(--dark-roast); }
+        #about, #experience { background: var(--dark-roast); }
         .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 4rem; align-items: start; margin-top: 2.5rem; }
         .about-text p { font-size: 1.05rem; line-height: 1.8; color: var(--light-grey); margin-top: 1rem; }
         
@@ -157,27 +156,31 @@
 <body>
   <!-- Fixed Controls Navigation Header Overlay -->
   <nav>
-    <div class="nav-logo"><a href="index.html" style="text-decoration:none; color:inherit;"><span>R</span>ikMakersHub</a> <em>SIZZLE TERMINAL</em></div>
+    <div class="nav-logo"><a href="index.html" style="text-decoration:none; color:inherit;"><span>R</span>ikMakersHub</a> <em>SIZZLE OVERRIDE</em></div>
     <div class="engine-selector-panel">
         <select id="stall-picker" onchange="switchStallRoute(this.value)"></select>
     </div>
     <ul class="nav-links">
-      <li><a href="#hero">Active Node</a></li>
-      <li><a href="#about">SaaS Billing</a></li>
-      <li><a href="#menu">Menu Grid</a></li>
+      <li><a href="#hero">Active Unit</a></li>
+      <li><a href="#experience">The Experience</a></li>
+      <li><a href="#menu">Menu Matrix</a></li>
     </ul>
   </nav>
 
   <section id="hero">
     <div class="hero-framework-grid">
-      <!-- Left Variable Merchant Branding Lane -->
+      <!-- Left Variable Merchant Branding Lane (100% Focused on Sizzle Cafe Overhaul) -->
       <div class="hero-left-info">
-        <p class="hero-eyebrow">Ecosystem Verification Pipeline Active</p>
-        <h1 class="hero-title"><span id="vendor-name-node" class="word-sizzle">Loading Node...</span></h1>
-        <p class="hero-sub" id="vendor-motto-node">Connecting pipeline data fields arrays with active server loops...</p>
+        <p class="hero-eyebrow">Sizzle Network Active Pipeline Node</p>
+        <h1 class="hero-title"><span id="vendor-name-node" class="word-sizzle">Loading Sizzle Node...</span></h1>
+        <p class="hero-sub" id="vendor-motto-node">Processing interfaces with deep network registry arrays...</p>
+        
         <div class="hero-cta-row">
           <a href="#menu" class="btn-primary">Inspect Pricing Feed</a>
-          <a href="#about" class="btn-ghost">Audit Registry Log</a>
+          <!-- Dynamic button routes users straight to their native dialer using JS memory arrays -->
+          <a id="dynamic-merchant-call-btn" href="tel:" class="btn-ghost" style="border-color: var(--amber); color: var(--amber); display: inline-flex; align-items: center; gap: 8px;">
+             📞 Connecting Dialer...
+          </a>
         </div>
       </div>
       <!-- Right Signature Live QR Scanner Telemetry Box -->
@@ -254,16 +257,45 @@
           </div>
         </div>
         
-        <!-- 100% Client Food Stall Analytics Matrix Cards (No advertising bloat) -->
+        <!-- 100% Sizzle Cafe Local Analytics Matrix Cards -->
         <div class="about-stats">
           <div class="stat-card"><div class="stat-num">₹250</div><div class="stat-label">SaaS License Rate</div></div>
           <div class="stat-card"><div class="stat-num">25%</div><div class="stat-label">Orphanage Fund Payout</div></div>
-          <div class="stat-card"><div class="stat-num">12+</div><div class="stat-label">Verified Menu Options</div></div>
+          <div class="stat-card"><div class="stat-num">47</div><div class="stat-label">Verified Menu Items</div></div>
           <div class="stat-card"><div class="stat-num">5-Pax</div><div class="stat-label">Minimum Seating Checked</div></div>
         </div>
       </div>
     </div>
   </section>
+
+  <div class="divider"></div>
+
+  <!-- THE HIGH-VALUE ENVIRONMENT SHOWCASE -->
+  <section id="experience">
+    <div class="container">
+      <p class="section-label">The Customer Experience</p>
+      <h2 class="section-title">A space that <em>breathes</em> warmth</h2>
+      
+      <blockquote class="ambiance-quote" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1.3rem, 3vw, 2rem); color: var(--amber); margin: 2rem 0; border-left: 2px solid var(--ember); padding-left: 1.5rem; line-height: 1.6;">
+        "You don't just eat here. You slow down. You lean in. You taste something that was made for exactly this moment."
+      </blockquote>
+      
+      <div class="about-grid" style="margin-top: 3rem; gap: 2rem;">
+        <div class="stat-card">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔥</div>
+          <div class="stat-num" style="font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 0.4rem;">Open Theater Kitchen</div>
+          <div class="stat-label" style="text-transform: none; font-size: 0.85rem; color: var(--light-grey); line-height: 1.5;">Watch every dish come to life — the theatre of the open flame is an active part of your meal.</div>
+        </div>
+        <div class="stat-card">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">🎵</div>
+          <div class="stat-num" style="font-size: 1.4rem; font-family: 'Playfair Display', serif; margin-bottom: 0.4rem;">Curated Ambient Acoustics</div>
+          <div class="stat-label" style="text-transform: none; font-size: 0.85rem; color: var(--light-grey); line-height: 1.5;">Smooth jazz, classic soul, and relaxed lo-fi — a background soundtrack that never fights for attention.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
 
   <section id="menu">
     <div class="container">
@@ -298,9 +330,9 @@
     </div>
   </section>
 
-  <footer>
+<footer>
     <div class="footer-logo"><span>R</span>ikMakersHub</div>
-    <div class="footer-copy">© 2026 The Ultimate RikMakersHub Tech Empire. All rights reserved.</div>
+    <div class="footer-copy">© 2026 Sizzle Network Operations. All rights reserved under RikMakersHub PRO Corporate Framework.</div>
   </footer>
 
   <script src="sizzle.js"></script>
