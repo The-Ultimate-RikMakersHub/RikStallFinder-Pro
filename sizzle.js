@@ -144,10 +144,29 @@ function pushVerificationReport(scoreInput) {
 }
 
 function triggerLiveQRGenerator() {
+    // Look for the exact matching ID inside your four-part index layout
     const imageTargetNode = document.getElementById('telemetry-qr-element');
-    if (!imageTargetNode) return;
-    imageTargetNode.src = `https://qrserver.com{encodeURIComponent(window.location.href)}&color=1e1208`;
+    
+    if (!imageTargetNode) {
+        console.log("[RikMakersHub Engine] Error: QR Image DOM target node not found.");
+        return;
+    }
+    
+    // Fallback logic: If local file path is detected, encode a standard baseline URL parameters string
+    let currentAbsoluteURL = window.location.href;
+    if (currentAbsoluteURL.startsWith('file:///')) {
+        currentAbsoluteURL = "https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/sizzle.html"
+    }
+    
+    // Clear, fully structured, secure HTTPS API query parameter string
+    const secureQRAPIUrl = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=1e1208";
+    
+    // Force the browser source layout to bind instantly
+    imageTargetNode.src = secureQRAPIUrl;
+    
+    console.log("[RikMakersHub Engine] Secure dynamic QR tracking matrix generated successfully.");
 }
+
 
 window.onload = bootstrapApp;
 
