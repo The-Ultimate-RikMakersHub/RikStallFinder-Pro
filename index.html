@@ -4,104 +4,168 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RikMakersHub PRO | Intelligent Local Commerce</title>
+    <!-- Premium Google Fonts Needed for Arghya's Luxury Theme -->
     <link href="https://googleapis.com" rel="stylesheet">
+    <!-- Link to your clean, external style sheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Lightweight local utilities to seamlessly align your custom telemetry widgets into his blocks */
+        .engine-selector-panel { display: inline-block; margin-left: 20px; }
+        #stall-picker {
+            background-color: var(--dark-roast);
+            color: var(--cream);
+            border: 1px solid rgba(255,107,0,0.3);
+            padding: 8px 16px;
+            border-radius: 2px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            cursor: pointer;
+            outline: none;
+        }
+        .hero-framework-grid {
+            position: relative; z-index: 2;
+            display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 48px;
+            width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; align-items: center;
+        }
+        .hero-left-info { display: flex; flex-direction: column; text-align: left; }
+        .hero-right-telemetry { display: flex; justify-content: flex-end; }
+        .telemetry-widget-card {
+            background-color: var(--dark-roast); border: 1px solid rgba(212, 201, 184, 0.08);
+            border-top: 4px solid var(--ember); padding: 24px; border-radius: 4px; text-align: center; max-width: 300px;
+        }
+        .telemetry-widget-card h5 { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: var(--cream); margin-bottom: 6px; }
+        .telemetry-widget-card p { font-size: 0.75rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 16px; }
+        .qr-code-housing { background-color: #ffffff; padding: 12px; display: inline-block; border-radius: 4px; }
+        .qr-code-housing img { display: block; max-width: 135px; height: auto; }
+        .live-system-verification-loop {
+            display: grid; grid-template-columns: 0.3fr 0.7fr; gap: 20px;
+            background-color: rgba(17, 13, 7, 0.5); border: 1px solid rgba(212, 201, 184, 0.1);
+            padding: 20px; border-radius: 4px; margin-top: 24px;
+        }
+        .lsvl-score-block { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(212, 201, 184, 0.15); padding-right: 12px; }
+        .lsvl-score-block h4, .lsvl-action-block h4 { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--warm-grey); margin-bottom: 4px; }
+        .lsvl-numerical-display { font-family: 'Playfair Display', serif; font-size: 2.4rem; font-weight: 900; color: var(--cream); }
+        .lsvl-action-block p { font-size: 0.75rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 10px; }
+        .star-rating-buttons-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+        .star-rating-buttons-row button {
+            background-color: var(--espresso); border: 1px solid rgba(212, 201, 184, 0.15);
+            color: var(--cream); padding: 8px 0; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s;
+        }
+        .star-rating-buttons-row button:hover { background: var(--ember); border-color: var(--ember); color: #fff; }
+        .nav-links { list-style: none; }
+        @media (max-width: 900px) {
+            .hero-framework-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-left-info { text-align: center; align-items: center; }
+            .hero-right-telemetry { justify-content: center; margin-top: 20px; }
+            .live-system-verification-loop { grid-template-columns: 1fr; }
+            .lsvl-score-block { border-right: none; border-bottom: 1px solid rgba(212, 201, 184, 0.1); padding-bottom: 12px; }
+        }
+    </style>
 </head>
 <body>
 
-  <!-- Premium Top Controls Navigation -->
+  <!-- ─── NAV LAYER CONSOLE ─── -->
   <nav>
-    <div class="nav-logo"><span>R</span>ikMakersHub <em>PRO</em></div>
+    <div class="nav-logo"><span>R</span>ikMakersHub</div>
     
-    <div class="system-routing-control">
+    <!-- Strategic Dropdown Controller Placement -->
+    <div class="engine-selector-panel">
         <select id="stall-picker" onchange="switchStallRoute(this.value)"></select>
     </div>
 
     <ul class="nav-links">
-      <li><a href="#hero">Console</a></li>
-      <li><a href="#about">Overview</a></li>
-      <li><a href="#menu">Menu Matrix</a></li>
+      <li><a href="#hero">System Core</a></li>
+      <li><a href="#about">Infrastructure</a></li>
+      <li><a href="#menu">Data Feeds</a></li>
     </ul>
   </nav>
 
-  <!-- Dual Pane Master Hero Layout -->
+  <!-- ─── HERO PANE WITH TELEMETRY SCAN CORES ─── -->
   <section id="hero">
+    <canvas id="hero-canvas"></canvas>
     <div class="hero-framework-grid">
       
-      <!-- Left Info Panel -->
+      <!-- Left Branding Lane -->
       <div class="hero-left-info">
-        <p class="hero-eyebrow">RikMakersHub Verified Live Node Registry</p>
-        <h1 class="hero-title" id="vendor-name-display">Loading Node...</h1>
-        <p class="hero-sub" id="vendor-motto-display">Syncing data parameters with system architecture database...</p>
-        
+        <p class="hero-eyebrow" id="vendor-eyebrow-text">Ecosystem Verification Pipeline Active</p>
+        <h1 class="hero-title">
+          <span id="vendor-name-node" class="word-sizzle">Loading Engine...</span>
+        </h1>
+        <p class="hero-sub" id="vendor-motto-node">Connecting pipeline interfaces with deep registry arrays...</p>
         <div class="hero-cta-row">
-          <a href="#menu" class="btn-primary">Explore Menu Engine</a>
-          <a href="#about" class="btn-ghost">Operational Infrastructure</a>
+          <a href="#menu" class="btn-primary">Inspect Pricing Feed</a>
+          <a href="#about" class="btn-ghost">Audit Registry Log</a>
         </div>
       </div>
 
-      <!-- Right Telemetry Widget Panel (Practical UI Upgrade) -->
+      <!-- Right Signature Telemetry QR Scanning Module -->
       <div class="hero-right-telemetry">
-        <div class="telemetry-widget-card">
-            <h5>Live Device Verification Routing</h5>
-            <p>Scan this telemetry layer on external mobile screens to synchronize live stall routing targets instantly.</p>
-            <div class="qr-code-housing">
-                <img id="dynamic-qr-target" src="" alt="Processing QR Generation Data Layer...">
-            </div>
-        </div>
+         <div class="telemetry-widget-card">
+             <h5>Device Verification Route</h5>
+             <p>Scan this tracking interface layer using separate handheld devices to broadcast server parameter links instantly.</p>
+             <div class="qr-code-housing">
+                 <img id="telemetry-qr-element" src="" alt="Compiling QR Telemetry String Layer...">
+             </div>
+         </div>
       </div>
 
     </div>
+    
+    <div class="hero-scroll-hint">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
   </section>
-
   <div class="divider"></div>
 
-  <!-- Operational Overview Section -->
+  <!-- ─── AUDIT INFRASTRUCTURE PANEL ─── -->
   <section id="about">
     <div class="container">
       <div class="about-grid">
         <div class="about-text">
-          <p class="section-label">System Node Status</p>
+          <p class="section-label">Field Verification</p>
           <h2 class="section-title">Verified On-Site <em>Telemetry</em></h2>
-          <p id="vendor-ambience-text">Loading verified environmental layout configurations...</p>
+          <p id="vendor-ambience-node">Loading environment structural profiles...</p>
           
-          <!-- Quality Audit Control Feedback Loop Matrix -->
-          <div class="registry-feedback-loop">
-             <div class="loop-score-pane">
-                 <h6>Registry Index Score</h6>
-                 <div class="big-score-display"><span id="avg-rating-display">0.0</span>⭐</div>
-             </div>
-             <div class="loop-action-pane">
-                 <h6>Submit Field Verification Report</h6>
-                 <p>Auto-purging sequences activate across public circuits if registry indexes slide under the 3.0★ audit boundary.</p>
-                 <div class="star-report-row">
-                     <button onclick="submitLiveFieldReport(1)">1★</button>
-                     <button onclick="submitLiveFieldReport(2)">2★</button>
-                     <button onclick="submitLiveFieldReport(3)">3★</button>
-                     <button onclick="submitLiveFieldReport(4)">4★</button>
-                     <button onclick="submitLiveFieldReport(5)">5★</button>
-                 </div>
-             </div>
+          <!-- Intelligent Verification Loop Panel -->
+          <div class="live-system-verification-loop">
+              <div class="lsvl-score-block">
+                  <h4>Registry Index</h4>
+                  <div class="lsvl-numerical-display"><span id="avg-rating-value">0.0</span>⭐</div>
+              </div>
+              <div class="lsvl-action-block">
+                  <h4>Submit Telemetry Report</h4>
+                  <p>Our automation layer auto-purges registry configurations across live networks if total averages drop below 3.0★ guidelines.</p>
+                  <div class="star-rating-buttons-row">
+                      <button onclick="pushVerificationReport(1)">1★</button>
+                      <button onclick="pushVerificationReport(2)">2★</button>
+                      <button onclick="pushVerificationReport(3)">3★</button>
+                      <button onclick="pushVerificationReport(4)">4★</button>
+                      <button onclick="pushVerificationReport(5)">5★</button>
+                  </div>
+              </div>
           </div>
 
         </div>
         
+        <!-- Corporate Watchlist Matrix Display Cards -->
         <div class="about-stats">
           <div class="stat-card">
             <div class="stat-num">100%</div>
-            <div class="stat-label">Independent Equity</div>
+            <div class="stat-label">Independent Capital</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">14</div>
-            <div class="stat-label">Active Repos</div>
+            <div class="stat-label">Production Repos</div>
           </div>
           <div class="stat-card">
             <div class="stat-num">23</div>
-            <div class="stat-label">Ecosystem Webs</div>
+            <div class="stat-label">Live Ecosystem Webs</div>
           </div>
           <div class="stat-card">
-            <div class="stat-num">₹0</div>
-            <div class="stat-label">External Liabilities</div>
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Velocity Hustle</div>
           </div>
         </div>
       </div>
@@ -110,55 +174,53 @@
 
   <div class="divider"></div>
 
-  <!-- Interactive Filterable Menu Section -->
+  <!-- ─── THE DYNAMIC MENU MATRIX ENGINE ─── -->
   <section id="menu">
     <div class="container">
       <div class="menu-intro">
         <div>
-          <p class="section-label">Verified Terminal Pricing</p>
-          <h2 class="section-title">The <em>Menu Engine</em></h2>
+          <p class="section-label">Real-Time Data Feed</p>
+          <h2 class="section-title">The <em>Menu Matrix</em></h2>
         </div>
         <div class="menu-tabs">
           <button class="tab-btn active" onclick="filterMenu('all', this)">All Feeds</button>
-          <button class="tab-btn" onclick="filterMenu('breakfast', this)">Veg Options</button>
-          <button class="tab-btn" onclick="filterMenu('mains', this)">Chicken Lineup</button>
-          <button class="tab-btn" onclick="filterMenu('drinks', this)">Drinks & Broths</button>
-          <button class="tab-btn" onclick="filterMenu('desserts', this)">Moburg Fusion</button>
+          <button class="tab-btn" onclick="filterMenu('breakfast', this)">Veg Base</button>
+          <button class="tab-btn" onclick="filterMenu('mains', this)">Chicken Stack</button>
+          <button class="tab-btn" onclick="filterMenu('drinks', this)">Soups & Broths</button>
+          <button class="tab-btn" onclick="filterMenu('desserts', this)">Moburg Series</button>
         </div>
       </div>
-      <div class="menu-grid" id="menu-grid">
-          <!-- Injected dynamically by app.js processing engines -->
-      </div>
+      <!-- Target matrix grid container for JavaScript arrays output -->
+      <div class="menu-grid" id="menu-grid"></div>
     </div>
   </section>
 
   <div class="divider"></div>
 
-  <!-- Real-Time Merchant Identification Directory Node -->
+  <!-- ─── SECURE GEOGRAPHIC NODES HUB ─── -->
   <section id="visit">
     <div class="container">
-      <p class="section-label">Node Verification</p>
-      <h2 class="section-title">Secure Hub <em>Coordinates</em></h2>
+      <p class="section-label">Registry Security Coordinates</p>
+      <h2 class="section-title">Location <em>Nodes</em></h2>
       <div class="visit-details">
         <div class="visit-detail-block">
-          <div class="vd-label">Physical Coordinates</div>
-          <div class="vd-value" id="vd-location-text">Loading Address...</div>
+          <div class="vd-label">Physical Field Address</div>
+          <div class="vd-value" id="vd-location-pane">Syncing Nodes...</div>
         </div>
         <div class="divider-v"></div>
         <div class="visit-detail-block">
-          <div class="vd-label">Operational Hours</div>
-          <div class="vd-value" id="vd-hours-text">Loading Schedule...</div>
+          <div class="vd-label">Monitored Schedule</div>
+          <div class="vd-value" id="vd-hours-pane">Processing Hours...</div>
         </div>
         <div class="divider-v"></div>
         <div class="visit-detail-block">
-          <div class="vd-label">Regulatory Registry Credentials</div>
-          <div class="vd-value" id="vd-contact-text">Verifying Credentials...</div>
+          <div class="vd-label">Regulatory Identity Parameters</div>
+          <div class="vd-value" id="vd-credentials-pane">Verifying License Arrays...</div>
         </div>
       </div>
     </div>
   </section>
 
-  
   <footer>
     <div class="footer-logo"><span>R</span>ikMakersHub</div>
     <div class="footer-copy">© 2026 The Ultimate RikMakersHub Tech Empire. All rights reserved.</div>
