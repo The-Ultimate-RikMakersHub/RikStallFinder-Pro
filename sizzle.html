@@ -226,9 +226,9 @@
     </div>
   </section>
 
-  <div class="divider"></div>
+   <div class="divider"></div>
 
-  <!-- ─── AMBIANCE ─── -->
+  <!-- ─── AMBIANCE (CORRECTED CLASS-TO-ID HOOKS) ─── -->
   <section id="ambiance">
     <div class="container">
       <p class="section-label reveal">The Experience</p>
@@ -236,6 +236,12 @@
       <blockquote class="ambiance-quote reveal">
         "You don't just eat at Sizzle Cafe. You slow down. You lean in. You taste something that was made for exactly this moment."
       </blockquote>
+      
+      <!-- Injected dynamic data container hook -->
+      <div class="card" style="background: var(--dark-roast); padding: 24px; border: 1px dashed rgba(255,107,0,0.15); margin-bottom: 30px;">
+          <p id="vendor-ambience-node" style="font-size: 0.95rem; line-height: 1.7; color: var(--cream);">Loading structural layout configurations profiles...</p>
+      </div>
+
       <div class="ambiance-grid">
         <div class="ambiance-card reveal">
           <div class="ambiance-card-bg">🔥</div>
@@ -264,7 +270,7 @@
 
   <div class="divider"></div>
 
-  <!-- ─── VISIT ─── -->
+  <!-- ─── VISIT (CORRECTED LOGIC PANES) ─── -->
   <section id="visit">
     <div class="container">
       <p class="section-label reveal">Come Find Us</p>
@@ -272,24 +278,33 @@
       <div class="visit-details reveal">
         <div class="visit-detail-block">
           <div class="vd-label">Location</div>
-          <div class="vd-value" id="vd-location-pane">12 Ember Lane<br>Arts Quarter, Downtown</div>
+          <div class="vd-value" id="vd-location-pane">Syncing Nodes...</div>
         </div>
         <div class="divider-v"></div>
         <div class="visit-detail-block">
           <div class="vd-label">Hours</div>
-          <div class="vd-value" id="vd-hours-pane">Mon – Fri: 7am – 10pm<br>Sat – Sun: 8am – 11pm</div>
+          <div class="vd-value" id="vd-hours-pane">Processing Hours...</div>
         </div>
         <div class="divider-v"></div>
         <div class="visit-detail-block">
           <div class="vd-label">Reservations & Identity</div>
-          <div class="vd-value" id="vd-credentials-pane">+1 (800) SIZZLE-1<br>hello@sizzlecafe.com</div>
+          <div class="vd-value" id="vd-credentials-pane">Verifying License Arrays...</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ─── FOOTER (WITH SOLE RIKMAKERSHUB INTELLECTUAL PROPERTY NOTICE) ─── -->
+  <!-- ─── FOOTER ─── -->
   <footer>
+    <div class="footer-logo"><span>S</span>izzle Cafe</div>
+    <div class="footer-copy">© 2026 Sizzle Cafe. All rights reserved. Mapped & Engineered as Proprietary Software Ecosystem under RikMakersHub PRO.</div>
+    <div class="footer-socials">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+
     <div class="footer-logo"><span>S</span>izzle Cafe</div>
     <div class="footer-copy">© 2026 Sizzle Cafe. All rights reserved. Mapped & Engineered as Proprietary Software Ecosystem under RikMakersHub.</div>
     <div class="footer-socials">
