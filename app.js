@@ -26,7 +26,7 @@ const vendorRegistry = {
         ambience: "A high-traffic, roadside container installation running right along North Lake Road. Perfectly configured for quick standing street side snacks or a casual 6-person wooden layout table under clean bamboo setups near the Prestigious Saheb Bandh.",
         phone: "+91 98321 47650",
         opsLead: "Arghya Lohar (Field Operations Surveyor)",
-        location: "North Lake Road Near District Stadium, Purulia",
+        location: "North Lake Road Near Saheb Bandh, Purulia",
         hours: "Daily: 4:00 PM – 9:30 PM (Special Soups on Weekends)",
         license: "FSSAI Lic. 22823168000053",
         ratings: [],
