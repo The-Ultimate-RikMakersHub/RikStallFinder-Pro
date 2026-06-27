@@ -1,45 +1,45 @@
 /**
  * RikMakersHub PRO — High-Velocity Local Commerce Engine
  * Sizzle Standalone Override Controller Pipeline Engine Module
- * Operational Node Patch: 100% Rik Independent Property
+ * Operational Core Data Restoration: Arghya's Authentic Menu Matrix
  */
 
 const vendorRegistry = {
-    "lamaland_momos": {
-        name: "The LamaLand",
-        motto: "Authentic Himalayan Flame — Where Every Bite Ignites.",
-        ambience: "A high-traffic counter installation sitting right on North Lake Road. Perfect for quick standing snacks or casual community seating options under classic bamboo structures.",
+    "sizzle_cafe": {
+        name: "Sizzle Cafe",
+        motto: "Where every bite ignites a moment worth remembering.",
+        ambience: "A luxury, high-end culinary space built around the sound of the perfect sear. Operating an open theater cast-iron kitchen with curated lo-fi acoustics at the Raghabpur More hub.",
         phone: "+91 98321 47650",
         opsLead: "Arghya Lohar (Field Surveyor Group)",
-        location: "North Lake Road Near District Stadium, Purulia",
-        hours: "Daily: 4:00 PM – 9:30 PM (Special Soup Weekends)",
+        location: "12 Ember Lane, Raghabpur More, Purulia",
+        hours: "Mon – Fri: 7:00 AM – 10:00 PM | Sat – Sun: 8:00 AM – 11:00 PM",
         license: "FSSAI Lic. 22823168000053",
         trialStarted: "2026-06-25", // Hardlocked baseline to calculate the active 7 days trial
         ratings: [],
         menu: [
-            { name: "Steam Veg Momo (5 PIC)", desc: "Fresh garden vegetable mince seasoned with premium mountain herbs wrapped in thin wheat envelopes", price: "₹39", category: "breakfast" },
-            { name: "Steam Chicken Momo (5 PIC)", desc: "Fine minced lean chicken breast meat tossed with green scallions and clear garlic stock", price: "₹49", category: "mains" },
-            { name: "Fried Veg Momo (5 PIC)", desc: "Crisp skillet golden deep fried vegetable momos served with spicy home chili paste oil", price: "₹45", category: "breakfast" },
-            { name: "Fried Chicken Momo (5 PIC)", desc: "Crunchy textured deep fried chicken dumplings packing heavy local spices and juices", price: "₹55", category: "mains" },
-            { name: "Gondhoraj Veg Momo (5 PIC)", desc: "Steamed vegetable pocket folds carrying an exquisite fragrance of local Gondhoraj lime leaf extracts", price: "₹55", category: "breakfast" },
-            { name: "Gondhoraj Chicken Momo (5 PIC)", desc: "Succulent minced chicken breast packing an explosive aromatic kick of native Gondhoraj lime juice", price: "₹65", category: "mains" },
-            { name: "Taifu Momo (2 PIC)", desc: "Traditional oversized fluffy Tibetan-style steamed bun pockets filled with highly seasoned centers", price: "₹55", category: "mains" },
-            { name: "Panfried Veg Momo (5 PIC)", desc: "Skillet seared base pan-fried vegetable momos glazed fully in hot dark chili soy infusions", price: "₹55", category: "breakfast" },
-            { name: "Panfried Chicken Momo (5 PIC)", desc: "Pan-crisped bottom chicken momos tossed intensely in a fiery Schezwan sweet and sour chili sauce", price: "₹65", category: "mains" },
-            { name: "Moburg (Veg)", desc: "Experimental fusion burger loaded with a crisp deep fried vegetable momo core and signature dressings", price: "₹69", category: "desserts" },
-            { name: "Moburg (Chicken)", desc: "Toasted artisanal buns containing an ultra-crisp chicken momo center with spicy mayonnaise layers", price: "₹75", category: "desserts" },
-            { name: "Lamaland Spl Soup (SAT & SUN)", desc: "Exclusive weekend slow-brewed rich marrow and clear black pepper herb extract broth served steaming hot", price: "₹49", category: "drinks" }
+            { category: 'breakfast', name: 'The Sizzle Stack',    price: '₹349', desc: 'Triple griddle-pressed pancakes, caramelised banana, amber maple drizzle, sea salt butter.',   tag: '🔥 Chef\'s Pick' },
+            { category: 'breakfast', name: 'Ember Eggs Benedict', price: '₹299', desc: 'Slow-poached eggs on toasted sourdough, charred prosciutto, smoked paprika hollandaise.',        tag: 'Bestseller' },
+            { category: 'breakfast', name: 'Sunrise Açaí Bowl',   price: '₹249', desc: 'Cold-pressed açaí, fresh mango, granola crunch, honey dust, and edible flower.',                 tag: 'Plant-Based' },
+            { category: 'mains',     name: 'Cast-Iron Burger',    price: '₹449', desc: 'Double smash patty, aged cheddar, pickled jalapeño, ember-roasted garlic aioli, brioche bun.',   tag: '🔥 Signature' },
+            { category: 'mains',     name: 'Sizzle Steak Wrap',   price: '₹399', desc: 'Griddle-seared flank steak, chimichurri, caramelised onion, roasted peppers, warm tortilla.',   tag: '' },
+            { category: 'mains',     name: 'Truffle Mushroom Pasta', price: '₹379', desc: 'Hand-rolled tagliatelle, wild mushroom ragu, black truffle shavings, parmesan snow.',          tag: 'Vegetarian' },
+            { category: 'drinks',    name: 'Ember Pour-Over',     price: '₹179', desc: 'Single-origin Ethiopian beans, slow-filtered to perfection. Notes of dark chocolate & citrus.', tag: 'Small Batch' },
+            { category: 'drinks',    name: 'Spiced Chai Latte',   price: '₹149', desc: 'Masala chai brewed with oat milk, saffron cream top, dusted cinnamon.',                          tag: '' },
+            { category: 'drinks',    name: 'Sizzle Cold Brew',    price: '₹199', desc: '18-hour cold-steeped brew, salted caramel ribbon, topped with whipped oat cream.',               tag: 'Iced' },
+            { category: 'desserts',  name: 'Lava Choco Cake',     price: '₹259', desc: 'Warm molten chocolate heart, single-origin ganache, vanilla bean ice cream, ember sugar.',       tag: '🔥 Must Try' },
+            { category: 'desserts',  name: 'Crème Brûlée',        price: '₹229', desc: 'Classic vanilla custard, torched sugar crust cracked tableside. Simple. Perfect.',               tag: '' },
+            { category: 'desserts',  name: 'Mango Saffron Panna Cotta', price: '₹199', desc: 'Silky panna cotta, alphonso mango coulis, candied saffron thread.',                        tag: 'Seasonal' }
         ]
     }
 };
 
-let activeStallId = "lamaland_momos";
+let activeStallId = "sizzle_cafe";
 let currentTabFilter = "all";
 
 function bootstrapApp() {
     const picker = document.getElementById('stall-picker');
     if (picker) {
-        picker.innerHTML = `<option value="lamaland_momos">The LamaLand (North Lake Road)</option>`;
+        picker.innerHTML = `<option value="sizzle_cafe">Sizzle Cafe (Raghabpur More)</option>`;
         picker.value = activeStallId;
     }
     renderActiveDashboard(vendorRegistry[activeStallId]);
@@ -60,6 +60,14 @@ function renderActiveDashboard(data) {
     calculateTrialMetric(data.trialStarted);
     triggerLiveQRGenerator();
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
+
+    // DYNAMIC DIALER ROUTING INTERCEPT: Out-engineering static text variables securely
+    const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
+    if (callButtonNode && data.phone) {
+        const cleanPhoneNumber = data.phone.replace(/[^+\d]/g, '');
+        callButtonNode.href = `tel:${cleanPhoneNumber}`;
+        callButtonNode.innerHTML = `📞 Call Desk: ${data.phone}`;
+    }
 }
 
 function calculateTrialMetric(startDateString) {
@@ -97,9 +105,13 @@ function filterMenu(category, triggerButton) {
     const filteredArray = category === 'all' ? fullMenuArray : fullMenuArray.filter(i => i.category === category);
 
     filteredArray.forEach(item => {
+        // Generate optional highlight badge layout string if tag is loaded
+        const tagMarkup = item.tag ? `<span class="badge-fssai-layer" style="margin-top:0; margin-bottom:6px; background-color:rgba(255,107,0,0.1); border-color:rgba(255,107,0,0.3); color:var(--amber); font-size:0.6rem;">${item.tag}</span>` : '';
+        
         const structuralMarkup = `
             <div class="menu-item-card">
                 <div class="mic-info">
+                    ${tagMarkup}
                     <h4>${item.name}</h4>
                     <p>${item.desc}</p>
                 </div>
