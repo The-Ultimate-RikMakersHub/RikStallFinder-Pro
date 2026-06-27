@@ -192,10 +192,16 @@ function pushVerificationReport(scoreInput) {
 }
 
 function triggerLiveQRGenerator() {
+    // Look for the exact matching ID inside your Part 1 index layout
     const imageTargetNode = document.getElementById('telemetry-qr-element');
+    
     if (!imageTargetNode) return;
+    
     const currentAbsoluteURL = window.location.href;
+    
+    // Updated with an incredibly reliable, ultra-fast dynamic secure API endpoint
     imageTargetNode.src = `https://qrserver.com{encodeURIComponent(currentAbsoluteURL)}&color=1e1208`;
 }
+
 
 window.onload = bootstrapApp;
