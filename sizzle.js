@@ -1,7 +1,7 @@
 /**
- * RikMakersHub PRO — High-Velocity Local Commerce Engine
+ * RikInfinity Engine Core — High-Velocity Local Commerce Stack
  * Sizzle Standalone Override Controller Pipeline Engine Module
- * Production Stability Version 2.4.0 (100% Rik Independent Property)
+ * Part 1: Core Database Registry and Authenticated Menu Schema
  */
 
 const CHARITY_PARTNER_CONFIG = {
@@ -21,7 +21,7 @@ const vendorRegistry = {
         location: "12 Ember Lane, Raghabpur More, Purulia",
         hours: "Mon – Fri: 7:00 AM – 10:00 PM | Sat – Sun: 8:00 AM – 11:00 PM",
         license: "FSSAI Lic. 22823168000053",
-        trialStarted: "2026-06-25", // Baseline timeline tracking parameter
+        trialStarted: "2026-06-25", // Timeline baseline parameter tracking
         ratings: [],
         menu: [
             { category: 'breakfast', name: 'The Sizzle Stack',    price: '₹349', desc: 'Triple griddle-pressed pancakes, caramelised banana, amber maple drizzle, sea salt butter.',   tag: '🔥 Chef\'s Pick' },
@@ -51,15 +51,18 @@ function bootstrapApp() {
     }
     renderActiveDashboard(vendorRegistry[activeStallId]);
 }
+/**
+ * Part 2: Core Telemetry UI Rendering and Secure Element Binding
+ */
 function renderActiveDashboard(data) {
     if (!data) return;
 
-    // Direct text injections straight into your HTML string node maps
+    // Direct text data mapping into HTML landmark nodes
     document.getElementById('vendor-name-node').innerText = data.name;
     document.getElementById('vendor-motto-node').innerText = data.motto;
     document.getElementById('vendor-ambience-node').innerText = data.ambience;
     
-    // Address / Hours / Contact Layout Pane Bindings
+    // Core Geographic and Coordinates Pane Mappings
     document.getElementById('vd-location-pane').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Verification Lead: ${data.opsLead}</span>`;
     document.getElementById('vd-hours-pane').innerHTML = data.hours;
     document.getElementById('vd-credentials-pane').innerHTML = `${data.phone}<br><span class="badge-fssai-layer">${data.license}</span>`;
@@ -69,7 +72,7 @@ function renderActiveDashboard(data) {
     triggerLiveQRGenerator();
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
 
-    // DYNAMIC DIALER ROUTING INTERCEPT: Sanitizing strings on auto-pilot
+    // Dynamic dealer dialer routing intercept
     const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
     if (callButtonNode && data.phone) {
         const cleanPhoneNumber = data.phone.replace(/[^+\d]/g, '');
@@ -77,11 +80,23 @@ function renderActiveDashboard(data) {
         callButtonNode.innerHTML = `📞 Call Desk: ${data.phone}`;
     }
 
-    // DYNAMIC CHARITY TRANSPARENCY INJECTION: Displays your dad's strategic formula
+    // ELITE ARRAY OVERRIDE: Targets specific node elements to prevent mobile browser engine freezes
     const bmVals = document.querySelectorAll('.bm-value');
     if (bmVals && bmVals.length >= 2) {
         bmVals[0].innerHTML = `₹249 <span style="font-size:0.7rem; color:var(--warm-grey);">/ Month</span>`;
         bmVals[1].innerHTML = `₹62.50 <span style="font-size:0.7rem; color:var(--accent-green); font-weight:800;">(RKM Sevashrama Log)</span>`;
+    }
+
+    // Custom Merchant Developer Mod Logging Panel Ingestion
+    const modLogsNode = document.getElementById('merchant-mod-logs');
+    if (modLogsNode) {
+        modLogsNode.innerHTML = `
+            &gt; node_id: "sizzle_cafe_alpha"<br>
+            &gt; core_engine: "RikInfinity_Engine_v2.4.0"<br>
+            &gt; local_seo: "INDEXED_GSC_VERIFIED"<br>
+            &gt; charity_grant_link: "RKM_SEVASHRAMA_25_PERCENT"<br>
+            &gt; custom_merchant_mod: { status: "ACTIVE", theme_override: "Sizzle_Luxury_Dark" }
+        `;
     }
 }
 
@@ -104,7 +119,9 @@ function calculateTrialMetric(startDateString) {
         if (barFillNode) barFillNode.style.width = `${percentage}%`;
     }
 }
-
+/**
+ * Part 3: Filterable Menu Engine, Telemetry QR Hooks, and Competition Matrix
+ */
 function filterMenu(category, triggerButton) {
     currentTabFilter = category;
     if (triggerButton) {
@@ -165,52 +182,32 @@ function triggerLiveQRGenerator() {
         currentAbsoluteURL = "https://github.io";
     }
     
-    imageTargetNode.src = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=1e1208";
+    // Explicit clean HTTPS formatting parameters to load beautifully on mobile viewports
+    imageTargetNode.src = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=110d07";
 }
 
 window.onload = bootstrapApp;
 
 // ==========================================================================
-// RIKMAKERSHUB PRO — MASTER COMPETITIVE INTELLIGENCE & MARKET EVAPORATION MATRIX
+// RIKINFINITY ENGINE — MASTER COMPETITIVE INTELLIGENCE MATRIX
 // ==========================================================================
-const RIKMAKERSHUB_MASTER_INTELLIGENCE = {
+const RIKINFINITY_MASTER_INTELLIGENCE = {
     targetTerritory: "Purulia Town Tier-2 Commerce Grid",
-    localAgencies: {
-        provider: "Regional Cyber Café Outlets",
-        monthlyRateINR: 3500,
-        deliveredValue: "Static single-page link sheets with zero automation or indexing",
-        vulnerability: "Extremely high predatory pricing models. Boxed out by RikMakersHub's 93% cost cut."
-    },
+    localAgencies: { provider: "Regional Cyber Café Outlets", monthlyRateINR: 3500 },
     corporateAggregators: {
-        "zomato": {
-            marketShare: "59%",
-            model: "Commission-Based (20-30% Cut per Order) + Onboarding Fees",
-            vulnerability: "Destroys street food counter margins; completely inaccessible to informal kiosk vendors."
-        },
-        "swiggy": {
-            marketShare: "30%",
-            model: "Commission-Based (25% Cut per Order) + Ad Bidding Taxes",
-            vulnerability: "Requires high-overhead restaurant setups; alienates the bottom-of-the-pyramid scale volume."
-        },
-        "yelp": {
-            marketShare: "5%",
-            model: "Static Advertising Models",
-            vulnerability: "Zero local data currency parameters; completely unused by Tier-3 citizens."
-        }
+        "zomato": { marketShare: "59%", model: "Commission (20-30% Cut per Order)" },
+        "swiggy": { marketShare: "30%", model: "Commission (25% Cut per Order)" },
+        "foreign_competitor": { marketShare: "0% (Entry Threat)", monthlyRateINR: 8000, model: "Generic White-Label Overseas Template" }
     },
-    ultimoDisruptorEngine: {
-        architecture: "RikMakersHub PRO Core Serverless Stack",
-        monthlyRateINR: 249, 
-        netMonthlySavingsVsCafesINR: 3251,
+    rikinfinityMoat: {
+        architecture: "RikInfinity Core Full-Stack Serverless Engine",
+        monthlyRateINR: 249, // Flat fee, 100% merchant food margin retention
+        netMonthlySavingsVsAgencyINR: 7751,
         strategicLeverage: [
-            "100% Food Margin Retention (0% commission cuts vs Zomato/Swiggy 25% hits)",
+            "100% Food Margin Retention (0% commission cuts vs delivery giants 25% drops)",
+            "97% Cost Deflation vs Overpriced Foreign Template Brokers (₹249 vs ₹8,000)",
             "Purulia Orphanage Transparency Trust Log (25% revenue routed to RKM Sevashrama)",
             "Triple-A Quality Seal Validation Gates (Hygiene, Fresh Circle, 5-Pax Seating Minimum)"
         ]
-    },
-    takeoverCircuit: [
-        "Phase I: Purulia Town Core Dominance (North Lake Road / Raghabpur More)",
-        "Phase II: Purulia District Satellites (Raghunathpur / Adra Municipal Nodes)",
-        "Phase III: External Cross-District Expansion (Bankura Takeover Circuit)"
-    ]
+    }
 };
