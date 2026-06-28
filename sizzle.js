@@ -297,7 +297,7 @@ function triggerLiveQRGenerator() {
     
     let currentAbsoluteURL = window.location.href;
     if (currentAbsoluteURL.startsWith('file:///')) {
-        currentAbsoluteURL = "https://github.io";
+        currentAbsoluteURL = "https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/sizzle.html";
     }
     
     imageTargetNode.src = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=110d07";
