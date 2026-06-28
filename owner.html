@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sizzle Cafe | RikFintech-PRO Console</title>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #FFFFFF; color: #1C1C1C; font-family: 'Inter', sans-serif; padding: 20px; }
+        .console-box { max-width: 1000px; margin: 0 auto; background: #F8F8F8; border: 1px solid #E8E8E8; border-radius: 4px; padding: 24px; }
+        h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; color: #1C1C1C; border-bottom: 1px solid #E8E8E8; padding-bottom: 12px; }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
+        .fin-card { background: #FFFFFF; border: 1px solid #E8E8E8; border-left: 4px solid #FF6B00; padding: 20px; border-radius: 4px; }
+        .fc-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #696969; font-weight: 700; }
+        .fc-value { font-size: 1.8rem; font-weight: 800; color: #1C1C1C; margin-top: 4px; }
+        
+        /* Rush Hour Protocol Control Board Panel Layout */
+        .protocol-panel { background: #FFFFFF; border: 1px solid #E8E8E8; border-top: 4px solid #FF6B00; padding: 20px; border-radius: 4px; margin-bottom: 24px; }
+        .panel-title { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1C1C1C; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+        .control-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+        select, button { padding: 10px 16px; font-size: 0.82rem; font-weight: 600; border-radius: 4px; cursor: pointer; border: 1px solid #D3D3D3; outline: none; }
+        select { background: #F8F8F8; color: #1C1C1C; }
+        .btn-activate { background: #FF6B00; color: #FFFFFF; border: none; }
+        .btn-activate:hover { background: #E05E00; }
+        .btn-deactivate { background: #FFFFFF; color: #FF6B00; border: 1px solid #FF6B00; }
+        .status-banner { font-size: 0.82rem; font-weight: 700; color: #696969; padding: 8px 12px; background: #F8F8F8; border-radius: 4px; display: inline-block; }
+        
+        .log-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.82rem; }
+        .log-table th { background: #FFFFFF; padding: 12px; color: #1C1C1C; border-bottom: 2px solid #FF6B00; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em; text-align: left; }
+        .log-table td { padding: 12px; border-bottom: 1px solid #E8E8E8; color: #3D3D3D; }
+    </style>
+</head>
+<body>
+
+    <div class="console-box">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 12px;">
+            <h1>Sizzle Cafe · Operational Control Tower</h1>
+            <a href="sizzle.html" style="font-size:0.8rem; font-weight:700; color:#FF6B00; text-decoration:none; border:1px solid #FF6B00; padding:6px 12px; border-radius:4px;">← View Client Web</a>
+        </div>
+
+        <!-- RUSH HOUR PROTOCOL MATRIX INTERFACE -->
+        <div class="protocol-panel">
+            <div class="panel-title">
+                <span>⏱️ Live Kitchen Congestion Control Override</span>
+                <span id="live-indicator" style="font-size:0.65rem; background:rgba(105,105,105,0.1); color:#696969; padding:2px 8px; border-radius:2px;">DORMANT</span>
+            </div>
+            <p style="font-size:0.82rem; color:#696969; margin-bottom:16px;">When the counter gets slammed with cash customers, select a cooldown interval. The system will sync globally to warn incoming clients instantly.</p>
+            
+            <div class="control-row">
+                <select id="protocol-duration">
+                    <option value="30">Trigger 30 Minute Cooldown</option>
+                    <option value="60">Trigger 1 Hour Cooldown</option>
+                </select>
+                <button class="btn-activate" onclick="engageRushProtocol()">Engage Protocol Override</button>
+                <button class="btn-deactivate" onclick="killRushProtocol()">Clear Kitchen Grid</button>
+            </div>
+            <div class="status-banner" id="protocol-status-text">System Core State: Normal Wait Metric (3-5 Mins)</div>
+        </div>
+
+        <!-- RikFintech-PRO Live Metrics Row -->
+        <div class="grid-3">
+            <div class="fin-card">
+                <div class="fc-label">Projected Monthly Gross Revenue</div>
+                <div class="fc-value" style="color: #FF6B00;">₹48,500</div>
+            </div>
+            <div class="fin-card">
+                <div class="fc-label">RikInfinity SaaS Network Fee</div>
+                <div class="fc-value">₹249</div>
+            </div>
+            <div class="fin-card">
+                <div class="fc-label">Net Food Margin Retained (100%)</div>
+                <div class="fc-value" style="color: #4ade80;">₹48,251</div>
+            </div>
+        </div>
+
+        <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; color: #1C1C1C;">Ecosystem Telemetry Real-Time Stream</h3>
+        <table class="log-table">
+            <thead>
+                <tr>
+                    <th>Timestamp Parameters</th>
+                    <th>Ecosystem Action</th>
+                    <th>Telemetry Route ID</th>
+                    <th>Status Flag</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>2026-06-28 21:14:02</td><td>Dynamic Device Verification QR Scanned</td><td>qr_route_9482</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
+                <tr><td>2026-06-28 21:18:45</td><td>Asynchronous Menu Filtering Toggle [Mains]</td><td>tab_filter_mains</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
+                <tr><td>2026-06-28 21:24:11</td><td>Field Verification Review Submitted [5★]</td><td>audit_review_log</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function engageRushProtocol() {
+            const minutes = document.getElementById('protocol-duration').value;
+            const expirationTimestamp = new Date().getTime() + (minutes * 60 * 1000);
+            
+            // Set shared variables across local storage pipelines
+            localStorage.setItem('rush_protocol_active', 'true');
+            localStorage.setItem('rush_protocol_expires', expirationTimestamp);
+            localStorage.setItem('rush_protocol_duration_set', minutes);
+            
+            updateControlUI(true, minutes);
+        }
+
+        function killRushProtocol() {
+            localStorage.removeItem('rush_protocol_active');
+            localStorage.removeItem('rush_protocol_expires');
+            localStorage.removeItem('rush_protocol_duration_set');
+            updateControlUI(false, 0);
+        }
+
+        function updateControlUI(isActive, mins) {
+            const indicator = document.getElementById('live-indicator');
+            const statusText = document.getElementById('protocol-status-text');
+            
+            if (isActive) {
+                indicator.innerHTML = "⚠️ RUSH HOUR PROTOCOL ACTIVE";
+                indicator.style.background = "rgba(255,107,0,0.1)";
+                indicator.style.color = "#FF6B00";
+                statusText.innerHTML = `Ecosystem Alert broadcasting to client web for the next ${mins} minutes.`;
+                statusText.style.color = "#FF6B00";
+            } else {
+                indicator.innerHTML = "DORMANT";
+                indicator.style.background = "rgba(105,105,105,0.1)";
+                indicator.style.color = "#696969";
+                statusText.innerHTML = "System Core State: Normal Wait Metric (3-5 Mins)";
+                statusText.style.color = "#696969";
+            }
+        }
+
+        // Initialize state verification on page paint
+        window.onload = function() {
+            const isActive = localStorage.getItem('rush_protocol_active') === 'true';
+            const expires = localStorage.getItem('rush_protocol_expires');
+            
+            if (isActive && expires && new Date().getTime() < expires) {
+                const diffMins = Math.round((expires - new Date().getTime()) / 60000);
+                updateControlUI(true, diffMins > 0 ? diffMins : localStorage.getItem('rush_protocol_duration_set'));
+            } else {
+                killRushProtocol();
+            }
+        }
+    </script>
+</body>
+</html>
