@@ -3,32 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sizzle Cafe | RikFintech-PRO Console</title>
+    <title>Sizzle Cafe | RikInfinity Control Tower</title>
+    <!-- Premium Fonts Framework Link Ingestion -->
     <link href="https://googleapis.com" rel="stylesheet">
     <style>
+        /* ─── RIKINFINITY MASTER CONSOLE STYLING TOKENS ─── */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         body { background: #FFFFFF; color: #1C1C1C; font-family: 'Inter', sans-serif; padding: 20px; }
-        .console-box { max-width: 1000px; margin: 0 auto; background: #F8F8F8; border: 1px solid #E8E8E8; border-radius: 4px; padding: 24px; }
+        .console-box { max-width: 1000px; margin: 0 auto; background: #F8F8F8; border: 1px solid #E8E8E8; border-radius: 4px; padding: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
         h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 16px; color: #1C1C1C; border-bottom: 1px solid #E8E8E8; padding-bottom: 12px; }
+        
         .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px; }
         .fin-card { background: #FFFFFF; border: 1px solid #E8E8E8; border-left: 4px solid #FF6B00; padding: 20px; border-radius: 4px; }
         .fc-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.08em; color: #696969; font-weight: 700; }
         .fc-value { font-size: 1.8rem; font-weight: 800; color: #1C1C1C; margin-top: 4px; }
         
-        /* Rush Hour Protocol Control Board Panel Layout */
+        /* Interactive Panel Layout Nodes */
         .protocol-panel { background: #FFFFFF; border: 1px solid #E8E8E8; border-top: 4px solid #FF6B00; padding: 20px; border-radius: 4px; margin-bottom: 24px; }
         .panel-title { font-size: 0.9rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #1C1C1C; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
         .control-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
-        select, button { padding: 10px 16px; font-size: 0.82rem; font-weight: 600; border-radius: 4px; cursor: pointer; border: 1px solid #D3D3D3; outline: none; }
+        
+        select, button { padding: 10px 16px; font-size: 0.82rem; font-weight: 600; border-radius: 4px; cursor: pointer; border: 1px solid #D3D3D3; outline: none; transition: all 0.2s ease; }
         select { background: #F8F8F8; color: #1C1C1C; }
         .btn-activate { background: #FF6B00; color: #FFFFFF; border: none; }
         .btn-activate:hover { background: #E05E00; }
         .btn-deactivate { background: #FFFFFF; color: #FF6B00; border: 1px solid #FF6B00; }
+        .btn-deactivate:hover { background: rgba(255,107,0,0.05); }
         .status-banner { font-size: 0.82rem; font-weight: 700; color: #696969; padding: 8px 12px; background: #F8F8F8; border-radius: 4px; display: inline-block; }
         
         .log-table { width: 100%; border-collapse: collapse; margin-top: 16px; font-size: 0.82rem; }
         .log-table th { background: #FFFFFF; padding: 12px; color: #1C1C1C; border-bottom: 2px solid #FF6B00; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em; text-align: left; }
         .log-table td { padding: 12px; border-bottom: 1px solid #E8E8E8; color: #3D3D3D; }
+        
+        /* Stealth Console Footer Notice Styling */
+        .console-footer { text-align: center; margin-top: 32px; padding-top: 16px; border-top: 1px solid #E8E8E8; font-size: 0.72rem; color: #A0A0A0; }
     </style>
 </head>
 <body>
@@ -39,13 +47,13 @@
             <a href="sizzle.html" style="font-size:0.8rem; font-weight:700; color:#FF6B00; text-decoration:none; border:1px solid #FF6B00; padding:6px 12px; border-radius:4px;">← View Client Web</a>
         </div>
 
-        <!-- RUSH HOUR PROTOCOL MATRIX INTERFACE -->
+        <!-- ⏱️ RUSH HOUR PROTOCOL MATRIX CONTROL BOARD -->
         <div class="protocol-panel">
             <div class="panel-title">
                 <span>⏱️ Live Kitchen Congestion Control Override</span>
                 <span id="live-indicator" style="font-size:0.65rem; background:rgba(105,105,105,0.1); color:#696969; padding:2px 8px; border-radius:2px;">DORMANT</span>
             </div>
-            <p style="font-size:0.82rem; color:#696969; margin-bottom:16px;">When the counter gets slammed with cash customers, select a cooldown interval. The system will sync globally to warn incoming clients instantly.</p>
+            <p style="font-size:0.82rem; color:#696969; margin-bottom:16px;">When the counter gets slammed with physical foot traffic, select a cooldown interval. The client interface updates on-the-fly to manage guest expectations.</p>
             
             <div class="control-row">
                 <select id="protocol-duration">
@@ -57,8 +65,20 @@
             </div>
             <div class="status-banner" id="protocol-status-text">System Core State: Normal Wait Metric (3-5 Mins)</div>
         </div>
+        <!-- 📊 RIKFINTECH-PRO HIGH-PERFORMANCE VISUAL ANALYTICS GRAPH -->
+        <div class="protocol-panel" style="border-top-color: #FFB347;">
+            <div class="panel-title">
+                <span>📊 Real-Time Sales Velocity Matrix</span>
+                <span style="font-size:0.65rem; background:rgba(74,222,128,0.1); color:#4ade80; padding:2px 8px; border-radius:2px;">LIVE ANALYTICS ENGINE DATA ACTIVE</span>
+            </div>
+            <p style="font-size:0.82rem; color:#696969; margin-bottom:16px;">Hourly metrics isolate peak consumer surges to optimize product prep timing and eliminate component food waste [INDEX].</p>
+            
+            <div style="background:#FFFFFF; border:1px solid #E8E8E8; padding:16px; border-radius:4px; display:flex; justify-content:center; align-items:center; min-height:290px;">
+                <canvas id="salesAnalyticsChart" width="800" height="260" style="width:100%; max-width:800px; height:260px;"></canvas>
+            </div>
+        </div>
 
-        <!-- RikFintech-PRO Live Metrics Row -->
+        <!-- RikFintech-PRO Financial Metrics Row -->
         <div class="grid-3">
             <div class="fin-card">
                 <div class="fc-label">Projected Monthly Gross Revenue</div>
@@ -74,7 +94,8 @@
             </div>
         </div>
 
-        <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; color: #1C1C1C;">Ecosystem Telemetry Real-Time Stream</h3>
+        <!-- Real-Time Activity Pipeline Stream -->
+        <h3 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 12px; color: #1C1C1C;">Ecosystem Telemetry Stream</h3>
         <table class="log-table">
             <thead>
                 <tr>
@@ -88,16 +109,23 @@
                 <tr><td>2026-06-28 21:14:02</td><td>Dynamic Device Verification QR Scanned</td><td>qr_route_9482</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
                 <tr><td>2026-06-28 21:18:45</td><td>Asynchronous Menu Filtering Toggle [Mains]</td><td>tab_filter_mains</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
                 <tr><td>2026-06-28 21:24:11</td><td>Field Verification Review Submitted [5★]</td><td>audit_review_log</td><td style="color:#4ade80; font-weight:700;">SUCCESS</td></tr>
+                <tr><td>2026-06-28 21:30:00</td><td>Cloud Bot Automation Automation Daily Sync</td><td>bot_circuit_sync</td><td style="color:#FF6B00; font-weight:700;">RUNNING</td></tr>
             </tbody>
         </table>
+
+        <!-- ─── STEALTH REPUTATION FOOTER NOTICE LAYER ─── -->
+        <div class="console-footer">
+            Admin Console Architecture · Powered by RikInfinity Operations Engine.<br>
+            <span style="font-size: 0.65rem; letter-spacing: 0.04em;">© 2026 Proprietary Full-Stack Core Ledger of <strong>RikMakersHub PRO</strong>. All rights reserved.</span>
+        </div>
     </div>
 
     <script>
+        /* ─── SECTION 1: CONGESTION PROTOCOL SYNC LOGIC ─── */
         function engageRushProtocol() {
             const minutes = document.getElementById('protocol-duration').value;
             const expirationTimestamp = new Date().getTime() + (minutes * 60 * 1000);
             
-            // Set shared variables across local storage pipelines
             localStorage.setItem('rush_protocol_active', 'true');
             localStorage.setItem('rush_protocol_expires', expirationTimestamp);
             localStorage.setItem('rush_protocol_duration_set', minutes);
@@ -131,7 +159,78 @@
             }
         }
 
-        // Initialize state verification on page paint
+        /* ─── SECTION 2: HIGH-PERFORMANCE VANILLA CANVAS GRAPH CORE ─── */
+        function renderSalesAnalyticsGraph() {
+            const canvas = document.getElementById('salesAnalyticsChart');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            
+            const dataPoints = [
+                { label: "7 AM (Breakfast)", value: 1200 },
+                { label: "12 PM (Lunch)", value: 4500 },
+                { label: "4 PM (Snacks)", value: 2800 },
+                { label: "7 PM (Peak Rush)", value: 8900 },
+                { label: "10 PM (Closing)", value: 3100 }
+            ];
+            
+            const padding = 40;
+            const graphWidth = canvas.width - padding * 2;
+            const graphHeight = canvas.height - padding * 2;
+            const maxVal = 10000;
+            
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Draw Axis Background Grid Guides
+            ctx.strokeStyle = '#E8E8E8';
+            ctx.lineWidth = 1;
+            for (let i = 0; i <= 4; i++) {
+                const y = padding + (graphHeight / 4) * i;
+                ctx.beginPath();
+                ctx.moveTo(padding, y);
+                ctx.lineTo(canvas.width - padding, y);
+                ctx.stroke();
+            }
+            
+            // Draw Continuous Velocity Path Line
+            ctx.strokeStyle = '#FF6B00';
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            
+            dataPoints.forEach((pt, idx) => {
+                const x = padding + (graphWidth / (dataPoints.length - 1)) * idx;
+                const y = canvas.height - padding - (pt.value / maxVal) * graphHeight;
+                
+                if (idx === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            });
+            ctx.stroke();
+            
+            // Draw Value Indicators and Coordinate Data Nodes
+            ctx.fillStyle = '#1C1C1C';
+            ctx.font = 'bold 11px Inter, sans-serif';
+            ctx.textAlign = 'center';
+            
+            dataPoints.forEach((pt, idx) => {
+                const x = padding + (graphWidth / (dataPoints.length - 1)) * idx;
+                const y = canvas.height - padding - (pt.value / maxVal) * graphHeight;
+                
+                // Axis Label Markers
+                ctx.fillStyle = '#696969';
+                ctx.fillText(pt.label, x, canvas.height - 12);
+                
+                // Real-Time Value Tokens Text
+                ctx.fillStyle = '#FF6B00';
+                ctx.fillText('₹' + pt.value, x, y - 12);
+                
+                // Focal Node Circles
+                ctx.fillStyle = '#FF6B00';
+                ctx.beginPath();
+                ctx.arc(x, y, 4, 0, 2 * Math.PI);
+                ctx.fill();
+            });
+        }
+
+        /* ─── SECTION 3: SYSTEM BOOTSTRAP INITIALIZATION ─── */
         window.onload = function() {
             const isActive = localStorage.getItem('rush_protocol_active') === 'true';
             const expires = localStorage.getItem('rush_protocol_expires');
@@ -142,6 +241,9 @@
             } else {
                 killRushProtocol();
             }
+            
+            // Execute the high-velocity visual graph draw call
+            renderSalesAnalyticsGraph();
         }
     </script>
 </body>
