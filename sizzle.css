@@ -1,1 +1,106 @@
+/* ==========================================================================
+   RIKINFINITY ENGINE — MERCHANT SIZZLE CUSTOM SKIN OVERRIDE
+   Aesthetic Identity: Clean Corporate Flat-Design Framework
+   ========================================================================== */
 
+body, html {
+    background: #FFFFFF !important; /* Flat light canvas */
+    color: #1C1C1C !important;     /* High-contrast dark typography text */
+    font-family: 'Inter', sans-serif;
+    padding-top: 75px;
+    scroll-behavior: smooth;
+}
+
+/* Minimalist Navigation Layer Panel */
+nav {
+    background: #FFFFFF !important;
+    border-bottom: 1px solid #E8E8E8 !important; /* Soft flat grey separator */
+    box-shadow: 0 2px 8px rgba(17, 13, 7, 0.04) !important;
+}
+.nav-logo {
+    color: #1C1C1C !important;
+    font-weight: 800 !important;
+}
+.nav-logo span {
+    color: #FF6B00 !important; /* Corporate signature accent color parameter */
+}
+.nav-links a {
+    color: #3D3D3D !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.05em !important;
+}
+.nav-links a:hover {
+    color: #FF6B00 !important;
+}
+
+/* State Variable Target Dropdown Control */
+#stall-picker {
+    background: #F8F8F8 !important;
+    color: #1C1C1C !important;
+    border: 1px solid #D3D3D3 !important;
+    font-size: 0.78rem !important;
+}
+
+/* Standard Section Background Normalization to White */
+#hero, #about, #developer-mods, #menu, #ambiance, #visit, footer {
+    background: #FFFFFF !important;
+    color: #1C1C1C !important;
+}
+
+/* Typographic Headings Configuration Shifts */
+.hero-title, .section-title, .mic-info h4, .vd-value, .lsvl-numerical-display {
+    color: #1C1C1C !important;
+    font-family: 'Inter', sans-serif !important; /* Flat uniform sans-serif tech feel */
+    font-weight: 800 !important;
+}
+.hero-sub, .about-text p, .mic-info p, .section-label, .vd-label {
+    color: #696969 !important; /* Muted corporate charcoal gray description strings */
+}
+
+/* Flat Informational UI Grid Blocks */
+.telemetry-widget-card, 
+.live-system-verification-loop, 
+.menu-item-card, 
+.stat-card,
+.ambiance-card,
+.billing-telemetry-box {
+    background: #F8F8F8 !important; /* Soft flat grey box panels */
+    border: 1px solid #E8E8E8 !important;
+    box-shadow: none !important; /* Stripping heavy shadows */
+    color: #1C1C1C !important;
+    border-radius: 4px !important;
+}
+
+/* Flat Active Action Interface Buttons */
+.btn-primary {
+    background: #FF6B00 !important;
+    border-radius: 4px !important;
+}
+.btn-ghost {
+    background: #FFFFFF !important;
+    border: 1px solid #D3D3D3 !important;
+    color: #1C1C1C !important;
+    border-radius: 4px !important;
+}
+.btn-ghost:hover {
+    border-color: #FF6B00 !important;
+    color: #FF6B00 !important;
+}
+
+/* Core Payout Token Highlights */
+.mic-pricing-tag, .stat-num, .bm-value {
+    color: #FF6B00 !important;
+    font-weight: 700 !important;
+}
+.bm-card {
+    background: #FFFFFF !important;
+    border: 1px solid #E8E8E8 !important;
+    border-left: 4px solid #FF6B00 !important;
+}
+
+/* Mobile Viewport Adaptability Parameter Rules */
+@media (max-width: 768px) {
+    body { padding-top: 85px !important; }
+    nav { background: #FFFFFF !important; padding: 1rem 1.5rem !important; }
+    .btn-primary, .btn-ghost { width: 100% !important; }
+}
