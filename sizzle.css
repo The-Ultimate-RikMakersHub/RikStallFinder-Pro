@@ -1,6 +1,6 @@
 /* ==========================================================================
    RIKINFINITY PLATFORM CORE — THE RETURN OF THE LUXURY DARK ROAST THEME
-   Corporate Signature: 100% RikMakersHub Proprietary Design Moat
+   Corporate Signature: Spacing & Section Division Correction Engine
    ========================================================================== */
 
 *, *::before, *::after { 
@@ -32,6 +32,28 @@ body {
     padding-top: 80px; 
 }
 
+/* ─── FIXED SPACING & SECTION DIVISION MODS ─── */
+section { 
+    padding: 7rem 0 !important; /* Forces massive breathing room between major panels */
+    position: relative;
+    width: 100%;
+}
+
+.container { 
+    max-width: 1140px; 
+    margin: 0 auto; 
+    padding: 0 2.5rem; 
+}
+
+/* Brings back the crisp horizontal dividing lines between panels */
+.divider { 
+    width: 100%; 
+    height: 1px; 
+    background: linear-gradient(to right, transparent, var(--ember), transparent); 
+    opacity: 0.28;
+    margin: 0 auto;
+}
+
 /* ─── NAVIGATION SYSTEM FIXED FRAME ─── */
 nav {
     position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
@@ -48,11 +70,54 @@ nav {
 #stall-picker { background-color: var(--espresso) !important; color: var(--cream) !important; border: 1px solid var(--ember) !important; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; cursor: pointer; outline: none; }
 
 /* ─── DUAL-PANE HERO CONSOLE SECTION ─── */
-#hero, #about, #developer-mods, #menu, #ambiance, #visit, footer {
-    background: var(--espresso) !important;
-    color: var(--cream) !important;
+#hero {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
 }
 .word-sizzle { display: inline-block; background: linear-gradient(135deg, var(--amber) 0%, var(--ember) 50%, #FF3D00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 32px rgba(255,107,0,0.45)); }
+
+/* Dynamic Layout Grids */
+.about-grid, .hero-framework-grid { 
+    display: grid; 
+    grid-template-columns: 1.2fr 0.8fr; 
+    gap: 48px; 
+    align-items: center; 
+    width: 100%;
+}
+.about-grid { align-items: start; }
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.menu-intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3.5rem;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.menu-tabs { display: flex; gap: 8px; flex-wrap: wrap; }
+.menu-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+    gap: 24px; 
+}
+
+.visit-details {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    margin-top: 3.5rem;
+    flex-wrap: wrap;
+}
+.visit-detail-block { flex: 1; min-width: 240px; }
+.divider-v { width: 1px; background: linear-gradient(to bottom, transparent, rgba(255,107,0,0.25), transparent); }
 
 /* Headings Restoration */
 .hero-title, .section-title, .mic-info h4, .vd-value, .lsvl-numerical-display {
@@ -61,6 +126,8 @@ nav {
 .hero-sub, .about-text p, .mic-info p, .section-label, .vd-label {
     color: var(--light-grey) !important;
 }
+.section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ember); margin-bottom: 0.8rem; }
+.section-title { font-family: 'Playfair Display', serif; font-size: 2.8rem; line-height: 1.1; margin-bottom: 1.5rem; }
 
 /* ─── LUXURY DARK CARD RE-BINDINGS ─── */
 .telemetry-widget-card, 
@@ -73,36 +140,51 @@ nav {
     border: 1px solid rgba(212,201,184,0.06) !important;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
     color: var(--cream) !important;
+    padding: 24px;
+    border-radius: 4px;
 }
-.menu-item-card:hover { border-color: rgba(255,107,0,0.3) !important; }
+.menu-item-card { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; padding: 2rem; }
+.menu-item-card:hover { border-color: rgba(255,107,0,0.3) !important; transform: translateY(-2px); transition: all 0.2s ease; }
 
 /* Interface Buttons */
-.btn-primary { background: var(--ember) !important; color: #fff !important; text-decoration: none; border-radius: 2px; }
+.tab-btn { background: transparent; border: 1px solid rgba(245,236,215,0.15); color: var(--warm-grey); padding: 0.6rem 1.4rem; font-size: 0.8rem; font-weight:600; text-transform: uppercase; cursor: pointer; border-radius: 2px; }
+.tab-btn.active, .tab-btn:hover { background: var(--ember); color: #fff; border-color: var(--ember); }
+.btn-primary { background: var(--ember) !important; color: #fff !important; text-decoration: none; border-radius: 2px; padding: 0.9rem 2.4rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; text-align: center; }
 .btn-primary:hover { background: #FF8C00 !important; box-shadow: 0 8px 28px rgba(255,107,0,0.45) !important; }
-.btn-ghost { background: transparent !important; color: var(--cream) !important; border: 1px solid rgba(245,236,215,0.35) !important; border-radius: 2px; text-decoration: none; }
+.btn-ghost { background: transparent !important; color: var(--cream) !important; border: 1px solid rgba(245,236,215,0.35) !important; border-radius: 2px; text-decoration: none; padding: 0.9rem 2.4rem; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; display: inline-block; text-align: center; }
 .btn-ghost:hover { border-color: var(--amber) !important; color: var(--amber) !important; }
 
 /* Financial Logs Highlights */
 .mic-pricing-tag, .stat-num, .bm-value {
     color: var(--amber) !important;
 }
+.stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 4px; }
+.stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--warm-grey); }
 .bm-card {
     background: var(--espresso) !important;
     border-left: 3px solid var(--amber) !important;
 }
 
+footer { padding: 4rem 0; text-align: center; border-top: 1px solid rgba(212,201,184,0.05); }
+.footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--amber); margin-bottom: 0.8rem; }
+.footer-logo span { color: var(--ember); font-style: italic; }
+.footer-copy { font-size: 0.75rem; color: var(--warm-grey); }
+
 /* ─── MOBILE VIEWPORT CONSOLE ADAPTATION ─── */
 @media (max-width: 768px) {
     body { padding-top: 85px !important; }
+    section { padding: 4rem 0 !important; }
     nav { padding: 1rem 1.5rem !important; flex-direction: column !important; gap: 12px !important; background: rgba(17, 13, 7, 0.98) !important; }
     .engine-selector-panel { width: 100% !important; margin-left: 0 !important; display: flex !important; justify-content: center !important; }
     #stall-picker { width: 100% !important; text-align: center !important; }
     .nav-links { gap: 1.5rem !important; justify-content: center !important; width: 100% !important; }
-    .hero-framework-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 32px !important; padding: 0 16px !important; }
+    .about-grid, .hero-framework-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 36px !important; padding: 0 8px !important; }
     .hero-left-info { align-items: center !important; }
-    .hero-cta-row { justify-content: center !important; width: 100% !important; gap: 12px !important; }
+    .hero-cta-row { justify-content: center !important; width: 100% !important; gap: 12px !important; flex-direction: column; }
     .btn-primary, .btn-ghost { width: 100% !important; text-align: center !important; padding: 0.8rem 0 !important; }
     .telemetry-widget-card { max-width: 100% !important; width: 100% !important; }
     .live-system-verification-loop { grid-template-columns: 1fr !important; }
     .lsvl-score-block { border-right: none !important; border-bottom: 1px solid rgba(212, 201, 184, 0.15) !important; padding-bottom: 12px !important; }
+    .divider-v { display: none; }
+    .visit-details { flex-direction: column; gap: 24px; }
 }
