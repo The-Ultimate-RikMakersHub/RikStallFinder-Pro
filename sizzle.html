@@ -12,58 +12,8 @@
     <meta name="robots" content="index, follow">
 
     <link href="https://googleapis.com" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* ─── TECHNICAL TELEMETRY LOGIC UTILITY LAYOUTS ─── */
-        .engine-selector-panel { display: inline-block; margin-left: 20px; }
-        #stall-picker {
-            background-color: var(--dark-roast); color: var(--cream);
-            border: 1px solid rgba(255,107,0,0.4); padding: 6px 12px;
-            border-radius: 2px; font-size: 0.8rem; font-weight: 600;
-            letter-spacing: 0.05em; cursor: pointer; outline: none;
-        }
-        .hero-framework-grid {
-            position: relative; z-index: 2; display: grid; grid-template-columns: 1.25fr 0.75fr;
-            gap: 40px; width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 24px; align-items: center;
-        }
-        .hero-left-info { display: flex; flex-direction: column; text-align: left; }
-        .hero-right-telemetry { display: flex; justify-content: flex-end; }
-        .telemetry-widget-card {
-            background-color: var(--dark-roast); border: 1px solid rgba(212, 201, 184, 0.08);
-            border-top: 4px solid var(--ember); padding: 20px; border-radius: 4px; text-align: center; max-width: 280px;
-        }
-        .telemetry-widget-card h5 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--cream); margin-bottom: 4px; }
-        .telemetry-widget-card p { font-size: 0.7rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 12px; }
-        .qr-code-housing { background-color: #ffffff; padding: 10px; display: inline-block; border-radius: 2px; }
-        .qr-code-housing img { display: block; max-width: 120px; height: auto; }
-        
-        .live-system-verification-loop {
-            display: grid; grid-template-columns: 0.3fr 0.7fr; gap: 16px;
-            background-color: rgba(17, 13, 7, 0.5); border: 1px solid rgba(212, 201, 184, 0.1);
-            padding: 16px; border-radius: 4px; margin-top: 20px; text-align: left;
-        }
-        .lsvl-score-block { display: flex; flex-direction: column; justify-content: center; align-items: center; border-right: 1px solid rgba(212, 201, 184, 0.15); padding-right: 12px; }
-        .lsvl-score-block h4, .lsvl-action-block h4 { font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--warm-grey); margin-bottom: 4px; }
-        .lsvl-numerical-display { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; color: var(--cream); }
-        .lsvl-action-block p { font-size: 0.72rem; color: var(--warm-grey); line-height: 1.4; margin-bottom: 8px; }
-        .star-rating-buttons-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; }
-        .star-rating-buttons-row button {
-            background-color: var(--espresso); border: 1px solid rgba(212, 201, 184, 0.15);
-            color: var(--cream); padding: 6px 0; font-weight: 700; cursor: pointer; border-radius: 2px; transition: all 0.2s;
-        }
-        .star-rating-buttons-row button:hover { background: var(--ember); border-color: var(--ember); color: #fff; }
-        
-        .billing-telemetry-box { background-color: rgba(17, 13, 7, 0.4); border: 1px solid rgba(255,107,0,0.15); padding: 16px; border-radius: 4px; margin-top: 16px; text-align: left; }
-        .billing-metrics-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-        .bm-card { background: var(--espresso); padding: 10px; border-radius: 2px; border-left: 3px solid var(--amber); }
-        .bm-label { font-size: 0.6rem; color: var(--warm-grey); text-transform: uppercase; letter-spacing: 0.08em; }
-        .bm-value { font-size: 1rem; font-weight: 700; color: var(--cream); margin-top: 2px; }
-        
-        .trial-progress-container { margin-top: 10px; }
-        .tpc-header { display: flex; justify-content: space-between; font-size: 0.7rem; color: var(--light-grey); margin-bottom: 4px; }
-        .tpc-track { background: var(--espresso); height: 5px; border-radius: 2px; overflow: hidden; border: 1px solid rgba(212,201,184,0.05); }
-        .tpc-fill { background: var(--ember); height: 100%; transition: width 0.4s ease; }
-    </style>
+    
+    <link rel="stylesheet" href="sizzle.css">
 </head>
 <body>
   <nav>
