@@ -1,106 +1,108 @@
 /* ==========================================================================
-   RIKINFINITY ENGINE — MERCHANT SIZZLE CUSTOM SKIN OVERRIDE
-   Aesthetic Identity: Clean Corporate Flat-Design Framework
+   RIKINFINITY PLATFORM CORE — THE RETURN OF THE LUXURY DARK ROAST THEME
+   Corporate Signature: 100% RikMakersHub Proprietary Design Moat
    ========================================================================== */
 
-body, html {
-    background: #FFFFFF !important; /* Flat light canvas */
-    color: #1C1C1C !important;     /* High-contrast dark typography text */
-    font-family: 'Inter', sans-serif;
-    padding-top: 75px;
-    scroll-behavior: smooth;
+*, *::before, *::after { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
 }
 
-/* Minimalist Navigation Layer Panel */
+:root {
+    --espresso:   #110D07; /* Core Deep Dark Matte */
+    --dark-roast: #1E1208; /* Premium Container Card Background */
+    --ember:      #FF6B00; /* High-Frequency Action Ember Accent */
+    --amber:      #FFB347; /* Luxury Gold Highlights */
+    --cream:      #F5ECD7; /* High-Utility Soft Typography Text */
+    --warm-grey:  #8A7A6A; /* Muted Parameter Labels */
+    --light-grey: #D4C9B8; /* Secondary Content Text */
+    --accent-green: #4ade80; /* Clean Compliance Active Seal */
+}
+
+html { 
+    scroll-behavior: smooth; 
+}
+
+body { 
+    background: var(--espresso) !important; 
+    color: var(--cream) !important; 
+    font-family: 'Inter', sans-serif; 
+    overflow-x: hidden; 
+    padding-top: 80px; 
+}
+
+/* ─── NAVIGATION SYSTEM FIXED FRAME ─── */
 nav {
-    background: #FFFFFF !important;
-    border-bottom: 1px solid #E8E8E8 !important; /* Soft flat grey separator */
-    box-shadow: 0 2px 8px rgba(17, 13, 7, 0.04) !important;
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem;
+    background: linear-gradient(to bottom, rgba(17,13,7,0.98) 0%, rgba(17,13,7,0.85) 100%) !important;
+    backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,107,0,0.18) !important;
 }
-.nav-logo {
-    color: #1C1C1C !important;
-    font-weight: 800 !important;
-}
-.nav-logo span {
-    color: #FF6B00 !important; /* Corporate signature accent color parameter */
-}
-.nav-links a {
-    color: #3D3D3D !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.05em !important;
-}
-.nav-links a:hover {
-    color: #FF6B00 !important;
-}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; letter-spacing: 0.04em; color: var(--amber) !important; }
+.nav-logo span { color: var(--ember) !important; font-style: italic; }
+.nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--light-grey) !important; text-decoration: none; transition: color 0.25s; }
+.nav-links a:hover { color: var(--amber) !important; }
 
-/* State Variable Target Dropdown Control */
-#stall-picker {
-    background: #F8F8F8 !important;
-    color: #1C1C1C !important;
-    border: 1px solid #D3D3D3 !important;
-    font-size: 0.78rem !important;
-}
+/* System Dropdown Selector */
+#stall-picker { background-color: var(--espresso) !important; color: var(--cream) !important; border: 1px solid var(--ember) !important; padding: 8px 16px; font-size: 0.82rem; font-weight: 600; cursor: pointer; outline: none; }
 
-/* Standard Section Background Normalization to White */
+/* ─── DUAL-PANE HERO CONSOLE SECTION ─── */
 #hero, #about, #developer-mods, #menu, #ambiance, #visit, footer {
-    background: #FFFFFF !important;
-    color: #1C1C1C !important;
+    background: var(--espresso) !important;
+    color: var(--cream) !important;
 }
+.word-sizzle { display: inline-block; background: linear-gradient(135deg, var(--amber) 0%, var(--ember) 50%, #FF3D00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; filter: drop-shadow(0 0 32px rgba(255,107,0,0.45)); }
 
-/* Typographic Headings Configuration Shifts */
+/* Headings Restoration */
 .hero-title, .section-title, .mic-info h4, .vd-value, .lsvl-numerical-display {
-    color: #1C1C1C !important;
-    font-family: 'Inter', sans-serif !important; /* Flat uniform sans-serif tech feel */
-    font-weight: 800 !important;
+    color: var(--cream) !important;
 }
 .hero-sub, .about-text p, .mic-info p, .section-label, .vd-label {
-    color: #696969 !important; /* Muted corporate charcoal gray description strings */
+    color: var(--light-grey) !important;
 }
 
-/* Flat Informational UI Grid Blocks */
+/* ─── LUXURY DARK CARD RE-BINDINGS ─── */
 .telemetry-widget-card, 
 .live-system-verification-loop, 
 .menu-item-card, 
 .stat-card,
 .ambiance-card,
 .billing-telemetry-box {
-    background: #F8F8F8 !important; /* Soft flat grey box panels */
-    border: 1px solid #E8E8E8 !important;
-    box-shadow: none !important; /* Stripping heavy shadows */
-    color: #1C1C1C !important;
-    border-radius: 4px !important;
+    background: var(--dark-roast) !important; 
+    border: 1px solid rgba(212,201,184,0.06) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+    color: var(--cream) !important;
 }
+.menu-item-card:hover { border-color: rgba(255,107,0,0.3) !important; }
 
-/* Flat Active Action Interface Buttons */
-.btn-primary {
-    background: #FF6B00 !important;
-    border-radius: 4px !important;
-}
-.btn-ghost {
-    background: #FFFFFF !important;
-    border: 1px solid #D3D3D3 !important;
-    color: #1C1C1C !important;
-    border-radius: 4px !important;
-}
-.btn-ghost:hover {
-    border-color: #FF6B00 !important;
-    color: #FF6B00 !important;
-}
+/* Interface Buttons */
+.btn-primary { background: var(--ember) !important; color: #fff !important; text-decoration: none; border-radius: 2px; }
+.btn-primary:hover { background: #FF8C00 !important; box-shadow: 0 8px 28px rgba(255,107,0,0.45) !important; }
+.btn-ghost { background: transparent !important; color: var(--cream) !important; border: 1px solid rgba(245,236,215,0.35) !important; border-radius: 2px; text-decoration: none; }
+.btn-ghost:hover { border-color: var(--amber) !important; color: var(--amber) !important; }
 
-/* Core Payout Token Highlights */
+/* Financial Logs Highlights */
 .mic-pricing-tag, .stat-num, .bm-value {
-    color: #FF6B00 !important;
-    font-weight: 700 !important;
+    color: var(--amber) !important;
 }
 .bm-card {
-    background: #FFFFFF !important;
-    border: 1px solid #E8E8E8 !important;
-    border-left: 4px solid #FF6B00 !important;
+    background: var(--espresso) !important;
+    border-left: 3px solid var(--amber) !important;
 }
 
-/* Mobile Viewport Adaptability Parameter Rules */
+/* ─── MOBILE VIEWPORT CONSOLE ADAPTATION ─── */
 @media (max-width: 768px) {
     body { padding-top: 85px !important; }
-    nav { background: #FFFFFF !important; padding: 1rem 1.5rem !important; }
-    .btn-primary, .btn-ghost { width: 100% !important; }
+    nav { padding: 1rem 1.5rem !important; flex-direction: column !important; gap: 12px !important; background: rgba(17, 13, 7, 0.98) !important; }
+    .engine-selector-panel { width: 100% !important; margin-left: 0 !important; display: flex !important; justify-content: center !important; }
+    #stall-picker { width: 100% !important; text-align: center !important; }
+    .nav-links { gap: 1.5rem !important; justify-content: center !important; width: 100% !important; }
+    .hero-framework-grid { grid-template-columns: 1fr !important; text-align: center !important; gap: 32px !important; padding: 0 16px !important; }
+    .hero-left-info { align-items: center !important; }
+    .hero-cta-row { justify-content: center !important; width: 100% !important; gap: 12px !important; }
+    .btn-primary, .btn-ghost { width: 100% !important; text-align: center !important; padding: 0.8rem 0 !important; }
+    .telemetry-widget-card { max-width: 100% !important; width: 100% !important; }
+    .live-system-verification-loop { grid-template-columns: 1fr !important; }
+    .lsvl-score-block { border-right: none !important; border-bottom: 1px solid rgba(212, 201, 184, 0.15) !important; padding-bottom: 12px !important; }
 }
