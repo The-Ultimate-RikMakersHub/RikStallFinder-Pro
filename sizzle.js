@@ -1,8 +1,9 @@
 /**
  * RikInfinity Engine Core — High-Velocity Local Commerce Stack
  * Sizzle Standalone Override Controller Pipeline Engine Module
- * Production Standard Framework v4.0.0 (100% Rik Proprietary Property)
- * Part 1: Supabase Key Ingestion & Core Registry Setup
+ * Version 4.0.0 — Production Standard Core Framework
+ * Part 1: Supabase Initialization & Core Registry Handshake
+ * Corporate Signature: 100% RikMakersHub Intellectual Property Secure
  */
 
 const RIKINFINITY_SUPABASE_CONFIG = {
@@ -23,8 +24,8 @@ let activeStallId = "sizzle_cafe";
 let currentTabFilter = "all";
 
 function initializeCloudDatabaseSync() {
-    console.log(`[RikInfinity Engine] Checking connectivity to Supabase endpoint node...`);
-    console.log(`[RikInfinity Engine] Serverless cloud database state: DORMANT. Running on high-velocity local cache.`);
+    print("[RikInfinity Engine] Checking connectivity to Supabase endpoint node...");
+    print("[RikInfinity Engine] Serverless cloud database state: DORMANT. Running on high-velocity local cache.");
 }
 /**
  * Part 2: Authenticated Merchant Menu Database Layout — Part A
@@ -39,7 +40,7 @@ const vendorRegistry = {
         location: "12 Ember Lane, Raghabpur More, Purulia",
         hours: "Mon – Fri: 7:00 AM – 10:00 PM | Sat – Sun: 8:00 AM – 11:00 PM",
         license: "FSSAI Lic. 22823168000053",
-        trialStarted: "2026-06-25", 
+        trialStarted: "2026-06-25",
         ratings: [],
         menu: [
             // 🍔 SIZZLE BURGER SECTION (IMAGE 1)
@@ -57,8 +58,7 @@ const vendorRegistry = {
             { category: 'drinks', name: 'Oreo Shake', price: '₹120', desc: 'Thick creamy vanilla blend whipped with crunchy crushed Oreo cookies.', tag: 'Must Try' },
             { category: 'drinks', name: 'Kitkat Shake', price: '₹120', desc: 'Chilled premium chocolate blend layered with chunks of crispy wafer Kitkat fingers.', tag: '' },
             { category: 'drinks', name: 'Cold Coffee', price: '₹90', desc: 'Rich, smooth ice-blended coffee served chilled with a sweet chocolate drizzle cream.', tag: 'Iced' },
-
-            // 🍟 SIZZLE SIDES SECTION (IMAGE 2)
+            // 🍟 SIZZLE SIDES & MOMOS SECTION (IMAGE 2)
             { category: 'momos', name: 'French Fry', price: '₹80', desc: 'Classic golden crispy potato fries, lightly salted and served with house dip.', tag: '' },
             { category: 'momos', name: 'Peri Peri French Fry', price: '₹100', desc: 'Crispy golden fries tossed in a fiery, hot and smoky peri-peri spice blend.', tag: 'Spicy' },
             { category: 'momos', name: 'Crispy Chicken', price: '₹120', desc: 'Deep-fried battered chicken strips packed with crunch and savory seasoning.', tag: '' },
@@ -67,15 +67,6 @@ const vendorRegistry = {
             { category: 'momos', name: 'Chicken Pakora (8 Pcs)', price: '₹120', desc: 'Hometown favorite crispy chicken fritters infused with local ground spices.', tag: 'Bestseller' },
             { category: 'momos', name: 'Veg Cutlet (2 Pcs)', price: '₹80', desc: 'Two crumb-coated grilled vegetable patties crisping with local herbs.', tag: '' },
             { category: 'momos', name: 'Chicken Cutlet (2 Pcs)', price: '₹100', desc: 'Two spiced minced chicken cutlets fried to a premium dark amber crunch.', tag: '' },
-            // 🥣 SOUP SECTION (IMAGE 2)
-            { category: 'mains', name: 'Veg Manchow Soup', price: '₹90', desc: 'Classic thick Chinese dark soup with mixed greens and crunchy fried noodles on top.', tag: '' },
-            { category: 'mains', name: 'Veg Hot and Sour Soup', price: '₹90', desc: 'Tangy and fiery vegetable broth packed with fresh mushrooms, tofu, and bamboo hints.', tag: 'Spicy' },
-            { category: 'mains', name: 'Veg Hot Garlic Soup', price: '₹90', desc: 'Aromatic light vegetable broth packed with heavily smashed, roasted garlic pods.', tag: '' },
-            { category: 'mains', name: 'Chicken Manchow Soup', price: '₹120', desc: 'Thick dark soup loaded with shredded chicken chunks and crispy fried noodles.', tag: 'Bestseller' },
-            { category: 'mains', name: 'Chicken Hot and Sour Soup', price: '₹120', desc: 'Fiery and sour rich broth packed with shredded chicken eggs and chili hints.', tag: 'Spicy' },
-            { category: 'mains', name: 'Chicken Hot Garlic Soup', price: '₹120', desc: 'Deeply comforting warm chicken soup infused with heavy roasted garlic essence.', tag: '' },
-
-            // 🥟 MOMO SECTION (IMAGE 2)
             { category: 'momos', name: 'Veg Steam Momo', price: '₹40', desc: 'Classic soft steamed dumplings stuffed with finely minced garden vegetables.', tag: 'Classic' },
             { category: 'momos', name: 'Veg Fried Momo', price: '₹50', desc: 'Deep-fried vegetable dumplings crisping to a beautiful golden-amber outer layer.', tag: '' },
             { category: 'momos', name: 'Veg Pan Fried Momo', price: '₹90', desc: 'Tossed fried veg momos glazed in a fiery, sweet, and sticky hot chili sauce.', tag: '🔥 Spicy Pick' },
@@ -83,7 +74,14 @@ const vendorRegistry = {
             { category: 'momos', name: 'Chicken Fried Momo', price: '₹90', desc: 'Deep-fried chicken dumplings delivered with an ultra-crisp golden crunch.', tag: '' },
             { category: 'momos', name: 'Chicken Pan Fried Momo', price: '₹100', desc: 'Fried chicken dumplings heavily glazed in a rich, dark garlic-chili oil reduction.', tag: '🔥 Signature' },
 
-            // 🍝 SIZZLE NOODLES SECTION (IMAGE 3)
+            // 🥣 SOUP SECTION (MAPPED TO MAINS FOR BALANCED FILTERING)
+            { category: 'mains', name: 'Veg Manchow Soup', price: '₹90', desc: 'Classic thick Chinese dark soup with mixed greens and crunchy fried noodles on top.', tag: '' },
+            { category: 'mains', name: 'Veg Hot and Sour Soup', price: '₹90', desc: 'Tangy and fiery vegetable broth packed with fresh mushrooms, tofu, and bamboo hints.', tag: 'Spicy' },
+            { category: 'mains', name: 'Veg Hot Garlic Soup', price: '₹90', desc: 'Aromatic light vegetable broth packed with heavily smashed, roasted garlic pods.', tag: '' },
+            { category: 'mains', name: 'Chicken Manchow Soup', price: '₹120', desc: 'Thick dark soup loaded with shredded chicken chunks and crispy fried noodles.', tag: 'Bestseller' },
+            { category: 'mains', name: 'Chicken Hot and Sour Soup', price: '₹120', desc: 'Fiery and sour rich broth packed with shredded chicken eggs and chili hints.', tag: 'Spicy' },
+            { category: 'mains', name: 'Chicken Hot Garlic Soup', price: '₹120', desc: 'Deeply comforting warm chicken soup infused with heavy roasted garlic essence.', tag: '' },
+            // 🍝 SIZZLE NOODLES & RICE (IMAGE 3)
             { category: 'mains', name: 'Veg Hakka Noodles', price: '₹80', desc: 'Classic wok-tossed noodles with fresh shredded garden vegetables and aromatic white pepper.', tag: 'Classic' },
             { category: 'mains', name: 'Chilli Garlic Noodles', price: '₹90', desc: 'Spicy stir-fried noodles infused with heavily minced garlic and sharp green chilies.', tag: 'Spicy' },
             { category: 'mains', name: 'Veg Schezwan Noodles', price: '₹90', desc: 'Wok-tossed fiery noodles coated in a rich, bold house-made Schezwan chili paste.', tag: '🔥 Fire Pick' },
@@ -92,7 +90,6 @@ const vendorRegistry = {
             { category: 'mains', name: 'Chicken Garlic Noodles', price: '₹120', desc: 'Premium stir-fried chicken noodles packed with a deep, smoky roasted garlic flavor profile.', tag: '' },
             { category: 'mains', name: 'Chicken Schezwan Noodles', price: '₹120', desc: 'Fiery wok-tossed chicken noodles coated in an intense, zesty Schezwan reduction sauce.', tag: 'Spicy' },
             { category: 'mains', name: 'Mixed Noodles', price: '₹140', desc: 'The ultimate wok master blend packed with scrambled egg, shredded chicken, and fresh vegetables.', tag: '🔥 Signature' },
-            // 🍚 RICE SECTION (IMAGE 3)
             { category: 'mains', name: 'Veg Fried Rice', price: '₹100', desc: 'Fragrant aromatic basmati rice wok-fried with finely chopped garden vegetables.', tag: '' },
             { category: 'mains', name: 'Veg Garlic Rice', price: '₹110', desc: 'Stir-fried aromatic rice heavily infused with golden, crispy toasted garlic bits.', tag: '' },
             { category: 'mains', name: 'Veg Schezwan Rice', price: '₹120', desc: 'Zesty wok-fried rice tossed in a deep, sharp and fiery red Schezwan chili paste.', tag: 'Spicy' },
@@ -101,12 +98,10 @@ const vendorRegistry = {
             { category: 'mains', name: 'Chicken Garlic Rice', price: '₹140', desc: 'Savory fried rice loaded with diced chicken and finished with a deep roasted garlic touch.', tag: '' },
             { category: 'mains', name: 'Chicken Schezwan Rice', price: '₹140', desc: 'Bold, fiery chicken stir-fried rice loaded up with our spicy house Schezwan blend.', tag: '🔥 Fire Pick' },
             { category: 'mains', name: 'Mixed Fried Rice', price: '₹150', desc: 'The elite master wok rice blend mixed thoroughly with egg chunks, chicken, and greens.', tag: 'Signature' },
-
-            // 🍝 PASTA SECTION (IMAGE 3)
             { category: 'mains', name: 'White Sauce Pasta', price: '₹150', desc: 'Hand-rolled penne drenched in an ultra-creamy, rich velvet white parmesan sauce.', tag: 'Must Try' },
             { category: 'mains', name: 'Red Sauce Pasta', price: '₹150', desc: 'Penne pasta tossed in a robust, slow-simmered tangy tomato and fresh herb marinara.', tag: '' },
 
-            // 🔥 SPECIAL SIZZLER SECTION (IMAGE 4)
+            // 🔥 SPECIAL SIZZLERS SECTION (IMAGE 4)
             { category: 'sizzlers', name: 'Veg Sizzler', price: '₹320', desc: 'Sizzling, smokey, and sensational! Served on a piping hot platter. Pure vegetarian perfection.', tag: '🔥 Signature' },
             { category: 'sizzlers', name: 'Chicken Sizzler', price: '₹380', desc: 'Succulent grilled chicken, charred veggies, and aromatic sauces served on a hissing hot platter.', tag: '👑 Best Seller' },
             { category: 'sizzlers', name: 'Sizzler Momo Platter', price: '₹250', desc: 'Juicy, pan-seared momos served on a hissing hot platter with zesty sauces and charred veggies.', tag: '🔥 Must Try' },
@@ -132,7 +127,7 @@ const vendorRegistry = {
             { category: 'sizzlers', name: 'Veg American Chop Suey', price: '₹180', desc: 'Crispy fried noodles topped with a sweet and tangy vegetable sauce.', tag: '' },
             { category: 'sizzlers', name: 'Chicken American Chop Suey', price: '₹210', desc: 'Crispy golden noodles served with a rich tangy sauce, shredded chicken, and topped with an egg.', tag: '' },
 
-            // 🍱 SIZZLE COMBO SECTION & PLANNED PACKS (IMAGE 6)
+            // 🍱 SIZZLE COMBO SECTION & FAMILY PACKS (IMAGE 6)
             { category: 'breakfast', name: 'Veg Hakka Noodles + Veg Manchurian', price: '₹130', desc: 'Perfect solo combo featuring seasoned veg noodles with two rich Manchurian gravy rounds.', tag: 'Value Hub' },
             { category: 'breakfast', name: 'Veg Fried Rice + Veg Manchurian', price: '₹140', desc: 'Wok-seared vegetable fried rice paired with slow-simmered tangy Manchurian balls.', tag: '' },
             { category: 'breakfast', name: 'Veg Hakka Noodles + Chilli Paneer', price: '₹150', desc: 'Fresh wok noodles paired with sharp dry chili paneer cubes. High-utility lunch option.', tag: 'Must Try' },
@@ -157,7 +152,7 @@ function bootstrapApp() {
     renderActiveDashboard(vendorRegistry[activeStallId]);
 }
 /**
- * Part 6: Active UI Handlers, Rush Hour Real-Time Loops, & Market Disruption Ledger
+ * Part 6: Active UI Handlers, Fixed Element Loops, and Competitive Intelligence Matrix
  */
 function renderActiveDashboard(data) {
     if (!data) return;
@@ -172,7 +167,11 @@ function renderActiveDashboard(data) {
 
     calculateLiveAuditScore(data);
     calculateTrialMetric(data.trialStarted);
-    triggerLiveQRGenerator();
+    
+    // ─── SURGICAL BYPASS: ELIMINATED RUNTIME OVERWRITE RACE CONDITIONS ───
+    // The automated API caller is commented out to allow your static Canva qr.png asset to dominate.
+    // triggerLiveQRGenerator();
+    
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
 
     const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
@@ -294,19 +293,17 @@ function pushVerificationReport(scoreInput) {
 function triggerLiveQRGenerator() {
     const imageTargetNode = document.getElementById('telemetry-qr-element');
     if (!imageTargetNode) return;
-    
     let currentAbsoluteURL = window.location.href;
     if (currentAbsoluteURL.startsWith('file:///')) {
-        currentAbsoluteURL = "https://the-ultimate-rikmakershub.github.io/RikStallFinder-Pro/sizzle.html";
+        currentAbsoluteURL = "https://github.io";
     }
-    
     imageTargetNode.src = "https://qrserver.com" + encodeURIComponent(currentAbsoluteURL) + "&color=110d07";
 }
 
-window.onload = () => {
+document.addEventListener("DOMContentLoaded", () => {
     bootstrapApp();
     initializeCloudDatabaseSync();
-};
+});
 
 const RIKINFINITY_MASTER_INTELLIGENCE = {
     targetTerritory: "Purulia Town Tier-2 Commerce Grid",
