@@ -206,23 +206,36 @@ function initializeCloudDatabaseSync() {
 // ==========================================================================
 // RIKINFINITY ENGINE — MASTER COMPETITIVE INTELLIGENCE & EVAPORATION MATRIX
 // ==========================================================================
+// Open sizzle.js and replace the master intelligence array at the bottom with this complete model
 const RIKINFINITY_MASTER_INTELLIGENCE = {
     targetTerritory: "Purulia Town Tier-2 Commerce Grid",
     localAgencies: { provider: "Regional Cyber Café Outlets", monthlyRateINR: 3500 },
+    
+    // Updated Directories and Aggregators Layer
     corporateAggregators: {
-        "zomato": { marketShare: "59%", model: "Commission (20-30% Cut per Order)" },
-        "swiggy": { marketShare: "30%", model: "Commission (25% Cut per Order)" },
+        "zomato": { marketShare: "59%", model: "Commission (20-30% Cut per Order)", vulnerability: "Merchant margin depletion" },
+        "swiggy": { marketShare: "30%", model: "Commission (25% Cut per Order)", vulnerability: "Alienates street kiosks" },
+        "justdial": { 
+            marketShare: "Restricted Directory Traffic", 
+            model: "Premium Ad Bidding / Lead-Selling", 
+            vulnerability: "Sells vendor leads to multiple local competitors simultaneously; zero dynamic menu utilities" 
+        },
         "foreign_competitor": { marketShare: "0% (Entry Threat)", monthlyRateINR: 8000, model: "Generic White-Label Overseas Template" }
     },
+    
     rikinfinityMoat: {
         architecture: "RikInfinity Core Full-Stack Serverless Engine",
         monthlyRateINR: 249, // Flat fee, 100% merchant food margin retention
         netMonthlySavingsVsAgencyINR: 7751,
         strategicLeverage: [
-            "100% Food Margin Retention (0% commission cuts vs delivery giants 25% drops)",
+            "100% Direct Customer Connection (Zero lead-selling or competitor routing algorithms)",
+            "0% Commission Cuts on food menu items (vs delivery giants 25% drops)",
             "97% Cost Deflation vs Overpriced Foreign Template Brokers (₹249 vs ₹8,000)",
             "Purulia Orphanage Transparency Trust Log (25% revenue routed to RKM Sevashrama)",
             "Triple-A Quality Seal Validation Gates (Hygiene, Fresh Circle, 5-Pax Seating Minimum)"
         ]
     }
 };
+
+// Console logger parameter check
+console.log("[RikInfinity Engine] Justdial vector ingested into market evaporation matrix parameters.");
