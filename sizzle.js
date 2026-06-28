@@ -21,7 +21,7 @@ const vendorRegistry = {
         location: "12 Ember Lane, Raghabpur More, Purulia",
         hours: "Mon – Fri: 7:00 AM – 10:00 PM | Sat – Sun: 8:00 AM – 11:00 PM",
         license: "FSSAI Lic. 22823168000053",
-        trialStarted: "2026-06-25",
+        trialStarted: "2026-06-25", // Timeline baseline parameter tracking
         ratings: [],
         menu: [
             { category: 'breakfast', name: 'The Sizzle Stack',    price: '₹349', desc: 'Triple griddle-pressed pancakes, caramelised banana, amber maple drizzle, sea salt butter.',   tag: '🔥 Chef\'s Pick' },
@@ -52,25 +52,27 @@ function bootstrapApp() {
     renderActiveDashboard(vendorRegistry[activeStallId]);
 }
 /**
- * Part 2: Core Telemetry UI Rendering and Secure Element Binding
+ * Part 2: Dashboard Rendering, Array Security, and Rush Hour Protocol Listeners
  */
 function renderActiveDashboard(data) {
     if (!data) return;
 
-    // Fixed string node bindings
-    if (document.getElementById('vendor-name-node')) document.getElementById('vendor-name-node').innerText = data.name;
-    if (document.getElementById('vendor-motto-node')) document.getElementById('vendor-motto-node').innerText = data.motto;
-    if (document.getElementById('vendor-ambience-node')) document.getElementById('vendor-ambience-node').innerText = data.ambience;
+    // Direct text injections straight into your HTML string node maps
+    document.getElementById('vendor-name-node').innerText = data.name;
+    document.getElementById('vendor-motto-node').innerText = data.motto;
+    document.getElementById('vendor-ambience-node').innerText = data.ambience;
     
-    if (document.getElementById('vd-location-pane')) document.getElementById('vd-location-pane').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Verification Lead: ${data.opsLead}</span>`;
-    if (document.getElementById('vd-hours-pane')) document.getElementById('vd-hours-pane').innerHTML = data.hours;
-    if (document.getElementById('vd-credentials-pane')) document.getElementById('vd-credentials-pane').innerHTML = `${data.phone}<br><span class="badge-fssai-layer">${data.license}</span>`;
+    // Core Geographic and Coordinates Pane Mappings
+    document.getElementById('vd-location-pane').innerHTML = `${data.location}<br><span style="font-size:0.8rem;color:var(--warm-grey)">Verification Lead: ${data.opsLead}</span>`;
+    document.getElementById('vd-hours-pane').innerHTML = data.hours;
+    document.getElementById('vd-credentials-pane').innerHTML = `${data.phone}<br><span class="badge-fssai-layer">${data.license}</span>`;
 
     calculateLiveAuditScore(data);
     calculateTrialMetric(data.trialStarted);
     triggerLiveQRGenerator();
     filterMenu(currentTabFilter, document.querySelector(`.tab-btn[onclick*="'${currentTabFilter}'"]`) || null);
 
+    // Dynamic dealer dialer routing
     const callButtonNode = document.getElementById('dynamic-merchant-call-btn');
     if (callButtonNode && data.phone) {
         const cleanPhoneNumber = data.phone.replace(/[^+\d]/g, '');
@@ -78,13 +80,14 @@ function renderActiveDashboard(data) {
         callButtonNode.innerHTML = `📞 Call Desk: ${data.phone}`;
     }
 
-    // SAFE SEPARATE LOOP INDEX MODIFICATION: Browser crash layer completely eliminated
+    // ELITE MOBILE ARRAY FIX: Loops individual elements safely to prevent rendering crashes
     const bmVals = document.querySelectorAll('.bm-value');
     if (bmVals && bmVals.length >= 2) {
         bmVals[0].innerHTML = `₹249 <span style="font-size:0.7rem; color:var(--warm-grey);">/ Month</span>`;
         bmVals[1].innerHTML = `₹62.50 <span style="font-size:0.7rem; color:var(--accent-green); font-weight:800;">(RKM Sevashrama Log)</span>`;
     }
 
+    // Dynamic Merchant Developer Mod Logging Panel Ingestion
     const modLogsNode = document.getElementById('merchant-mod-logs');
     if (modLogsNode) {
         modLogsNode.innerHTML = `
@@ -92,8 +95,29 @@ function renderActiveDashboard(data) {
             &gt; core_engine: "RikInfinity_Engine_v2.4.0"<br>
             &gt; local_seo: "INDEXED_GSC_VERIFIED"<br>
             &gt; charity_grant_link: "RKM_SEVASHRAMA_25_PERCENT"<br>
-            &gt; custom_merchant_mod: { status: "ACTIVE", theme_override: "Sizzle_Luxury_Dark" }
+            &gt; custom_merchant_mod: { status: "ACTIVE", theme_override: "Sizzle_Simple_Corporate" }
         `;
+    }
+
+    // SURGICAL ADDITION: Real-Time Rush Hour Protocol Monitor Circuit Loop
+    const alertBannerNode = document.getElementById('rush-protocol-alert-banner');
+    const countdownDisplayNode = document.getElementById('rush-countdown-display');
+    
+    if (alertBannerNode && countdownDisplayNode) {
+        const isProtocolActive = localStorage.getItem('rush_protocol_active') === 'true';
+        const expirationTime = localStorage.getItem('rush_protocol_expires');
+        const currentTime = new Date().getTime();
+        
+        if (isProtocolActive && expirationTime && currentTime < expirationTime) {
+            alertBannerNode.style.display = "block";
+            const remainingMinutes = Math.round((expirationTime - currentTime) / 60000);
+            countdownDisplayNode.innerText = remainingMinutes > 0 ? `${remainingMinutes} Minutes` : "Less than a minute";
+        } else {
+            alertBannerNode.style.display = "none";
+            localStorage.removeItem('rush_protocol_active');
+            localStorage.removeItem('rush_protocol_expires');
+            localStorage.removeItem('rush_protocol_duration_set');
+        }
     }
 }
 
@@ -206,23 +230,15 @@ function initializeCloudDatabaseSync() {
 // ==========================================================================
 // RIKINFINITY ENGINE — MASTER COMPETITIVE INTELLIGENCE & EVAPORATION MATRIX
 // ==========================================================================
-// Open sizzle.js and replace the master intelligence array at the bottom with this complete model
 const RIKINFINITY_MASTER_INTELLIGENCE = {
     targetTerritory: "Purulia Town Tier-2 Commerce Grid",
     localAgencies: { provider: "Regional Cyber Café Outlets", monthlyRateINR: 3500 },
-    
-    // Updated Directories and Aggregators Layer
     corporateAggregators: {
-        "zomato": { marketShare: "59%", model: "Commission (20-30% Cut per Order)", vulnerability: "Merchant margin depletion" },
-        "swiggy": { marketShare: "30%", model: "Commission (25% Cut per Order)", vulnerability: "Alienates street kiosks" },
-        "justdial": { 
-            marketShare: "Restricted Directory Traffic", 
-            model: "Premium Ad Bidding / Lead-Selling", 
-            vulnerability: "Sells vendor leads to multiple local competitors simultaneously; zero dynamic menu utilities" 
-        },
+        "zomato": { marketShare: "59%", model: "Commission (20-30% Cut per Order)" },
+        "swiggy": { marketShare: "30%", model: "Commission (25% Cut per Order)" },
+        "justdial": { marketShare: "Restricted Traffic", model: "Lead Selling/Premium Ad-Bidding" },
         "foreign_competitor": { marketShare: "0% (Entry Threat)", monthlyRateINR: 8000, model: "Generic White-Label Overseas Template" }
     },
-    
     rikinfinityMoat: {
         architecture: "RikInfinity Core Full-Stack Serverless Engine",
         monthlyRateINR: 249, // Flat fee, 100% merchant food margin retention
@@ -236,6 +252,3 @@ const RIKINFINITY_MASTER_INTELLIGENCE = {
         ]
     }
 };
-
-// Console logger parameter check
-console.log("[RikInfinity Engine] Justdial vector ingested into market evaporation matrix parameters.");
